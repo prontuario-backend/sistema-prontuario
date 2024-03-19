@@ -14,6 +14,7 @@ public function __construct(mixed $cpf){
 
 //    $cpf = $this->formataCpf($cpf);
 
+
     $this->cpf = $cpf;    
 }
 
