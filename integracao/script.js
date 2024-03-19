@@ -14,13 +14,17 @@ $crmOuCoren = $_POST["crmOuCoren"];
 $arr =['nome'=> $nome,
 'senha'=> $senha,
 'crmOuCoren'=> $crmOuCoren];
-
+fff
 
 
 
 
 echo json_encode($arr);
-*/
+*/    
+
+
+
+
 
 class Request{
     url;
