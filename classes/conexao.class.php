@@ -59,11 +59,11 @@ class Conexao{
 
 
     public function __construct(){
-        //cria uma conexao ao banco de dados
-        session_start([
-            'name' => 'conn',
-            'httponly'=> true
-        ]);
+        // //cria uma conexao ao banco de dados
+        // session_start([
+        //     'name' => 'conection',
+        //     'httponly'=> true
+        // ]);
 
         $this->criarConexao();
     }
@@ -74,7 +74,7 @@ class Conexao{
             //se a conexao nao tiver sido estabelecida retorna erro
             throw new Exception('Erro, não e possivel fechar a conexão pois uma conexão ainda não foi criada.');
         }else{
-            session_destroy();
+            // session_destroy();
             $this->conn->close();
             unset($this->conn);
         }

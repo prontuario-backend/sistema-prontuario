@@ -1,5 +1,5 @@
 <?php
 include './conexao.class.php';
 
-$conexao = new conexao();
-$conexao;
+$conexao = new Conexao();
+$conexao->getConn();
