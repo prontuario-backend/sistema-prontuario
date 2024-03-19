@@ -1,0 +1,15 @@
+{
+    "name": "italo/proz-php",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Italo de Assis",
+            "email": "italomachado8000@gmail.com"
+        }
+    ],
+    "require": {}
+}
