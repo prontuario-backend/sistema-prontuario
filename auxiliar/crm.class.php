@@ -1,20 +1,25 @@
 <?php
 /*
- Esta classe recebe e valida  um crm ela acita somente o tipo string, outros tipos de dados não são suportados;
+ Esta classe recebe e valida  um crm ela aceita somente o tipo string, outros tipos de dados não são suportados;
 Para obter o crm formatado ultilize o metodo getCrm();
+os metodos de validação foram criados presumindo o recebimento de crm um não formatado.
+
+exemplo crm formatado: 00000MG
 exemplo crm formatado: 00000-MG
 */
 class Crm{ 
     private readonly string $crm;//apos criado o crm nao pode ser reatribuido.
     public function __construct(string $crm){
 
-        $this ->validaCrm($crm);
-        $crm = strtoupper($crm);
-//        $crm = $this->formataCrm($crm);
+        $crm = $this ->validaCrm($crm);
+//      $crm = $this->formataCrm($crm);
         $this->crm = $crm;
     }
 
     private function validaCrm(string $crm){
+        $crm = str_replace(' ', '', $crm);//remove os espaços em branco do parametro
+        $crm = trim(strtoupper($crm));//remove os espaços em branco do parametro e o deixa maiusculo
+
         for($i=0; $i < 4; $i++){//verifica se os 5 primeiro caracteres do crm são numeros
             if(is_numeric($crm[$i]) == false){
              throw new Exception('Erro, não pode ter letras, simbolos ou espaços vazios nos primeiros 5 caracteres do crm.');   
@@ -24,6 +29,7 @@ class Crm{
         $estado = $crm[5] . $crm[6];// pega os 2 ultimos caracteres do crm e concatena para criar o estado.
         $this->validarEstado($estado);
 
+        return $crm;
         
     }
 

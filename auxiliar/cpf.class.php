@@ -2,6 +2,9 @@
 /*
  Esta classe recebe valida e formata um cpf independente se for string ou inteiro, outros tipos de dados não são suportados;
 Para obter o cpf formatado ultilize o metodo getCpf();
+os metodos de validação foram criados presumindo o recebimento de cpf um não formatado.
+
+exemplo cpf nao formatado: 00000000000
 exemplo cpf formatado: 000.000.000-00
 
 */
@@ -12,14 +15,15 @@ public function __construct(mixed $cpf){
 
     $cpf = $this->validaCpf($cpf);
 
-//    $cpf = $this->formataCpf($cpf);
-
+//  $cpf = $this->formataCpf($cpf);
 
     $this->cpf = $cpf;    
 }
 
 
 private function validaCpf($cpf){
+    $cpf = str_replace(' ', '', $cpf);//remove os espaços em branco do parametro
+    $cpf = trim($cpf);//remove os espaços em branco do parametro
     if(strlen($cpf)== 11){//verifica se o cpf tem 11 caracteres
 
         if(Is_numeric($cpf) ==true){//verifica se tem somente numeros no cpf
@@ -38,7 +42,9 @@ private function validaCpf($cpf){
 
 private function formataCpf($cpf){
     // adiciona a formatacao com '.' e '-' no cpf
-    
+    $cpf = str_replace(' ', '', $cpf);//remove os espaços em branco do parametro
+    $cpf = trim($cpf);//remove os espaços em branco do parametro
+
     $cpf = substr_replace($cpf, '.', 3, 0);
     $cpf = substr_replace($cpf, '.', 7, 0);
     $cpf = substr_replace($cpf, '-', 11, 0);
