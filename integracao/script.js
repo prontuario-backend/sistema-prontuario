@@ -15,6 +15,10 @@ $arr =['nome'=> $nome,
 'senha'=> $senha,
 'crmOuCoren'=> $crmOuCoren];
 
+
+
+
+
 echo json_encode($arr);
 */
 
