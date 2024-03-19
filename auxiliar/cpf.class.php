@@ -3,6 +3,7 @@
  Esta classe recebe valida e formata um cpf independente se for string ou inteiro, outros tipos de dados não são suportados;
 Para obter o cpf formatado ultilize o metodo getCpf();
 exemplo cpf formatado: 000.000.000-00
+
 */
 class Cpf{
     private readonly string $cpf;//apos criado o cpf nao pode ser reatribuido.
@@ -10,7 +11,9 @@ class Cpf{
 public function __construct(mixed $cpf){
 
     $cpf = $this->validaCpf($cpf);
+
 //    $cpf = $this->formataCpf($cpf);
+
     $this->cpf = $cpf;    
 }
 
