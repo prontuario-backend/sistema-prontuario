@@ -6,11 +6,11 @@ require 'registros.php';
 require 'custos.php';
 
 
-class Consulta {
+class Prontuario {
     // Atributos
-    private $dadosPaciente; // Objeto do tipo DadosPaciente
-    private $custos; // Objeto do tipo Custos
-    private $histSaude; // Objeto do tipo HistSaude
+    private Paciente $dadosPaciente; // Objeto do tipo DadosPaciente
+    private $custos; // Objeto do tipo Custos <------apagar
+    private Anamnese $histSaude; // Objeto do tipo HistSaude
     private $registros; // Objeto do tipo Registros
 
     // Construtor

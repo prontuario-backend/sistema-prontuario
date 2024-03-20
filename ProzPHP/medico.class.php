@@ -2,7 +2,6 @@
 
 class medico
 {
-    private $id;
     private $nome;
     private $email;
     private $corem;
@@ -13,8 +12,7 @@ class medico
     private $salario;
 
 
-    public function __construct($id, $nome, $email, $corem, $setor, $cargoSetor, $telefone, $endereco, $salario) {
-        $this->id = $id;
+    public function __construct($nome, $email, $corem, $setor, $cargoSetor, $telefone, $endereco, $salario) {
         $this->nome = $nome;
         $this->email = $email;
         $this->corem = $corem;
@@ -27,15 +25,8 @@ class medico
 
     // Métodos setters e getters para cada atributo
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
-    public function getId()
-    {
-        return $this->id;
-    }
+
 
     public function setNome($nome)
     {
@@ -120,15 +111,16 @@ class medico
     // Método para exibir todos os dados do médico
     public function exibirDados()
     {
-        echo "ID: {$this->getId()}\n";
-        echo "Nome: {$this->getNome()}\n";
-        echo "Email: {$this->getEmail()}\n";
-        echo "Corem: {$this->getCorem()}\n";
-        echo "Setor: {$this->getSetor()}\n";
-        echo "Cargo no Setor: {$this->getCargoSetor()}\n";
-        echo "Telefone: {$this->getTelefone()}\n";
-        echo "Endereço: {$this->getEndereco()}\n";
-        echo "Salário: {$this->getSalario()}\n";
+        echo ">>>ID
+        Nome: ".{$this->getNome()}."\n
+        Email: {$this->getEmail()}\n
+        Corem: {$this->getCorem()}\n
+        Setor: {$this->getSetor()}\n
+        Cargo no Setor: {$this->getCargoSetor()}\n
+        Telefone: {$this->getTelefone()}\n
+        Endereço: {$this->getEndereco()}\n
+        Salário: {$this->getSalario()}\n
+        ID";
     }
     public function RealizarConsultas()
     {

@@ -5,7 +5,6 @@ require 'familiares.php';
 
 class Paciente
 {
-    private $id;
     private $nome;
     private $nomeSocial;
     private $sexo;
@@ -82,10 +81,7 @@ class Paciente
             $this->dadosFamiliares = $dadosFamiliares;
         }
 
-        public function getId()
-        {
-            return $this->id;
-        }
+
         
         public function getNome()
         {
