@@ -4,6 +4,7 @@ require 'paciente.php';
 
 class medico
 {
+    private $id;
     private $nomeComp;
     private $crm;
     private $senha;
@@ -15,6 +16,16 @@ class medico
         $this->senha = $senha;
     }
     // Métodos getters e setters
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function setNomeComp($nomeComp)
     {

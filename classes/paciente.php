@@ -1,6 +1,7 @@
 <?php
 
 class paciente {
+    private $id;
     private $nome;
     private $dataNasc;
     private $sexo;
@@ -31,6 +32,13 @@ class paciente {
         $this->cpf = $cpf;
     }
 
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
 
     public function setNome($nome) {
         $this->nome = $nome;

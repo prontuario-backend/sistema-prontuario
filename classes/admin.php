@@ -2,6 +2,7 @@
 
 class admin {
     // Atributos
+    private $ID;
     private $nome;
     private $email;
     private $telefone;
@@ -10,7 +11,8 @@ class admin {
     private $salario;
 
     // Construtor
-    public function __construct( $nome, $email, $telefone, $cargoSetor, $endereco, $salario) {
+    public function __construct($ID, $nome, $email, $telefone, $cargoSetor, $endereco, $salario) {
+        $this->ID = $ID;
         $this->nome = $nome;
         $this->email = $email;
         $this->telefone = $telefone;
@@ -20,6 +22,16 @@ class admin {
     }
 
     // Métodos
+
+    // ID
+    public function setID($ID) {
+        $this->ID = $ID;
+    }
+
+    public function getID() {
+        return $this->ID;
+    }
+
     // nome
     public function setNome($nome) {
         $this->nome = $nome;
@@ -97,3 +109,5 @@ class admin {
         // Lógica para atualizar
     }
 }
+
+?>
