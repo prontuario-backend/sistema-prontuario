@@ -27,7 +27,7 @@ class balancoHidrico {
         return $this->data;
     }
 
-    public function setData($data) {
+   private function setData($data) {
         $this->data = $data;
     }
 
@@ -35,7 +35,7 @@ class balancoHidrico {
         return $this->hora;
     }
 
-    public function setHora($hora) {
+   private function setHora($hora) {
         $this->hora = $hora;
     }
 
@@ -43,7 +43,7 @@ class balancoHidrico {
         return $this->liquidosAdministrados;
     }
 
-    public function setLiquidosAdministrados($liquidosAdministrados) {
+   private function setLiquidosAdministrados($liquidosAdministrados) {
         $this->liquidosAdministrados = $liquidosAdministrados;
     }
 
@@ -51,7 +51,7 @@ class balancoHidrico {
         return $this->liquidosEliminados;
     }
 
-    public function setLiquidosEliminados($liquidosEliminados) {
+   private function setLiquidosEliminados($liquidosEliminados) {
         $this->liquidosEliminados = $liquidosEliminados;
     }
 
@@ -59,7 +59,7 @@ class balancoHidrico {
         return $this->totalQuantAdministrada;
     }
 
-    public function setTotalQuantAdministrada($totalQuantAdministrada) {
+   private function setTotalQuantAdministrada($totalQuantAdministrada) {
         $this->totalQuantAdministrada = $totalQuantAdministrada;
     }
 
@@ -67,7 +67,7 @@ class balancoHidrico {
         return $this->totalQuantEliminada;
     }
 
-    public function setTotalQuantEliminada($totalQuantEliminada) {
+   private function setTotalQuantEliminada($totalQuantEliminada) {
         $this->totalQuantEliminada = $totalQuantEliminada;
     }
 
@@ -75,7 +75,7 @@ class balancoHidrico {
         return $this->conclusao;
     }
 
-    public function setConclusao($conclusao) {
+   private function setConclusao($conclusao) {
         $this->conclusao = $conclusao;
     }
 
@@ -83,7 +83,7 @@ class balancoHidrico {
         return $this->coremMedEnf;
     }
 
-    public function setCoremMedEnf($coremMedEnf) {
+   private function setCoremMedEnf($coremMedEnf) {
         $this->coremMedEnf = $coremMedEnf;
     }
 }

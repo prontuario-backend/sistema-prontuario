@@ -1,6 +1,6 @@
 <?php
 
-class anamnese {
+class Anamnese {
     // Atributos
     private $tipoDiagnostico;
     private $tipoCIDNANDA;
@@ -22,7 +22,7 @@ class anamnese {
     // Métodos getters e setters...
 
     //diagnóstico
-    public function setTipoDiagnostico($tipoDiagnostico) {
+   private function setTipoDiagnostico($tipoDiagnostico) {
         $this->tipoDiagnostico = $tipoDiagnostico;
     }
 
@@ -31,7 +31,7 @@ class anamnese {
     }
 
     // CID/NANDA
-    public function setTipoCIDNANDA($tipoCIDNANDA) {
+   private function setTipoCIDNANDA($tipoCIDNANDA) {
         $this->tipoCIDNANDA = $tipoCIDNANDA;
     }
 
@@ -40,7 +40,7 @@ class anamnese {
     }
 
     // dados
-    public function setDados($dados) {
+   private function setDados($dados) {
         $this->dados = $dados;
     }
 
@@ -49,7 +49,7 @@ class anamnese {
     }
 
     // anamnese
-    public function setDadosAnamnese($dadosAnamnese) {
+   private function setDadosAnamnese($dadosAnamnese) {
         $this->dadosAnamnese = $dadosAnamnese;
     }
 
@@ -58,7 +58,7 @@ class anamnese {
     }
 
     // Setter para nome do profissional que fez o diagnóstico
-    public function setNomeProfissionalQueFezDiagnostico($nomeProfissional) {
+   private function setNomeProfissionalQueFezDiagnostico($nomeProfissional) {
         $this->nomeProfissionalQueFezDiagnostico = $nomeProfissional;
     }
 
@@ -67,7 +67,7 @@ class anamnese {
     }
 
     // físico
-    public function setExameFisico($exameFisico) {
+   private function setExameFisico($exameFisico) {
         $this->exameFisico = $exameFisico;
     }
 

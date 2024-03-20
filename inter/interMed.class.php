@@ -14,6 +14,40 @@ class InterMedico{
         $this->conn = $conexao->getConn();
         unset($conexao);
     }
+
+    public function fazerCadastro($nome, $coren, $senha)
+    {
+        // Lógica para fazer o cadastro
+    }
+
+    public function fazerLogin($nome, $coren, $senha)
+    {
+        // Lógica para fazer login
+    }
+
+    public function alterarSenha($novaSenha, $senhaAntiga)
+    {
+        // Lógica para alterar senha
+    }
+
+    public function alterarNome($novoNome)
+    {
+        // Lógica para alterar nome
+    }
+
+    public function deslogar()
+    {
+        // Lógica para deslogar
+    }
+
+    public function excluirConta()
+    {
+        // Lógica para excluir conta
+    }
+
+
+
+
     public function fecharConexao(){
         //fecha uma conexao ja iniciada
         if($this->conn == null){

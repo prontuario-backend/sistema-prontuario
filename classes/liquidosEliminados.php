@@ -19,7 +19,7 @@ class LiquidosEliminados {
         return $this->diurese;
     }
 
-    public function setDiurese($diurese) {
+    private function setDiurese($diurese) {
         $this->diurese = $diurese;
     }
 
@@ -27,7 +27,7 @@ class LiquidosEliminados {
         return $this->estase;
     }
 
-    public function setEstase($estase) {
+    private function setEstase($estase) {
         $this->estase = $estase;
     }
 
@@ -35,7 +35,7 @@ class LiquidosEliminados {
         return $this->vomito;
     }
 
-    public function setVomito($vomito) {
+    private function setVomito($vomito) {
         $this->vomito = $vomito;
     }
 
@@ -43,7 +43,7 @@ class LiquidosEliminados {
         return $this->outros;
     }
 
-    public function setOutros($outros) {
+    private function setOutros($outros) {
         $this->outros = $outros;
     }
 }

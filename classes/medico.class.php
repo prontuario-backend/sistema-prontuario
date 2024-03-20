@@ -1,151 +1,109 @@
 <?php
 
+require 'paciente.php';
+
 class medico
 {
-    private $nome;
-    private $email;
-    private $corem;
-    private $setor;
-    private $cargoSetor;
-    private $telefone;
-    private $endereco;
-    private $salario;
+    private $id;
+    private $nomeComp;
+    private $crm;
+    private $senha;
 
+    public function medico($nomeComp, $crm, $senha)
+    {
+        $this->nomeComp = $nomeComp;
+        $this->crm = $crm;
+        $this->senha = $senha;
+    }
+    // Métodos getters e setters
 
-    public function __construct($nome, $email, $corem, $setor, $cargoSetor, $telefone, $endereco, $salario) {
-        $this->nome = $nome;
-        $this->email = $email;
-        $this->corem = $corem;
-        $this->setor = $setor;
-        $this->cargoSetor = $cargoSetor;
-        $this->telefone = $telefone;
-        $this->endereco = $endereco;
-        $this->salario = $salario;
+    private function setId($id)
+    {
+        $this->id = $id;
     }
 
-    // Métodos setters e getters para cada atributo
-
-
-
-
-    public function setNome($nome)
+    public function getId()
     {
-        $this->nome = $nome;
+        return $this->id;
     }
 
-    public function getNome()
+    private function setNomeComp($nomeComp)
     {
-        return $this->nome;
+        $this->nomeComp = $nomeComp;
     }
 
-    public function setEmail($email)
+    public function getNomeComp()
     {
-        $this->email = $email;
+        return $this->nomeComp;
     }
 
-    public function getEmail()
+    private function setCrm($crm)
     {
-        return $this->email;
+        $this->crm = $crm;
     }
 
-    public function setCorem($corem)
+    public function getCrm()
     {
-        $this->corem = $corem;
+        return $this->crm;
     }
 
-    public function getCorem()
+    private function setSenha($senha)
     {
-        return $this->corem;
+        $this->senha = $senha;
     }
 
-    public function setSetor($setor)
+    public function getSenha()
     {
-        $this->setor = $setor;
+        return $this->senha;
+    }
+    public function fazerCadastro($nome, $crm, $senha)
+    {
+        // Lógica para fazer o cadastro
     }
 
-    public function getSetor()
+    public function fazerLogin($nome, $crm, $senha)
     {
-        return $this->setor;
+        // Lógica para fazer login
     }
 
-    public function setCargoSetor($cargoSetor)
+    public function alterarSenha($novaSenha, $senhaAntiga)
     {
-        $this->cargoSetor = $cargoSetor;
+        // Lógica para alterar senha
     }
 
-    public function getCargoSetor()
+    public function alterarNome($novoNome)
     {
-        return $this->cargoSetor;
+        // Lógica para alterar nome
     }
 
-    public function setTelefone($telefone)
+    public function deslogar()
     {
-        $this->telefone = $telefone;
+        // Lógica para deslogar
     }
 
-    public function getTelefone()
+    public function excluirConta()
     {
-        return $this->telefone;
+        // Lógica para excluir conta
     }
 
-    public function setEndereco($endereco)
+    public function pesquisarPaciente($nomePacienteOuCpfPaciente)
     {
-        $this->endereco = $endereco;
+        // Lógica para pesquisar paciente
+        /* return new Paciente(); */          // Retorna um objeto Paciente
     }
 
-    public function getEndereco()
+    public function criarAnotacaoEnfermagem($anotacaoEnf)
     {
-        return $this->endereco;
+        // Lógica para criar anotação de enfermagem
     }
 
-    public function setSalario($salario)
+    public function criarAnamnese($anamnese)
     {
-        $this->salario = $salario;
+        // Lógica para criar anamnese
     }
 
-    public function getSalario()
+    public function criarBalancoHidrico($balancoHidrico)
     {
-        return $this->salario;
-    }
-
-    // Método para exibir todos os dados do médico
-    public function exibirDados()
-    {
-        // echo ">>>ID
-        // Nome: ".{$this->getNome()}."\n
-        // Email: {$this->getEmail()}\n
-        // Corem: {$this->getCorem()}\n
-        // Setor: {$this->getSetor()}\n
-        // Cargo no Setor: {$this->getCargoSetor()}\n
-        // Telefone: {$this->getTelefone()}\n
-        // Endereço: {$this->getEndereco()}\n
-        // Salário: {$this->getSalario()}\n
-        // ID";
-    }
-    public function RealizarConsultas()
-    {
-        // Lógica para realizar consultas
-    }
-
-    public function RealizarExame()
-    {
-        // Lógica para realizar exames
-    }
-
-    public function EmitirReceitas()
-    {
-        // Lógica para emitir receitas
-    }
-
-    public function AtualizarProntuario()
-    {
-        // Lógica para atualizar prontuário
-    }
-
-    public function AgendarExame()
-    {
-        // Lógica para agendar exames
+        // Lógica para criar balanço hídrico
     }
 }
-
-
