@@ -13,11 +13,13 @@
 	       <option value="M">Masculino</option>
 	       <option value="Outro">Outro</option>
         <label for="nome"> Nome:</label>
-        <input type="text" name="nome" placeholder= " Digite seu nome: ">
-        <label for="nome"> Peso:</label>
-        <input type="float" name="peso" placeholder= " Digite seu peso: ">
-     </select>
-     <button type="submit"> Cadastrar </button>
+        <input type="text" name="nome" placeholder= " Digite seu nome">
+        <label for="nome"> CRM/COREM:</label>
+        <input type="string" name="matricula" placeholder= " 00000-MG ou COREN-MG-00000-ENF ">
+        <label for="nome"> Senha: </label>
+        <input type="password" name="senha" placeholder=" Digite uma senha">
+     <button type="submit" name="verify"> Cadastrar </button>
     </form>
+    <a href="recuperar_senha.php"> Esqueceu a senha?</a>
 </body>
 </html>

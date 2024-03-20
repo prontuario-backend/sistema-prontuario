@@ -3,13 +3,13 @@
 class enfermeiro
 {
     private $id;
-    private $nomeComp;
+    private $nome;
     private $coren;
     private $senha;
 
-    public function enfermeiro($nomeComp, $coren, $senha)
+    public function enfermeiro($nome, $coren, $senha)
     {
-        $this->nomeComp = $nomeComp;
+        $this->nome = $nome;
         $this->coren = $coren;
         $this->senha = $senha;
     }
@@ -21,19 +21,19 @@ class enfermeiro
         return $this->id;
     }
 
-   private function setId($id)
+    public function setId($id)
     {
         $this->id = $id;
     }
 
-    public function getNomeComp()
+    public function getNome()
     {
-        return $this->nomeComp;
+        return $this->nome;
     }
 
-   private function setNomeComp($nomeComp)
+    public function setNomeComp($nome)
     {
-        $this->nomeComp = $nomeComp;
+        $this->nome = $nome;
     }
 
     public function getCoren()
@@ -41,7 +41,7 @@ class enfermeiro
         return $this->coren;
     }
 
-   private function setCoren($coren)
+    public function setCoren($coren)
     {
         $this->coren = $coren;
     }
@@ -51,10 +51,60 @@ class enfermeiro
         return $this->senha;
     }
 
-   private function setSenha($senha)
+    public function setSenha($senha)
     {
         $this->senha = $senha;
     }
 
+    public function fazerCadastro($nome, $coren, $senha)
+    {
+        // Lógica para fazer o cadastro
+    }
 
+    public function fazerLogin($nome, $coren, $senha)
+    {
+        // Lógica para fazer login
+    }
+
+    public function alterarSenha($novaSenha, $senhaAntiga)
+    {
+        // Lógica para alterar senha
+    }
+
+    public function alterarNome($novoNome)
+    {
+        // Lógica para alterar nome
+    }
+
+    public function deslogar()
+    {
+        // Lógica para deslogar
+    }
+
+    public function excluirConta()
+    {
+        // Lógica para excluir conta
+    }
+
+    public function pesquisarPaciente($nomePacienteOuCpfPaciente)
+    {
+        // Lógica para pesquisar paciente
+       // return new Paciente(); // Retorna um objeto Paciente
+   //     return new Paciente(); // Retorna um objeto Paciente
+    }
+
+    public function criarAnotacaoEnfermagem($anotacaoEnf)
+    {
+        // Lógica para criar anotação de enfermagem
+    }
+
+    public function criarAnamnese($anamnese)
+    {
+        // Lógica para criar anamnese
+    }
+
+    public function criarBalancoHidrico($balancoHidrico)
+    {
+        // Lógica para criar balanço hídrico
+    }
 }
