@@ -1,4 +1,4 @@
-  <?php 
+  <?php
   include './database/conecao.class.php';
 /*
 Esta classe e responsavel por criptografar e descriptografar dados no geral, ela e capaz

@@ -12,7 +12,7 @@ class Validacao{
 
     public function valida(){
 
-    }    
+    }
 
 
 }

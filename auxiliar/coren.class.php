@@ -30,7 +30,7 @@ class Coren{
 
         for($i=7; $i < 11; $i++){//verifica se os caracteres de 7 a 11 do coren são numeros
             if(is_numeric($coren[$i]) == false){
-             throw new Exception('Erro, não pode ter letras, simbolos ou espaços vazios nos caracteres de 8 a 12 do coren.');   
+             throw new Exception('Erro, não pode ter letras, simbolos ou espaços vazios nos caracteres de 8 a 12 do coren.');
             }
         }
         $categoria = substr($coren, 12);//pega a categoria do coren e atribui a uma variavel

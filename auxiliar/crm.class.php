@@ -7,7 +7,7 @@ os metodos de validação foram criados presumindo o recebimento de crm um não 
 exemplo crm formatado: 00000MG
 exemplo crm formatado: 00000-MG
 */
-class Crm{ 
+class Crm{
     private readonly string $crm;//apos criado o crm nao pode ser reatribuido.
     public function __construct(string $crm){
 
