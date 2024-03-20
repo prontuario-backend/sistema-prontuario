@@ -16,10 +16,27 @@ class InterEnf {
         unset($conexao);
     }
 
-    public function fazerCadastro($nome, $coren, $senha)
-    {
-        // Lógica para fazer o cadastro
+    
+    // public function create($nome, $coren, $senha){
+
+    // }
+    // public function read($nome, $coren, $senha){
+    
+    // }
+    // public function updateNome($nome){
+    
+    // }
+    // public function updateCoren($coren){
+
+    // }
+    // public function updateSenha(){
+
+    // }
+    public function delete($nome, $coren, $senha){
+    
     }
+
+
 
     public function fazerLogin($nome, $coren, $senha)
     {
@@ -36,15 +53,6 @@ class InterEnf {
         // Lógica para alterar nome
     }
 
-    public function deslogar()
-    {
-        // Lógica para deslogar
-    }
-
-    public function excluirConta()
-    {
-        // Lógica para excluir conta
-    }
 
     
     public function fecharConexao(){

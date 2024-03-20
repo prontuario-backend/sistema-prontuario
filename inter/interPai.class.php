@@ -1,33 +1,26 @@
 <?php
-include './database/conecao.class.php';
-include './auxiliar/criptografia.class.php';
-include './interAnotacaoEnf.class.php';
-
-//intermediario da classe anotacao enfermagem
-
-class  InterAnotacaoEnf {
-
+include './inter/dados.interface.php';
+class InterPai implements Dados{
     private mysqli $conn;
+    
     public function __construct(){
         $conexao = new Conexao();
         $this->conn = $conexao->getConn();
         unset($conexao);
     }
-
     public function create(){
 
     }
     public function read(){
-    
+
     }
     public function update(){
-    
+
     }
     public function delete(){
-    
+
     }
 
-    
     public function fecharConexao(){
         //fecha uma conexao ja iniciada
         if($this->conn == null){

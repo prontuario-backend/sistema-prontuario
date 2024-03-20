@@ -12,6 +12,18 @@ class  InterBalHidrico {
         $this->conn = $conexao->getConn();
         unset($conexao);
     }
+    public function create(){
+
+    }
+    public function read(){
+    
+    }
+    public function update(){
+    
+    }
+    public function delete(){
+    
+    }
     public function fecharConexao(){
         //fecha uma conexao ja iniciada
         if($this->conn == null){
