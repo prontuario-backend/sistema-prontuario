@@ -21,7 +21,7 @@ class LiquidosAdministrados {
         return $this->viaOral;
     }
 
-    public function setViaOral($viaOral) {
+   private function setViaOral($viaOral) {
         $this->viaOral = $viaOral;
     }
 
@@ -29,7 +29,7 @@ class LiquidosAdministrados {
         return $this->viaParenteral;
     }
 
-    public function setViaParenteral($viaParenteral) {
+   private function setViaParenteral($viaParenteral) {
         $this->viaParenteral = $viaParenteral;
     }
 
@@ -37,7 +37,7 @@ class LiquidosAdministrados {
         return $this->quantAdminstrada;
     }
 
-    public function setQuantAdminstrada($quantAdminstrada) {
+   private function setQuantAdminstrada($quantAdminstrada) {
         $this->quantAdminstrada = $quantAdminstrada;
     }
 
@@ -45,7 +45,7 @@ class LiquidosAdministrados {
         return $this->sondas;
     }
 
-    public function setSondas($sondas) {
+   private function setSondas($sondas) {
         $this->sondas = $sondas;
     }
 
@@ -53,7 +53,7 @@ class LiquidosAdministrados {
         return $this->outros;
     }
 
-    public function setOutros($outros) {
+   private function setOutros($outros) {
         $this->outros = $outros;
     }
 }

@@ -24,7 +24,7 @@ class admin {
     // Métodos
 
     // ID
-    public function setID($ID) {
+   private function setID($ID) {
         $this->ID = $ID;
     }
 
@@ -33,7 +33,7 @@ class admin {
     }
 
     // nome
-    public function setNome($nome) {
+   private function setNome($nome) {
         $this->nome = $nome;
     }
 
@@ -42,7 +42,7 @@ class admin {
     }
 
     // email
-    public function setEmail($email) {
+   private function setEmail($email) {
         $this->email = $email;
     }
 
@@ -51,7 +51,7 @@ class admin {
     }
 
     // telefone
-    public function setTelefone($telefone) {
+   private function setTelefone($telefone) {
         $this->telefone = $telefone;
     }
 
@@ -60,7 +60,7 @@ class admin {
     }
 
     // cargo/setor
-    public function setCargoSetor($cargoSetor) {
+   private function setCargoSetor($cargoSetor) {
         $this->cargoSetor = $cargoSetor;
     }
 
@@ -69,7 +69,7 @@ class admin {
     }
 
     // endereço
-    public function setEndereco($endereco) {
+   private function setEndereco($endereco) {
         $this->endereco = $endereco;
     }
 
@@ -78,7 +78,7 @@ class admin {
     }
 
     // salário
-    public function setSalario($salario) {
+   private function setSalario($salario) {
         $this->salario = $salario;
     }
 

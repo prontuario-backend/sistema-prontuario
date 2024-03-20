@@ -17,7 +17,7 @@ class medico
     }
     // Métodos getters e setters
 
-    public function setId($id)
+    private function setId($id)
     {
         $this->id = $id;
     }
@@ -27,9 +27,11 @@ class medico
         return $this->id;
     }
 
-    public function setNome($nome)
+
+    private function setNomeComp($nomeComp)
+
     {
-        $this->nome = $nome;
+        $this->nome = $nomeComp;
     }
 
     public function getNome()
@@ -37,7 +39,7 @@ class medico
         return $this->nome;
     }
 
-    public function setCrm($crm)
+    private function setCrm($crm)
     {
         $this->crm = $crm;
     }
@@ -47,7 +49,7 @@ class medico
         return $this->crm;
     }
 
-    public function setSenha($senha)
+    private function setSenha($senha)
     {
         $this->senha = $senha;
     }

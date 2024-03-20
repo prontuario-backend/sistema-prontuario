@@ -1,16 +1,16 @@
 <?php
 
-require 'medico';
-require 'paciente.php';
-require 'enfermeiro.php';
+require './medico.class.php';
+require './paciente.class.php';
+require './enfermeiro.class.php';
 
-class prontuario {
-    private $paciente;
-    private $anamnese;
-    private $anotacaoEnfermagem;
-    private $balancoHidrico;
+class prontuario {//ok
+    private  Paciente $paciente;
+    private Anamnese $anamnese;
+    private AnotacaoEnfermagem $anotacaoEnfermagem;
+    private  BalancoHidrico $balancoHidrico;
 
-    public function prontuario($paciente, $anamnese, $anotacaoEnfermagem, $balancoHidrico) {
+    public function prontuario( Paciente $paciente, Anamnese $anamnese, AnotacaoEnfermagem $anotacaoEnfermagem,  BalancoHidrico $balancoHidrico) {
         $this->paciente = $paciente;
         $this->anamnese = $anamnese;
         $this->anotacaoEnfermagem = $anotacaoEnfermagem;
@@ -21,7 +21,7 @@ class prontuario {
         return $this->paciente;
     }
 
-    public function setPaciente($paciente) {
+    private function setPaciente($paciente) {
         $this->paciente = $paciente;
     }
 
@@ -29,7 +29,7 @@ class prontuario {
         return $this->anamnese;
     }
 
-    public function setAnamnese($anamnese) {
+    private function setAnamnese($anamnese) {
         $this->anamnese = $anamnese;
     }
 
@@ -37,7 +37,7 @@ class prontuario {
         return $this->anotacaoEnfermagem;
     }
 
-    public function setAnotacaoEnfermagem($anotacaoEnfermagem) {
+    private function setAnotacaoEnfermagem($anotacaoEnfermagem) {
         $this->anotacaoEnfermagem = $anotacaoEnfermagem;
     }
 
@@ -45,7 +45,7 @@ class prontuario {
         return $this->balancoHidrico;
     }
 
-    public function setBalancoHidrico($balancoHidrico) {
+    private function setBalancoHidrico($balancoHidrico) {
         $this->balancoHidrico = $balancoHidrico;
     }
 }

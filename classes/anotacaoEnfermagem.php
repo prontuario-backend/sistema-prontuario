@@ -1,11 +1,11 @@
 <?php
 
 class anotacaoEnfermagem {
-    private $dataRegistro;
-    private $hora;
-    private $registro;
+    private string $dataRegistro;
+    private string $hora;
+    private string $registro;
 
-    public function anotacaoEnfermagem($dataRegistro, $hora, $registro) {
+    public function anotacaoEnfermagem(string $dataRegistro, string $hora, string $registro) {
         $this->dataRegistro = $dataRegistro;
         $this->hora = $hora;
         $this->registro = $registro;
@@ -17,7 +17,7 @@ class anotacaoEnfermagem {
         return $this->dataRegistro;
     }
 
-    public function setDataRegistro($dataRegistro) {
+   private function setDataRegistro(string $dataRegistro) {
         $this->dataRegistro = $dataRegistro;
     }
 
@@ -25,7 +25,7 @@ class anotacaoEnfermagem {
         return $this->hora;
     }
 
-    public function setHora($hora) {
+   private function setHora(string $hora) {
         $this->hora = $hora;
     }
 
@@ -33,7 +33,7 @@ class anotacaoEnfermagem {
         return $this->registro;
     }
 
-    public function setRegistro($registro) {
+   private function setRegistro(string $registro) {
         $this->registro = $registro;
     }
 }
