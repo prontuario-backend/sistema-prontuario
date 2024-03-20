@@ -7,7 +7,7 @@
 </head>
 <body>
 <body>
-    <form action="processar-dados-paciente.php" method="post">
+    <form action="processar-dados-cadastrar.php" method="post">
         <select name="cargo" id="genero">
 	       <option value="F">Feminino</option>
 	       <option value="M">Masculino</option>

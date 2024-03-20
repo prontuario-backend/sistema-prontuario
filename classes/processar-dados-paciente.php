@@ -1,5 +1,5 @@
 <?php
-include './database/conecao.class.php';
+include './database/conexao.php';
 
 $conexao = new Conexao();
 $conexao->getConn();
