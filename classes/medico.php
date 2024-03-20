@@ -5,13 +5,13 @@ require 'paciente.php';
 class medico
 {
     private $id;
-    private $nomeComp;
+    private $nome;
     private $crm;
     private $senha;
 
-    public function medico($nomeComp, $crm, $senha)
+    public function medico($nome, $crm, $senha)
     {
-        $this->nomeComp = $nomeComp;
+        $this->nome = $nome;
         $this->crm = $crm;
         $this->senha = $senha;
     }
@@ -27,14 +27,14 @@ class medico
         return $this->id;
     }
 
-    public function setNomeComp($nomeComp)
+    public function setNome($nome)
     {
-        $this->nomeComp = $nomeComp;
+        $this->nome = $nome;
     }
 
-    public function getNomeComp()
+    public function getNome()
     {
-        return $this->nomeComp;
+        return $this->nome;
     }
 
     public function setCrm($crm)
