@@ -79,27 +79,3 @@ de criptografar e descriptografar strings, senhas(so criptografa e compara) e ar
            echo 'Usuário não cadastrado';}
    };
 
-<!DOCTYPE html>
-<html lang="pt-Br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criptografia</title>
-</head>
-<body>
-     <form action="criptografia.php" method="post">
-            <label for="nome"> CRM/COREM </label>
-            <input type="float" name="matricula" required>
-            <wbr>
-            <label for="nome"> Nome: </label>
-            <input type="text" name="nome" required>
-            <wbr>
-            <label for="nome"> senha </label>
-            <input type="password" name="senha" required> 
-
-            <button type ="submit" name="verify">Cadastrar</button>
-        </form>
-</body>
-     
-</html>
-*/
