@@ -6,80 +6,49 @@ require 'familiares.php';
 class Paciente
 {
     private $nome;
-    private $nomeSocial;
-    private $sexo;
+    private $genero;
     private $dataNasc;
-    private $tipoConvenio;
-    private $dataEntrada;
     private $cpf;
     private $telefone;
     private $email;
     private $cep;
-    private $numCasa;
-    private $bairro;
-    private $cidade;
-    private $estado;
-    private $escolaridade;
+    private $endereco;
     private $corRaca;
-    private $estadoCivil;
-    private $profissao;
-    private $naturalidade;
-    private $nacionalidade;
-    private $falecido;
-    private $observacao;
-    private $responsavelPaciente;
-    private $dadosFamiliares;
+    private $mae;
+    private $pai;
+    private $altura;
+    private $peso;
 
         // Construtor
         public function __construct      
         (
             $nome,
-            $nomeSocial,
-            $sexo,
+            $genero,
             $dataNasc,
-            $tipoConvenio,
-            $dataEntrada,
             $cpf,
             $telefone,
             $email,
             $cep,
-            $numCasa,
-            $bairro,
-            $cidade,
-            $estado,
-            $escolaridade,
+            $endereco,
             $corRaca,
-            $profissao,
-            $naturalidade,
-            $nacionalidade,
-            $falecido,
-            $observacao,
-            $responsavelPaciente,
-            $dadosFamiliares
+            $mae,
+            $pai,
+            $altura,
+            $peso,
         ) {
             $this->nome = $nome;
-            $this->nomeSocial = $nomeSocial;
-            $this->sexo = $sexo;
+            $this->genero = $genero;
             $this->dataNasc = $dataNasc;
-            $this->tipoConvenio = $tipoConvenio;
-            $this->dataEntrada = $dataEntrada;
             $this->cpf = $cpf;
             $this->telefone = $telefone;
             $this->email = $email;
             $this->cep = $cep;
-            $this->numCasa = $numCasa;
-            $this->bairro = $bairro;
-            $this->cidade = $cidade;
-            $this->estado = $estado;
-            $this->escolaridade = $escolaridade;
+            $this->endereco = $endereco;
             $this->corRaca = $corRaca;
-            $this->profissao = $profissao;
-            $this->naturalidade = $naturalidade;
-            $this->nacionalidade = $nacionalidade;
-            $this->falecido = $falecido;
-            $this->observacao = $observacao;
-            $this->responsavelPaciente = $responsavelPaciente;
-            $this->dadosFamiliares = $dadosFamiliares;
+            $this->mae = $mae;
+            $this->pai = $pai;
+            $this->altura = $altura;
+            $this->peso = $peso;
         }
 
 
@@ -89,29 +58,14 @@ class Paciente
             return $this->nome;
         }
         
-        public function getNomeSocial()
+        public function getGenero()
         {
-            return $this->nomeSocial;
-        }
-        
-        public function getSexo()
-        {
-            return $this->sexo;
+            return $this->genero;
         }
         
         public function getDataNasc()
         {
             return $this->dataNasc;
-        }
-        
-        public function getTipoConvenio()
-        {
-            return $this->tipoConvenio;
-        }
-        
-        public function getDataEntrada()
-        {
-            return $this->dataEntrada;
         }
         
         public function getCpf()
@@ -134,29 +88,9 @@ class Paciente
             return $this->cep;
         }
         
-        public function getNumCasa()
+        public function getEndereco()
         {
-            return $this->numCasa;
-        }
-        
-        public function getBairro()
-        {
-            return $this->bairro;
-        }
-        
-        public function getCidade()
-        {
-            return $this->cidade;
-        }
-        
-        public function getEstado()
-        {
-            return $this->estado;
-        }
-        
-        public function getEscolaridade()
-        {
-            return $this->escolaridade;
+            return $this->endereco;
         }
         
         public function getCorRaca()
@@ -164,44 +98,24 @@ class Paciente
             return $this->corRaca;
         }
         
-        public function getEstadoCivil()
+        public function getMae()
         {
-            return $this->estadoCivil;
+            return $this->mae;
+        }
+
+        public function getPai()
+        {
+            return $this->pai;
+        }
+
+        public function getAltura()
+        {
+            return $this->altura;
         }
         
-        public function getProfissao()
+        public function getPeso()
         {
-            return $this->profissao;
-        }
-        
-        public function getNaturalidade()
-        {
-            return $this->naturalidade;
-        }
-        
-        public function getNacionalidade()
-        {
-            return $this->nacionalidade;
-        }
-        
-        public function getFalecido()
-        {
-            return $this->falecido;
-        }
-        
-        public function getObservacao()
-        {
-            return $this->observacao;
-        }
-        
-        public function getResponsavelPaciente()
-        {
-            return $this->responsavelPaciente;
-        }
-        
-        public function getDadosFamiliares()
-        {
-            return $this->dadosFamiliares;
+            return $this->peso;
         }
         
     // ... (outros métodos)
@@ -222,11 +136,11 @@ class Paciente
         return null; 
     }
 
-    public function colicitarConsulta(): void {
+    public function solicitarConsulta(): void {
         // Lógica para solicitar uma consulta
     }
 
-    public function cealizarExames(): void {
+    public function realizarExames(): void {
         // Lógica para realizar os exames
     }
 
