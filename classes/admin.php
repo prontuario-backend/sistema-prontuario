@@ -84,7 +84,7 @@ class admin {
 
     public function getSalario() {
         return $this->salario;
-    }  
+    }
 
     //outros metodos
 
