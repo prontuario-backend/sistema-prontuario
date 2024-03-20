@@ -1,6 +1,4 @@
 <?php
-include './classes/interMedico.class.php';
+include './auxiliar/criptografia.class.php';
 
-$medico = new InterMedico();
 
-print_r($medico);
