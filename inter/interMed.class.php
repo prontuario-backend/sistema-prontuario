@@ -15,9 +15,19 @@ class InterMedico{
         unset($conexao);
     }
 
-    public function fazerCadastro($nome, $coren, $senha)
+    public function create($nome, $coren, $senha)
     {
-        // Lógica para fazer o cadastro
+        //logica banco de dados
+    }
+
+    public function read(){
+        //logica banco de dados
+    }
+    public function update(){
+        //logica banco de dados
+    }
+    public function delete(){
+
     }
 
     public function fazerLogin($nome, $coren, $senha)
@@ -27,7 +37,7 @@ class InterMedico{
 
     function redefinirSenha(Crm $crm, string $novaSenha) {
         // Verifica se o corem é válido
-    
+        $crm = $crm->getCrm();
     
         // Verifica se a nova senha é forte o suficiente (você pode implementar sua própria lógica aqui)
         if (strlen($novaSenha) < 8) {
@@ -46,7 +56,7 @@ class InterMedico{
     
             $stmt = $mysqli->prepare("UPDATE usuarios SET senha_hash = :senhaHash WHERE corem = :corem");
             $stmt->bindParam(':senhaHash', $senhaHash);
-            $stmt->bindParam(':crm', $crm->getCrm());
+            $stmt->bindParam(':crm', $crm);
             $stmt->execute();
     
             return "Senha redefinida com sucesso.";
@@ -57,18 +67,15 @@ class InterMedico{
 
     public function alterarNome($novoNome)
     {
-        // Lógica para alterar nome
+        //logica banco de dados
     }
 
     public function deslogar()
     {
-        // Lógica para deslogar
+        //logica para deslogar
     }
 
-    public function excluirConta()
-    {
-        // Lógica para excluir conta
-    }
+
 
 
 
@@ -82,6 +89,15 @@ class InterMedico{
             // session_destroy();
             $this->conn->close();
             unset($this->conn);
+        }
+    }
+    public function getConn(){
+        //retorna um objeto de conexao mysqli referente ao atributo 'conn'
+        if($this->conn == null){
+            //se a conexao nao tiver sido estabelecida retorna erro
+            throw new Exception('Erro, não e possivel retornar o atributo $conn pois uma conexão ainda não foi criada.');
+        }else{
+            return $this->conn;
         }
     }
 }

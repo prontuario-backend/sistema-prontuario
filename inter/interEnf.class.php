@@ -47,7 +47,7 @@ class InterEnf {
  // Função para redefinir a senha
 function redefinirSenha(Coren $corem, string $novaSenha) {
     // Verifica se o corem é válido
-
+    $corem = $corem->getCoren();
 
     // Verifica se a nova senha é forte o suficiente (você pode implementar sua própria lógica aqui)
     if (strlen($novaSenha) < 8) {
@@ -66,7 +66,7 @@ function redefinirSenha(Coren $corem, string $novaSenha) {
 
         $stmt = $mysqli->prepare("UPDATE usuarios SET senha_hash = :senhaHash WHERE corem = :corem");
         $stmt->bindParam(':senhaHash', $senhaHash);
-        $stmt->bindParam(':corem', $corem->getCoren());
+        $stmt->bindParam(':corem', $corem);
         $stmt->execute();
 
         return "Senha redefinida com sucesso.";
@@ -90,6 +90,15 @@ function redefinirSenha(Coren $corem, string $novaSenha) {
             // session_destroy();
             $this->conn->close();
             unset($this->conn);
+        }
+    }
+    public function getConn(){
+        //retorna um objeto de conexao mysqli referente ao atributo 'conn'
+        if($this->conn == null){
+            //se a conexao nao tiver sido estabelecida retorna erro
+            throw new Exception('Erro, não e possivel retornar o atributo $conn pois uma conexão ainda não foi criada.');
+        }else{
+            return $this->conn;
         }
     }
 }
