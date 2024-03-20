@@ -1,5 +1,13 @@
 <?php
+/*
+Esta classe realiza automaticmente uma conexao ao banco de dados ultilizando mysqli, para criar uma conexao basta criar um
+objeto desta classe e a conexao sera criada automaticamente, para acessar o objeto de conexao ultilize o metodo:
+getConn();
 
+!!! IMPORTANTE: LEMBRE-SE DE FECHAR A CONEXAO QUANDO TERMINAR DE USAR SEU OBJETO CRIADO PARA EVITAR VAZEMENTO DE MEMORIA!!!
+para fechar a conexao use o metodo:
+fecharConexao();
+*/
 class Conexao{
     protected string $server = 'localhost';
     protected string $user = 'id21959013_bhdev';
