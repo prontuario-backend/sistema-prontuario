@@ -25,9 +25,34 @@ class InterMedico{
         // Lógica para fazer login
     }
 
-    public function alterarSenha($novaSenha, $senhaAntiga)
-    {
-        // Lógica para alterar senha
+    function redefinirSenha(Crm $crm, string $novaSenha) {
+        // Verifica se o corem é válido
+    
+    
+        // Verifica se a nova senha é forte o suficiente (você pode implementar sua própria lógica aqui)
+        if (strlen($novaSenha) < 8) {
+            return "A senha deve ter pelo menos 8 caracteres.";
+        }
+    
+        // Gere um hash de senha seguro com um salt aleatório
+        $salt = bin2hex(random_bytes(32));
+        $senhaComSalt = $novaSenha . $salt;
+        $senhaHash = password_hash($senhaComSalt, PASSWORD_BCRYPT);
+    
+        // Atualize a senha no banco de dados
+        try {
+            $mysqli = new PDO("mysql:host=localhost;dbname=seu_banco_de_dados_Ezequiel", "seu_usuario", "sua_senha");
+            $mysqli->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            $stmt = $mysqli->prepare("UPDATE usuarios SET senha_hash = :senhaHash WHERE corem = :corem");
+            $stmt->bindParam(':senhaHash', $senhaHash);
+            $stmt->bindParam(':crm', $crm->getCrm());
+            $stmt->execute();
+    
+            return "Senha redefinida com sucesso.";
+        } catch (PDOException $e) {
+            return "Erro ao redefinir a senha: " . $e->getMessage();
+        }
     }
 
     public function alterarNome($novoNome)

@@ -1,16 +1,16 @@
-<?php 
-    include './database/conecao.class.php';
-    include './auxiliar/criptografia.class.php';
-    include './auxiliar/coren.class.php';
-    include './auxiliar/crm.class.php';
-    include './inter/interEnf.class.php';
-    include './inter/interMed.class.php';
+<?php
+    include "./database/conexao.php";
+    include "./auxiliar/criptografia.class.php";
+    include "./auxiliar/coren.class.php";
+    include "./auxiliar/crm.class.php";
+    include "./inter/interEnf.class.php";
+    include "./inter/interMed.class.php";
 
     $conexao = new Conexao();
     $conexao->getConn();
 
     if(isset($_POST['cargo'])){
-        if ($cargo==$matricula){
+        if($cargo==$matricula){
             echo "A matrícula confere com o cargo! ";
         } else{
             echo "A matrícula não confere com o cargo! ";
@@ -36,3 +36,4 @@
              echo 'Usuário não cadastrado';}
      };
 ?>
+

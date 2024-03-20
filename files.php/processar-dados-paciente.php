@@ -1,5 +1,5 @@
 <?php
-include './database/conecao.class.php';
+include './database/conexao.php';
 
 $conexao = new Conexao();
 $conexao->getConn();
@@ -20,9 +20,9 @@ $conexao->getConn();
      $data_atual = date('d/m/Y');
      $hora_atual = date('H:i');
 
-     $smtp = $conn->prepare("INSERT INTO mensagens (nome, cpf, telefone, dataNasc, 
+     $smtp = $conn->prepare("INSERT INTO mensagens (nome, cpf, telefone, dataNasc,
      genero, endereco, cep, corRaca, mae, pai, altura, peso, data, hora) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-     $smtp ->bind_param("ssssssssssssss", $nome, $cpf, $telefone, $dataNasc, 
+     $smtp ->bind_param("ssssssssssssss", $nome, $cpf, $telefone, $dataNasc,
      $genero, $endereco, $cep, $corRaca, $mae, $pai, $altura, $peso, $data_atual, $hora_atual);
 
      if($smtp->execute()){
