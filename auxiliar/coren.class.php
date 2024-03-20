@@ -74,7 +74,7 @@ class Coren{
         if(ctype_alpha($categoria) == false){//verifica se tem números no parametro passado
             throw new Exception('Erro, o parametro categoria não pode ser do tipo int.');
         }
-        $listaCategorias = ['ENF', 'TE', 'AE'];
+        $listaCategorias = ['ENF', 'TE', 'AE', 'OBST'];
 
         foreach($listaCategorias as $i => $valor){
             if($categoria === $valor){//verifica se a categoria fornecida esta na lista de categorias
