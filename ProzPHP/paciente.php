@@ -32,7 +32,8 @@ class Paciente
     private $dadosFamiliares;
 
         // Construtor
-        public function paciente(
+        public function __construct      
+        (
             $nome,
             $nomeSocial,
             $sexo,
