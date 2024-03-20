@@ -111,16 +111,16 @@ class medico
     // Método para exibir todos os dados do médico
     public function exibirDados()
     {
-        echo ">>>ID
-        Nome: ".{$this->getNome()}."\n
-        Email: {$this->getEmail()}\n
-        Corem: {$this->getCorem()}\n
-        Setor: {$this->getSetor()}\n
-        Cargo no Setor: {$this->getCargoSetor()}\n
-        Telefone: {$this->getTelefone()}\n
-        Endereço: {$this->getEndereco()}\n
-        Salário: {$this->getSalario()}\n
-        ID";
+        // echo ">>>ID
+        // Nome: ".{$this->getNome()}."\n
+        // Email: {$this->getEmail()}\n
+        // Corem: {$this->getCorem()}\n
+        // Setor: {$this->getSetor()}\n
+        // Cargo no Setor: {$this->getCargoSetor()}\n
+        // Telefone: {$this->getTelefone()}\n
+        // Endereço: {$this->getEndereco()}\n
+        // Salário: {$this->getSalario()}\n
+        // ID";
     }
     public function RealizarConsultas()
     {

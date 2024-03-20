@@ -1,244 +1,152 @@
 <?php
 
-require 'medico.php';
-require 'familiares.php';
-
-class Paciente
-{
+class paciente {
+    private $id;
     private $nome;
-    private $nomeSocial;
-    private $sexo;
     private $dataNasc;
-    private $tipoConvenio;
-    private $dataEntrada;
-    private $cpf;
-    private $telefone;
-    private $email;
-    private $cep;
-    private $numCasa;
-    private $bairro;
-    private $cidade;
-    private $estado;
-    private $escolaridade;
+    private $sexo;
     private $corRaca;
-    private $estadoCivil;
-    private $profissao;
-    private $naturalidade;
-    private $nacionalidade;
-    private $falecido;
-    private $observacao;
-    private $responsavelPaciente;
-    private $dadosFamiliares;
+    private $email;
+    private $altura;
+    private $peso;
+    private $nomeMae;
+    private $nomePai;
+    private $telefone;
+    private $cep;
+    private $endereco;
+    private $cpf;
 
-        // Construtor
-        public function paciente(
-            $nome,
-            $nomeSocial,
-            $sexo,
-            $dataNasc,
-            $tipoConvenio,
-            $dataEntrada,
-            $cpf,
-            $telefone,
-            $email,
-            $cep,
-            $numCasa,
-            $bairro,
-            $cidade,
-            $estado,
-            $escolaridade,
-            $corRaca,
-            $profissao,
-            $naturalidade,
-            $nacionalidade,
-            $falecido,
-            $observacao,
-            $responsavelPaciente,
-            $dadosFamiliares
-        ) {
-            $this->nome = $nome;
-            $this->nomeSocial = $nomeSocial;
-            $this->sexo = $sexo;
-            $this->dataNasc = $dataNasc;
-            $this->tipoConvenio = $tipoConvenio;
-            $this->dataEntrada = $dataEntrada;
-            $this->cpf = $cpf;
-            $this->telefone = $telefone;
-            $this->email = $email;
-            $this->cep = $cep;
-            $this->numCasa = $numCasa;
-            $this->bairro = $bairro;
-            $this->cidade = $cidade;
-            $this->estado = $estado;
-            $this->escolaridade = $escolaridade;
-            $this->corRaca = $corRaca;
-            $this->profissao = $profissao;
-            $this->naturalidade = $naturalidade;
-            $this->nacionalidade = $nacionalidade;
-            $this->falecido = $falecido;
-            $this->observacao = $observacao;
-            $this->responsavelPaciente = $responsavelPaciente;
-            $this->dadosFamiliares = $dadosFamiliares;
-        }
-
-
-        
-        public function getNome()
-        {
-            return $this->nome;
-        }
-        
-        public function getNomeSocial()
-        {
-            return $this->nomeSocial;
-        }
-        
-        public function getSexo()
-        {
-            return $this->sexo;
-        }
-        
-        public function getDataNasc()
-        {
-            return $this->dataNasc;
-        }
-        
-        public function getTipoConvenio()
-        {
-            return $this->tipoConvenio;
-        }
-        
-        public function getDataEntrada()
-        {
-            return $this->dataEntrada;
-        }
-        
-        public function getCpf()
-        {
-            return $this->cpf;
-        }
-        
-        public function getTelefone()
-        {
-            return $this->telefone;
-        }
-        
-        public function getEmail()
-        {
-            return $this->email;
-        }
-        
-        public function getCep()
-        {
-            return $this->cep;
-        }
-        
-        public function getNumCasa()
-        {
-            return $this->numCasa;
-        }
-        
-        public function getBairro()
-        {
-            return $this->bairro;
-        }
-        
-        public function getCidade()
-        {
-            return $this->cidade;
-        }
-        
-        public function getEstado()
-        {
-            return $this->estado;
-        }
-        
-        public function getEscolaridade()
-        {
-            return $this->escolaridade;
-        }
-        
-        public function getCorRaca()
-        {
-            return $this->corRaca;
-        }
-        
-        public function getEstadoCivil()
-        {
-            return $this->estadoCivil;
-        }
-        
-        public function getProfissao()
-        {
-            return $this->profissao;
-        }
-        
-        public function getNaturalidade()
-        {
-            return $this->naturalidade;
-        }
-        
-        public function getNacionalidade()
-        {
-            return $this->nacionalidade;
-        }
-        
-        public function getFalecido()
-        {
-            return $this->falecido;
-        }
-        
-        public function getObservacao()
-        {
-            return $this->observacao;
-        }
-        
-        public function getResponsavelPaciente()
-        {
-            return $this->responsavelPaciente;
-        }
-        
-        public function getDadosFamiliares()
-        {
-            return $this->dadosFamiliares;
-        }
-        
-    // ... (outros métodos)
-
-       
-    public function SolicitarCadastro(): void {
-        // Lógica para solicitar o cadastro
+    public function paciente($nome, $dataNasc, $sexo, $corRaca, $email, $altura, $peso, $nomeMae, $nomePai, $telefone, $cep, $endereco, $cpf) {
+        $this->nome = $nome;
+        $this->dataNasc = $dataNasc;
+        $this->sexo = $sexo;
+        $this->corRaca = $corRaca;
+        $this->email = $email;
+        $this->altura = $altura;
+        $this->peso = $peso;
+        $this->nomeMae = $nomeMae;
+        $this->nomePai = $nomePai;
+        $this->telefone = $telefone;
+        $this->cep = $cep;
+        $this->endereco = $endereco;
+        $this->cpf = $cpf;
     }
 
-   
-    public function getConsulta($consulta) {
-        // Lógica para obter a consulta
-        return null;
+    public function setId($id) {
+        $this->id = $id;
     }
 
-    public function getMedico():/*medico*/ null {
-        // Lógica para obter o médico associado ao paciente
-        return null; 
+    public function getId() {
+        return $this->id;
     }
 
-    public function colicitarConsulta(): void {
-        // Lógica para solicitar uma consulta
+    public function setNome($nome) {
+        $this->nome = $nome;
     }
 
-    public function cealizarExames(): void {
-        // Lógica para realizar os exames
+    public function getNome() {
+        return $this->nome;
     }
 
-    public function setDataNascimento($dataNasc): void {
-        // Lógica para definir a data de nascimento
+    public function setDataNasc($dataNasc) {
+        $this->dataNasc = $dataNasc;
     }
 
-    public function calcularIdade(): int {
-        // Lógica para calcular a idade
-        return 0; // ou retornar a idade calculada
+    public function getDataNasc() {
+        return $this->dataNasc;
     }
 
-    public function AddConsulta($consulta) {
-        // Lógica para adicionar uma consulta ao paciente
+    public function setSexo($sexo) {
+        $this->sexo = $sexo;
+    }
+
+    public function getSexo() {
+        return $this->sexo;
+    }
+
+    public function setCorRaca($corRaca) {
+        $this->corRaca = $corRaca;
+    }
+
+    public function getCorRaca() {
+        return $this->corRaca;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setAltura($altura) {
+        $this->altura = $altura;
+    }
+
+    public function getAltura() {
+        return $this->altura;
+    }
+
+    public function setPeso($peso) {
+        $this->peso = $peso;
+    }
+
+    public function getPeso() {
+        return $this->peso;
+    }
+
+    public function setNomeMae($nomeMae) {
+        $this->nomeMae = $nomeMae;
+    }
+
+    public function getNomeMae() {
+        return $this->nomeMae;
+    }
+
+    public function setNomePai($nomePai) {
+        $this->nomePai = $nomePai;
+    }
+
+    public function getNomePai() {
+        return $this->nomePai;
+    }
+
+    public function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    public function getTelefone() {
+        return $this->telefone;
+    }
+
+    public function setCep($cep) {
+        $this->cep = $cep;
+    }
+
+    public function getCep() {
+        return $this->cep;
+    }
+
+    public function setEndereco($endereco) {
+        $this->endereco = $endereco;
+    }
+
+    public function getEndereco() {
+        return $this->endereco;
+    }
+
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
+    }
+
+    public function getCpf() {
+        return $this->cpf;
+    }
+
+    public function criarPaciente($nome, $dataNasc, $sexo, $corRaca, $email, $altura, $peso, $nomeMae, $nomePai, $telefone, $cep, $endereco, $cpf) {
+        // Lógica para criar paciente
     }
 }
+
+?>

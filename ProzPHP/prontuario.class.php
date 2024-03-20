@@ -1,42 +1,51 @@
 <?php
 
+require 'medico';
 require 'paciente.php';
-require 'histSaude.php';
-require 'registros.php';
-require 'custos.php';
+require 'enfermeiro.php';
 
+class prontuario {
+    private $paciente;
+    private $anamnese;
+    private $anotacaoEnfermagem;
+    private $balancoHidrico;
 
-class Prontuario {
-    // Atributos
-    private Paciente $dadosPaciente; // Objeto do tipo DadosPaciente
-    private $custos; // Objeto do tipo Custos <------apagar
-    private Anamnese $histSaude; // Objeto do tipo HistSaude
-    private $registros; // Objeto do tipo Registros
-
-    // Construtor
-    public function __construct($dadosPaciente, $custos, $histSaude, $registros) {
-        $this->dadosPaciente = $dadosPaciente;
-        $this->custos = $custos;
-        $this->histSaude = $histSaude;
-        $this->registros = $registros;
+    public function prontuario($paciente, $anamnese, $anotacaoEnfermagem, $balancoHidrico) {
+        $this->paciente = $paciente;
+        $this->anamnese = $anamnese;
+        $this->anotacaoEnfermagem = $anotacaoEnfermagem;
+        $this->balancoHidrico = $balancoHidrico;
     }
 
-    // Métodos
-
-    
-    public function getExame($exame) {
-        // Lógica para obter exame
+    public function getPaciente() {
+        return $this->paciente;
     }
 
-    
-    public function getReceita($receita) {
-        // Lógica para obter receita
+    public function setPaciente($paciente) {
+        $this->paciente = $paciente;
     }
 
-    
-    public function getRelatorio($relatorio) {
-        // Lógica para obter relatório
+    public function getAnamnese() {
+        return $this->anamnese;
+    }
+
+    public function setAnamnese($anamnese) {
+        $this->anamnese = $anamnese;
+    }
+
+    public function getAnotacaoEnfermagem() {
+        return $this->anotacaoEnfermagem;
+    }
+
+    public function setAnotacaoEnfermagem($anotacaoEnfermagem) {
+        $this->anotacaoEnfermagem = $anotacaoEnfermagem;
+    }
+
+    public function getBalancoHidrico() {
+        return $this->balancoHidrico;
+    }
+
+    public function setBalancoHidrico($balancoHidrico) {
+        $this->balancoHidrico = $balancoHidrico;
     }
 }
-
-?>
