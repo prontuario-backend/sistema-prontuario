@@ -89,7 +89,7 @@ class enfermeiro
     public function pesquisarPaciente($nomePacienteOuCpfPaciente)
     {
         // Lógica para pesquisar paciente
-        return new Paciente(); // Retorna um objeto Paciente
+       // return new Paciente(); // Retorna um objeto Paciente
     }
 
     public function criarAnotacaoEnfermagem($anotacaoEnf)
