@@ -3,13 +3,13 @@
 class enfermeiro
 {
     private $id;
-    private $nomeComp;
+    private $nome;
     private $coren;
     private $senha;
 
-    public function enfermeiro($nomeComp, $coren, $senha)
+    public function enfermeiro($nome, $coren, $senha)
     {
-        $this->nomeComp = $nomeComp;
+        $this->nome = $nome;
         $this->coren = $coren;
         $this->senha = $senha;
     }
@@ -26,14 +26,14 @@ class enfermeiro
         $this->id = $id;
     }
 
-    public function getNomeComp()
+    public function getNome()
     {
-        return $this->nomeComp;
+        return $this->nome;
     }
 
-    public function setNomeComp($nomeComp)
+    public function setNomeComp($nome)
     {
-        $this->nomeComp = $nomeComp;
+        $this->nome = $nome;
     }
 
     public function getCoren()
@@ -90,6 +90,7 @@ class enfermeiro
     {
         // Lógica para pesquisar paciente
        // return new Paciente(); // Retorna um objeto Paciente
+   //     return new Paciente(); // Retorna um objeto Paciente
     }
 
     public function criarAnotacaoEnfermagem($anotacaoEnf)
