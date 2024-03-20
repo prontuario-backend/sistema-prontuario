@@ -2,7 +2,6 @@
 
 class enfermeiro
 {
-    private $id;
     private $nomeComp;
     private $coren;
     private $senha;
@@ -15,17 +14,6 @@ class enfermeiro
     }
     
     // Métodos getters e setters
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
     public function getNomeComp()
     {
         return $this->nomeComp;
@@ -89,7 +77,7 @@ class enfermeiro
     public function pesquisarPaciente($nomePacienteOuCpfPaciente)
     {
         // Lógica para pesquisar paciente
-        return new Paciente(); // Retorna um objeto Paciente
+        return new paciente(); // Retorna um objeto Paciente
     }
 
     public function criarAnotacaoEnfermagem($anotacaoEnf)
