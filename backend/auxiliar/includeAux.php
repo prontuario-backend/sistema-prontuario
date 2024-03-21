@@ -1,4 +1,5 @@
 <?php
+//include_once __DIR__ . '/includeAux.php'; //<-----importar este arquivo
 include_once __DIR__ . '/cep.class.php';
 include_once __DIR__ . '/coren.class.php';
 include_once __DIR__ . '/cpf.class.php';

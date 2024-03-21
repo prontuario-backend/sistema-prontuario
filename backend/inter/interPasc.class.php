@@ -1,7 +1,7 @@
 <?php
-include_once '../classes/includeClasses.php';
-//intermediario da classe pasciente
 
+include_once '../auxiliar/includeAux.php';
+//intermediario da classe pasciente
 
 class InterPasc
 {

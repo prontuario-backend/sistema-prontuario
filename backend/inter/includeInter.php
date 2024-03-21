@@ -1,4 +1,5 @@
 <?php
+include_once '../auxiliar/includeAux.php';
 include_once __DIR__ . '/interAnamnese.class.php';
 include_once __DIR__ . '/interAnotacaoEnf.class.php';
 include_once __DIR__ . '/interBalHidrico.class.php';

@@ -29,39 +29,30 @@ class Criptografia
    {
       $senha = $this->getValidar()->valStr($senha);
       //cria um hash usando a senha fornecida como parametro e criptografa, apos isso retorna a senha criptografada
-
-      $cript = new Criptografia();
-      $senhaCript = $cript ->criptografaSenha("MG123456");
-      $hash= $senhaCript; 
-
       return $senha;
    }
 
-   public function comparaSenha(string $senha, string $senhaCript)
+   public function comparaSenha(string $senha1, string $senha2)
    {
-      $senha1 = $this->getValidar()->valStr($senha);
-      $senha2 = $this->getValidar()->valStr($senhaCript);
+      $senha1 = $this->getValidar()->valStr($senha1);
+      $senha2 = $this->getValidar()->valStr($senha2);
       //compara a senha 1 com o hash da senha 2 vinda do banco de dados, se iguais retorna true senao false
-      $hash= $senha1;
-      if (password_verify($senha, $hash)){
-         echo "Senha correta!";
-       } else{
-         echo "Senha incorreta!";
-       }
+
    }
 
    public function criptografa(mixed $dados)
    {
       $dados = $this->getValidar()->valStr($dados);
       //criptografa dados de forma normal e os retorna
-      return $dados;
+
    }
 
    public function criptografaArray(array $dados)
-   { $hash = $dados;
+   {
       for ($i = 0; $i < count($dados); $i++) {
          $dados[$i] = $this->validar->valStr($dados[$i]);
-      } 
+
+      }
       //criptografa cada elemento de um array e o retorna
 
    }
@@ -70,15 +61,6 @@ class Criptografia
       $dados = $this->getValidar()->valStr($dados);
       //descriptografa dados de forma normal e os retorna
 
-      $dados = new Criptografia();
-      $dadosCript = $dados ->descriptografa("sssssssss");
-      $hash= "$2y$10$8sA2N5Sx/1zMQv2yrTDAaOFlbGWECrrgB68axL.hBb78NhQdyAqWm"; 
-      $verificar = ($hash($dadosCript, $hash));
-      if ($verificar != $dadosCript){
-         echo "Erro ao descriptografar senha";
-      } else {
-         echo $dadosCript; 
-      }
    }
 
    public function descriptografaArray(array $dados)
@@ -90,7 +72,9 @@ class Criptografia
       //descriptografa cada elemento de um array e o retorna
 
    }
-} 
+}
+
+
 
 
 
