@@ -53,6 +53,7 @@ class Criptografia
          $dados[$i] = $this->validar->valStr($dados[$i]);
 
       }
+      return $dados;
       //criptografa cada elemento de um array e o retorna
 
    }
@@ -99,3 +100,5 @@ class Criptografia
    };
    */
 
+$cript = new Criptografia();
+$cript->criptografaSenha('123456');

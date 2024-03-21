@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/includeAux.php';
+//include_once __DIR__ . '/includeAux.php';
 class Cep//ok
 {
     private string $cep;
