@@ -1,5 +1,5 @@
 <?php
-include_once '../classes/includeClasses.php';
+include_once __DIR__ . '/includeInter.php';
 
 
 
@@ -17,10 +17,12 @@ class InterAnamnese
     }
     public function create(Anamnese $anamnese)
     {
-        $this->getConn();
+        $queixa = $anamnese->getQueixaPrincipal();
+        $this->getConn()->query("INSERT INTO anamnese (queixaPrincipal, historicoFamiliar, exameFisico, habitosDeVida,cpf)
+        VALUES ('$queixa', 'Histórico Familiar do Paciente', 'Exame Físico do Paciente', 'Hábitos de Vida do Paciente','123456789-11')");
+
         /*
-INSERT INTO anamnese (queixaPrincipal, historicoFamiliar, exameFisico, habitosDeVida,cpf)
-VALUES ('Queixa Principal do Paciente', 'Histórico Familiar do Paciente', 'Exame Físico do Paciente', 'Hábitos de Vida do Paciente','123456789-11');
+
         */
     }
     public function read()

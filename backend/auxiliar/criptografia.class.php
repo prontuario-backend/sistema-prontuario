@@ -8,41 +8,34 @@ de criptografar e descriptografar strings, senhas(so criptografa e compara) e ar
 
 class Criptografia
 {
-   private Validacao $validar;
    public function __construct()
    {
-      $validar = new Validacao();
-      $this->validar = $validar;
-      unset($validar);
+
       // $conexao = new Conexao();//cria uma conexao mysqli
       //$this->conn = $conexao->getConn();//armazena em conn
       // unset($conexao);//exclui o objeto de conexao ja criado
 
    }
-   private function getValidar()
-   {
-      return $this->validar;
-   }
+
 
 
    public function criptografaSenha(string $senha)
    {
-      $senha = $this->getValidar()->valStr($senha);
+
       //cria um hash usando a senha fornecida como parametro e criptografa, apos isso retorna a senha criptografada
       return $senha;
    }
 
    public function comparaSenha(string $senha1, string $senha2)
    {
-      $senha1 = $this->getValidar()->valStr($senha1);
-      $senha2 = $this->getValidar()->valStr($senha2);
+
       //compara a senha 1 com o hash da senha 2 vinda do banco de dados, se iguais retorna true senao false
 
    }
 
    public function criptografa(mixed $dados)
    {
-      $dados = $this->getValidar()->valStr($dados);
+
       //criptografa dados de forma normal e os retorna
 
    }
@@ -50,7 +43,7 @@ class Criptografia
    public function criptografaArray(array $dados)
    {
       for ($i = 0; $i < count($dados); $i++) {
-         $dados[$i] = $this->validar->valStr($dados[$i]);
+         // $dados[$i] = $dados[$i];
 
       }
       return $dados;
@@ -59,7 +52,7 @@ class Criptografia
    }
    public function descriptografa(mixed $dados)
    {
-      $dados = $this->getValidar()->valStr($dados);
+      
       //descriptografa dados de forma normal e os retorna
 
    }
@@ -67,7 +60,7 @@ class Criptografia
    public function descriptografaArray(array $dados)
    {
       for ($i = 0; $i < count($dados); $i++) {
-         $dados[$i] = $this->validar->valStr($dados[$i]);
+         // $dados[$i] = $dados[$i];
 
       }
       //descriptografa cada elemento de um array e o retorna
