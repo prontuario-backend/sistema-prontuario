@@ -58,7 +58,99 @@
                </div>
             </div>
             <div class="dados-mobile">
+               <span><Strong>Nome:</Strong> Fer <strong>Idade:</strong> 21 <strong>Genero<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Paciente</title>
+   <link rel="stylesheet" href="./css/pacientes.css">
+   <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+   <!-- INICIO do HEADER -->
+   <div class="header shadow">
+      <div class="logo">
+         <i class="fa-solid fa-notes-medical"></i>
+         <p>UNI-TI</p>
+      </div>
+      <div class="login">
+         <i class="fa-solid fa-user-doctor"></i>
+         <p id="name">Dr. Paulo</p>
+         <p id="profissao">Médico</p>
+         <i class="fa-solid fa-bars"></i>
+      </div>
+   </div>
+   <!-- FIM do HEADER -->
+   <!-- INICIO do conteudo principal -->
+   <div class="main">
+
+
+      <!-- INICIO do NAVBAR -->
+      <div class="navbar shadow">
+         <h1 class="dados">DADOS</h1>
+         <ul>
+            <li class="itemList" id="navPaciente"><i class="icon fa-solid fa-user"></i><span
+                  class="spanNone">Pacientes</span></li>
+            <li class="itemList" id="navAgenda"><i class="icon fa-solid fa-notes-medical"></i><span
+                  class="spanNone">Anamnese</span></li>
+            <li class="itemList" id="navServicos"><i class="icon fa-solid fa-clipboard"></i><span
+                  class="spanNone">Anotações</span></li>
+            <li class="itemList" id="navFinanceiro"><i class="icon fa-solid fa-droplet"></i><span
+                  class="spanNone">Balanço Hídrico</span></li>
+         </ul>
+
+         <div class="buttonPosition">
+            <button type="button" class="btn">BUSCAR</button>
+         </div>
+
+      </div>
+      <!-- FIM do NAVBAR -->
+
+      <!-- INICIO do CONTEUDO -->
+      <div class="conteudo shadow">
+         <div class="container-info">
+            <div class="foto">
+               <div class="circulo">
+               </div>
+            </div>
+            <div class="dados-mobile">
                <span><Strong>Nome:</Strong> Fer <strong>Idade:</strong> 21 <strong>Genero:</strong> M</span>
+               <span><strong>Raça:</strong> Preto Claro <strong>DT.N:</strong> 01/10/2002 </span>
+               <span><strong>Peso:</strong> 53 molhado <strong>Altura:</strong>2.10</span>
+               <span><strong>Mãe:</strong> aaa</span> 
+               <span><strong>Pai:</strong> aaa</span>            
+            </div>
+            <div class="dados">
+               <span><Strong>Nome:</Strong> Fer</span>
+               <span><strong>Idade:</strong> 21 <strong>Genero:</strong> M <strong>Raça:</strong> Preto Claro</span>
+               <span><strong>DT.N:</strong> 01/10/2002 <strong>Peso:</strong> 53 molhado <strong>Altura:</strong>2.10</span>
+               <span><strong>Mãe:</strong> aaa</span> 
+               <span><strong>Pai:</strong> aaa</span>
+            </div>
+         </div>
+         <div class="container-endereco">
+            <div class="endereco">
+               <div class="endereco-left">
+                  <span><strong>Celular:</strong> 4002-8922</span>
+                  <span><strong>CEP:</strong> 33445-521</span>
+               </div>
+               <div class="endereco-right">
+                  <span><strong>Endereço:</strong> R. Dois, bla bla bla</span>
+                  <span><strong>E-mail:</strong> shrco@gmail.com</span>
+               </div>               
+            </div>
+         </div>
+      </div>
+      <!-- FIM do CONTEUDO -->
+   </div>
+   <!-- FIM do conteudo principal -->
+</body>
+
+</html> :</strong> M</span>
                <span><strong>Raça:</strong> Preto Claro <strong>DT.N:</strong> 01/10/2002 </span>
                <span><strong>Peso:</strong> 53 molhado <strong>Altura:</strong>2.10</span>
                <span><strong>Mãe:</strong> aaa</span> 

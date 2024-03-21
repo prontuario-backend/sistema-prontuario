@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balanço Hídrico</title>
-    <link rel="stylesheet" href="./css/balancohidrico.css">
+    <link rel="stylesheet" href="../css/balancohidrico.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -184,13 +184,11 @@
         <!-- Popup -->
         <div class="overlay" onclick="closePopup()"></div>
         <div class="popup" id="popup">
-<form action="">
-<input type="date" id="dataInput" name="data">
-            <input type="time" id="horaInput" name="hora">
-            <input type="text" id="tipoInput" placeholder="Tipo" name="tipo">
-            <input type="text" id="liquidosInput" placeholder="Líquidos Eliminados" name="elim">
-            <button onclick="saveData()" name="btn" type="submit">Salvar</button>
-</form>
+            <input type="date" id="dataInput">
+            <input type="time" id="horaInput">
+            <input type="text" id="tipoInput" placeholder="Tipo">
+            <input type="text" id="liquidosInput" placeholder="Líquidos Eliminados">
+            <button onclick="saveData()">Salvar</button>
         </div>
 
     </body>

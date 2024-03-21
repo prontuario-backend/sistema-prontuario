@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/includeInter.php';
+include_once '../classes/includeClasses.php';
 
 
 
@@ -15,39 +15,41 @@ class InterAnamnese
         unset($conexao);
 
     }
-    public function create(Anamnese $anamnese)
+    public function create(Anamnese $anamnese, Cpf $cpf)
     {
+        $this->getConn();
         $queixa = $anamnese->getQueixaPrincipal();
-        $this->getConn()->query("INSERT INTO anamnese (queixaPrincipal, historicoFamiliar, exameFisico, habitosDeVida,cpf)
-        VALUES ('$queixa', 'Histórico Familiar do Paciente', 'Exame Físico do Paciente', 'Hábitos de Vida do Paciente','123456789-11')");
-
-        /*
-
-        */
+        $historico_familiar = $anamnese->getHistoricoFamiliar();
+        $exame_fisico = $anamnese->getExameFisico();
+        $habito_vida = $anamnese->getHabitosDeVida();
+        $cpf = $cpf->getCpf();
+    
+        $sql = "INSERT INTO anamnese (queixaPrincipal, historicoFamiliar, exameFisico, habitosDeVida, cpf) 
+                VALUES ('$queixa', '$historico_familiar', '$exame_fisico', '$habito_vida', '$cpf')";
+    
+        $this->getConn()->query($sql); 
+        
     }
+    
     public function read()
     {
         $this->getConn();
-        /*
-SELECT * FROM anamnese ORDER BY queixaPrincipal; 
-        */
+        $sql = "SELECT * FROM anamnese ORDER BY queixaPrincipal; ";
+        $this->getConn()->query($sql); 
     }
     public function update()
     {
         $this->getConn();
-        /*
-UPDATE anamnese
-SET queixaPrincipal = 'Nova Queixa Principal', historicoFamiliar = 'Novo Histórico Familiar', exameFisico = 'Novo Exame Físico', habitosDeVida = 'Novos Hábitos de Vida',cpf ='1345676987'
-WHERE id_anamnese = 1;  
-
-        */
+        $sql ="UPDATE anamnese
+        SET queixaPrincipal = 'Nova Queixa Principal', historicoFamiliar = 'Novo Histórico Familiar', exameFisico = 'Novo Exame Físico', habitosDeVida = 'Novos Hábitos de Vida',cpf ='1345676987'
+        WHERE id_anamnese = 1";
+          $this->getConn()->query($sql); 
     }
     public function delete()
     {
         $this->getConn();
-        /*
-DELETE FROM Anamnese WHERE id = 1;
-        */
+        $sql ="DELETE FROM anamnese WHERE id_anamnese = 1";
+        $this->getConn()->query($sql);  
     }
     public function fecharConexao()
     {

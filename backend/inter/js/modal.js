@@ -20,9 +20,4 @@ window.onclick = function(event) {
   }
 }
 
-// Função para lidar com o envio do formulário
-document.getElementById("myForm").onsubmit = function() {
-    // Aqui você pode adicionar código JavaScript para lidar com o envio do formulário, como validação ou envio de dados
-    alert("Formulário enviado!");
-    return false; // Isso evita que o formulário seja enviado de verdade (apenas para este exemplo)
-}
+
