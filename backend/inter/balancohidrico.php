@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php 
+include_once __DIR__ . '/includeInter.php';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balanço Hídrico</title>
-    <link rel="stylesheet" href="../css/balancohidrico.css">
+    <link rel="stylesheet" href="./frontend/css/balancohidrico.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -61,7 +63,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Formulário</h2>
-                    <form id="myForm">
+                    <form id="myForm" method="post" action="./interBalHidrico.class.php">
                         <label for="data">Data:</label>
                         <input type="date" id="data" name="data" required><br><br>
                         <label for="hora">Hora:</label>

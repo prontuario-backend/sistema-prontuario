@@ -4,8 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Index</title>
-        <link rel="stylesheet" href="../css/buscar.css" />
-        <link
+        <link rel="stylesheet" href="./frontend/css/buscar.css">        <link
             rel="shortcut icon"
             href="imagens/favicon.ico"
             type="image/x-icon"
