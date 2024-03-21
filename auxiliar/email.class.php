@@ -1,12 +1,14 @@
 <?php
-
+include_once __DIR__ . '/includeAux.php';
 class Email
 {
 
     private string $email;
     public function __construct(string $email)
     {
-
+        $validar = new Validacao();
+        $email = $validar->valStr($email);
+        unset($validar);
         if ($this->validarEmail($email) === true) {
             $this->email = $email;
         } else {

@@ -1,5 +1,5 @@
 <?php
-
+include_once __DIR__ . '/includeAux.php';
 /*
  Esta classe recebe  valida  e formata um coren ela aceita somente o tipo string, outros tipos de dados não são suportados;
 Para obter o coren formatado ultilize o metodo getCoren();
@@ -9,13 +9,15 @@ exemplo coren nao formatado: CORENMG00000ENF
 exemplo coren formatado: COREN-MG-00000-ENF
 */
 
-class Coren
+class Coren//ok
 {
     private readonly string $coren;//apos criado o coren nao pode ser reatribuido.
     public function __construct(string $coren)
     {
-        $coren = $this->validarCoren($coren);
+        $validar = new Validacao();
+        $coren = $this->validarCoren($validar->valStr($coren));
         //       $coren = $this->formataCoren($coren);
+        unset($validar);
         $this->coren = $coren;
     }
 
@@ -138,3 +140,5 @@ class Coren
         }
     }
 }
+// $coren = new Coren('CORENMG00000ENF');
+// echo $coren->getCoren();

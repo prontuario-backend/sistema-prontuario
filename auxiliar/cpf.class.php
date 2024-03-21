@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/includeAux.php';
 /*
  Esta classe recebe valida e formata um cpf independente se for string ou inteiro, outros tipos de dados não são suportados;
 Para obter o cpf formatado ultilize o metodo getCpf();
@@ -14,8 +15,9 @@ class Cpf
 
     public function __construct(string $cpf)
     {
-
-        $cpf = $this->validaCpf($cpf);
+        $validar = new Validacao();
+        $cpf = $this->validaCpf($validar->valStr($cpf));
+        unset($validar);
 
         //  $cpf = $this->formataCpf($cpf);
 

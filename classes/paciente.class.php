@@ -34,6 +34,7 @@ class Paciente//ok
         $this->nomeMae = $nomeMae;
         $this->nomePai = $nomePai;
         $this->telefone = $validar->valStr($telefone);
+
         $this->cep = $cep->getCep();
         $this->endereco = $validar->valStr($endereco);
         $this->cpf = $cpf->getCpf();

@@ -1,10 +1,11 @@
 <?php
-
-class Cep
+include_once __DIR__ . '/includeAux.php';
+class Cep//ok
 {
     private string $cep;
     public function __construct(string $cep)
     {
+        $validar = new Validacao();
         if ($this->validarCEP($cep)) {
             $this->cep = $cep;
         } else {
@@ -22,7 +23,7 @@ class Cep
         $cep = preg_replace('/[^0-9]/', '', $cep);
 
         // Verificar se o CEP tem o formato correto (XXXXX-XXX)
-        if (preg_match('/^\d{5}-\d{3}$/', $cep)) {
+        if ($cep) {
             // Consultar a API dos Correios para validar o CEP
             $url = "https://viacep.com.br/ws/{$cep}/json/";
             $resultado = json_decode(file_get_contents($url), true);
@@ -34,8 +35,5 @@ class Cep
     }
 
 }
-
-
-
-
-
+// $cep = new Cep('01001-000');
+// echo $cep->getCep();

@@ -4,22 +4,22 @@ class BalancoHidrico
 {
     private string $data;
     private string $hora;
-    private string $liquidosAdministrados;
-    private string $liquidosEliminados;
-    private string $totalQuantAdministrada;
-    private string $totalQuantEliminada;
+    private LiquidosAdministrados $liquidosAdministrados;
+    private LiquidosEliminados $liquidosEliminados;
+    private float $totalQuantAdministrada;
+    private float $totalQuantEliminada;
     private string $conclusao;
     private string $coremMedEnf;
 
-    public function balancoHidrico(string $data, string $hora, string $liquidosAdministrados, string $liquidosEliminados, string $totalQuantAdministrada, string $totalQuantEliminada, string $conclusao, string $coremMedEnf)
+    public function balancoHidrico(string $data, string $hora, LiquidosAdministrados $liquidosAdministrados, LiquidosEliminados $liquidosEliminados, float $totalQuantAdministrada, float $totalQuantEliminada, string $conclusao, string $coremMedEnf)
     {
         $validar = new Validacao;
         $this->data = $validar->valStr($data);
         $this->hora = $validar->valStr($hora);
-        $this->liquidosAdministrados = $validar->valStr($liquidosAdministrados);
-        $this->liquidosEliminados = $validar->valStr($liquidosEliminados);
-        $this->totalQuantAdministrada = $validar->valStr($totalQuantAdministrada);
-        $this->totalQuantEliminada = $validar->valStr($totalQuantEliminada);
+        $this->liquidosAdministrados = $liquidosAdministrados;
+        $this->liquidosEliminados = $liquidosEliminados;
+        $this->totalQuantAdministrada = $validar->valfloat($totalQuantAdministrada);
+        $this->totalQuantEliminada = $validar->valFloat($totalQuantEliminada);
         $this->conclusao = $validar->valStr($conclusao);
         $this->coremMedEnf = $validar->valStr($coremMedEnf);
         unset($validar);
@@ -52,7 +52,7 @@ class BalancoHidrico
         return $this->liquidosAdministrados;
     }
 
-    private function setLiquidosAdministrados(string $liquidosAdministrados)
+    private function setLiquidosAdministrados(LiquidosAdministrados $liquidosAdministrados)
     {
         $this->liquidosAdministrados = $liquidosAdministrados;
     }
@@ -62,7 +62,7 @@ class BalancoHidrico
         return $this->liquidosEliminados;
     }
 
-    private function setLiquidosEliminados(string $liquidosEliminados)
+    private function setLiquidosEliminados(LiquidosEliminados $liquidosEliminados)
     {
         $this->liquidosEliminados = $liquidosEliminados;
     }
@@ -72,7 +72,7 @@ class BalancoHidrico
         return $this->totalQuantAdministrada;
     }
 
-    private function setTotalQuantAdministrada(string $totalQuantAdministrada)
+    private function setTotalQuantAdministrada(float $totalQuantAdministrada)
     {
         $this->totalQuantAdministrada = $totalQuantAdministrada;
     }
@@ -82,7 +82,7 @@ class BalancoHidrico
         return $this->totalQuantEliminada;
     }
 
-    private function setTotalQuantEliminada(string $totalQuantEliminada)
+    private function setTotalQuantEliminada(float $totalQuantEliminada)
     {
         $this->totalQuantEliminada = $totalQuantEliminada;
     }

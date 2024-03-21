@@ -1,10 +1,11 @@
 <?php
+include_once __DIR__ . '/includeAux.php';
 /*
  Esta classe recebe e valida  um crm ela aceita somente o tipo string, outros tipos de dados não são suportados;
 Para obter o crm formatado ultilize o metodo getCrm();
 os metodos de validação foram criados presumindo o recebimento de crm um não formatado.
 
-exemplo crm formatado: 00000MG
+exemplo crm nao formatado: 00000MG
 exemplo crm formatado: 00000-MG
 */
 class Crm
@@ -13,8 +14,11 @@ class Crm
     public function __construct(string $crm)
     {
 
+        $validar = new Validacao();
+        $crm = $validar->valStr($crm);
         $crm = $this->validaCrm($crm);
         //      $crm = $this->formataCrm($crm);
+        unset($validar);
         $this->crm = $crm;
     }
 
@@ -104,3 +108,5 @@ class Crm
 
     }
 }
+// $crm = new Crm('00000MG');<----------erro
+// echo $crm->getCrm();
