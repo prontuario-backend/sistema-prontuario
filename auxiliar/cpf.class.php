@@ -8,55 +8,60 @@ exemplo cpf nao formatado: 00000000000
 exemplo cpf formatado: 000.000.000-00
 
 */
-class Cpf{
+class Cpf
+{//ok
     private readonly string $cpf;//apos criado o cpf nao pode ser reatribuido.
 
-public function __construct(mixed $cpf){
+    public function __construct(string $cpf)
+    {
 
-    $cpf = $this->validaCpf($cpf);
+        $cpf = $this->validaCpf($cpf);
 
-//  $cpf = $this->formataCpf($cpf);
+        //  $cpf = $this->formataCpf($cpf);
 
-    $this->cpf = $cpf;
-}
+        $this->cpf = $cpf;
+    }
 
 
-private function validaCpf($cpf){
-    $cpf = str_replace(' ', '', $cpf);//remove os espaços em branco do parametro
-    $cpf = trim($cpf);//remove os espaços em branco do parametro
-    if(strlen($cpf)== 11){//verifica se o cpf tem 11 caracteres
+    private function validaCpf($cpf)
+    {
+        $cpf = str_replace(' ', '', $cpf);//remove os espaços em branco do parametro
+        $cpf = trim($cpf);//remove os espaços em branco do parametro
+        if (strlen($cpf) == 11) {//verifica se o cpf tem 11 caracteres
 
-        if(Is_numeric($cpf) ==true){//verifica se tem somente numeros no cpf
+            if (Is_numeric($cpf) == true) {//verifica se tem somente numeros no cpf
 
                 $cpf = strval($cpf);//converte o cpf para string
                 return $cpf;
 
-        }else{
-            throw new Exception('Erro, o cpf não pode possuir letras, simbolos ou espaços vazios.');
+            } else {
+                throw new Exception('Erro, o cpf não pode possuir letras, simbolos ou espaços vazios.');
+            }
+
+        } else {
+            throw new Exception('Erro, o cpf fonecido não tem a quantidade de caracteres nessesario (11 char)');
         }
-        
-    }else{
-        throw new Exception('Erro, o cpf fonecido não tem a quantidade de caracteres nessesario (11 char)');
     }
-}
 
-private function formataCpf($cpf){
-    // adiciona a formatacao com '.' e '-' no cpf
-    $cpf = str_replace(' ', '', $cpf);//remove os espaços em branco do parametro
-    $cpf = trim($cpf);//remove os espaços em branco do parametro
+    private function formataCpf($cpf)
+    {
+        // adiciona a formatacao com '.' e '-' no cpf
+        $cpf = str_replace(' ', '', $cpf);//remove os espaços em branco do parametro
+        $cpf = trim($cpf);//remove os espaços em branco do parametro
 
-    $cpf = substr_replace($cpf, '.', 3, 0);
-    $cpf = substr_replace($cpf, '.', 7, 0);
-    $cpf = substr_replace($cpf, '-', 11, 0);
-    return $cpf;
-}
-
-public function getCpf(){
-    if($this->cpf != null){
-        return $this->cpf;
-    }else{
-        throw new Exception('Erro, não foi possivel retornar atributo cpf pois um cpf ainda não foi criado');
+        $cpf = substr_replace($cpf, '.', 3, 0);
+        $cpf = substr_replace($cpf, '.', 7, 0);
+        $cpf = substr_replace($cpf, '-', 11, 0);
+        return $cpf;
     }
-}
+
+    public function getCpf()
+    {
+        if ($this->cpf != null) {
+            return $this->cpf;
+        } else {
+            throw new Exception('Erro, não foi possivel retornar atributo cpf pois um cpf ainda não foi criado');
+        }
+    }
 
 }

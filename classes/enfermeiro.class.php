@@ -1,24 +1,21 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class Medico
+class Enfermeiro
 {
     private string $nome;
-    private string $crm;
+    private string $coren;
     private string $senha;
 
-    public function medico(string $nome, string $crm, string $senha)
+    public function enfermeiro(string $nome, string $coren, string $senha)
     {
-        $crm = new Crm($crm);
+        $coren = new Coren($coren);
         $validar = new Validacao;
-
         $this->nome = $validar->valStr($nome);
-        $this->crm = $crm->getCrm();
+        $this->coren = $coren->getCoren();
         $this->senha = $validar->valStr($senha);
-
         unset($validar);
-        unset($crm);
+        unset($coren);
     }
-    // Métodos getters e setters
 
     // Métodos getters e setters
 
@@ -32,14 +29,14 @@ class Medico
         $this->nome = $nome;
     }
 
-    public function getcrm()
+    public function getCoren()
     {
-        return $this->crm;
+        return $this->coren;
     }
 
-    private function setcrm(string $crm)
+    private function setCoren(string $coren)
     {
-        $this->crm = $crm;
+        $this->coren = $coren;
     }
 
     public function getSenha()

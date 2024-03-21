@@ -1,7 +1,5 @@
 <?php
-include './database/conecao.class.php';
-include './auxiliar/criptografia.class.php';
-include './classes/paciente.class.php';
+include_once '../classes/includeClasses.php';
 //intermediario da classe pasciente
 
 

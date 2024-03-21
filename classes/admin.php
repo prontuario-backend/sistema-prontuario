@@ -1,6 +1,7 @@
 <?php
-
-class admin {
+include __DIR__ . '/includeClasses.php';
+class admin
+{
     // Atributos
     private $ID;
     private $nome;
@@ -11,7 +12,8 @@ class admin {
     private $salario;
 
     // Construtor
-    public function __construct($ID, $nome, $email, $telefone, $cargoSetor, $endereco, $salario) {
+    public function __construct($ID, $nome, $email, $telefone, $cargoSetor, $endereco, $salario)
+    {
         $this->ID = $ID;
         $this->nome = $nome;
         $this->email = $email;
@@ -24,88 +26,107 @@ class admin {
     // Métodos
 
     // ID
-   private function setID($ID) {
+    private function setID($ID)
+    {
         $this->ID = $ID;
     }
 
-    public function getID() {
+    public function getID()
+    {
         return $this->ID;
     }
 
     // nome
-   private function setNome($nome) {
+    private function setNome($nome)
+    {
         $this->nome = $nome;
     }
 
-    public function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
 
     // email
-   private function setEmail($email) {
+    private function setEmail($email)
+    {
         $this->email = $email;
     }
 
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
     // telefone
-   private function setTelefone($telefone) {
+    private function setTelefone($telefone)
+    {
         $this->telefone = $telefone;
     }
 
-    public function getTelefone() {
+    public function getTelefone()
+    {
         return $this->telefone;
     }
 
     // cargo/setor
-   private function setCargoSetor($cargoSetor) {
+    private function setCargoSetor($cargoSetor)
+    {
         $this->cargoSetor = $cargoSetor;
     }
 
-    public function getCargoSetor() {
+    public function getCargoSetor()
+    {
         return $this->cargoSetor;
     }
 
     // endereço
-   private function setEndereco($endereco) {
+    private function setEndereco($endereco)
+    {
         $this->endereco = $endereco;
     }
 
-    public function getEndereco() {
+    public function getEndereco()
+    {
         return $this->endereco;
     }
 
     // salário
-   private function setSalario($salario) {
+    private function setSalario($salario)
+    {
         $this->salario = $salario;
     }
 
-    public function getSalario() {
+    public function getSalario()
+    {
         return $this->salario;
     }
 
     //outros metodos
 
-    public function GerenciarFuncionario() {
+    public function GerenciarFuncionario()
+    {
         // Lógica para gerenciar funcionário
     }
 
-    public function ConsultarUsuario() {
+    public function ConsultarUsuario()
+    {
         // Lógica para consultar usuário
         return null;
     }
 
-    public function Excluir() {
+    public function Excluir()
+    {
         // Lógica para excluir
     }
 
-    public function CadastrarPaciente() {
+    public function CadastrarPaciente()
+    {
         // Lógica para cadastrar paciente
     }
 
-    public function Atualizar() {
+    public function Atualizar()
+    {
         // Lógica para atualizar
     }
 }
