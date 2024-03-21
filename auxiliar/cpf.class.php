@@ -16,7 +16,7 @@ class Cpf
     public function __construct(string $cpf)
     {
         $validar = new Validacao();
-        $cpf = $this->validaCpf($validar->valStr($cpf));
+        $cpf = $this->validaCpf($validar->valStr2($cpf));
         unset($validar);
 
         //  $cpf = $this->formataCpf($cpf);

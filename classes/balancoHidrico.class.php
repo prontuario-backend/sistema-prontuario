@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class BalancoHidrico
+class BalancoHidrico//ok
 {
     private string $data;
     private string $hora;
@@ -9,19 +9,19 @@ class BalancoHidrico
     private float $totalQuantAdministrada;
     private float $totalQuantEliminada;
     private string $conclusao;
-    private string $coremMedEnf;
+    // private string $coremMedEnf;
 
-    public function balancoHidrico(string $data, string $hora, LiquidosAdministrados $liquidosAdministrados, LiquidosEliminados $liquidosEliminados, float $totalQuantAdministrada, float $totalQuantEliminada, string $conclusao, string $coremMedEnf)
+    public function __construct(string $data, string $hora, LiquidosAdministrados $liquidosAdministrados, LiquidosEliminados $liquidosEliminados, float $totalQuantAdministrada, float $totalQuantEliminada, string $conclusao, )//string $coremMedEnf
     {
         $validar = new Validacao;
-        $this->data = $validar->valStr($data);
-        $this->hora = $validar->valStr($hora);
+        $this->data = $validar->valStr2($data);
+        $this->hora = $validar->valStr2($hora);
         $this->liquidosAdministrados = $liquidosAdministrados;
         $this->liquidosEliminados = $liquidosEliminados;
         $this->totalQuantAdministrada = $validar->valfloat($totalQuantAdministrada);
         $this->totalQuantEliminada = $validar->valFloat($totalQuantEliminada);
-        $this->conclusao = $validar->valStr($conclusao);
-        $this->coremMedEnf = $validar->valStr($coremMedEnf);
+        $this->conclusao = $validar->valStr2($conclusao);
+        // $this->coremMedEnf = $validar->valStr2($coremMedEnf);
         unset($validar);
     }
 
@@ -97,13 +97,19 @@ class BalancoHidrico
         $this->conclusao = $conclusao;
     }
 
-    public function getCoremMedEnf()
-    {
-        return $this->coremMedEnf;
-    }
+    // public function getCoremMedEnf()
+    // {
+    //     return $this->coremMedEnf;
+    // }
 
-    private function setCoremMedEnf(string $coremMedEnf)
-    {
-        $this->coremMedEnf = $coremMedEnf;
-    }
+    // private function setCoremMedEnf(string $coremMedEnf)
+    // {
+    //     $this->coremMedEnf = $coremMedEnf;
+    // }
 }
+// $adm = new LiquidosAdministrados(0.5, 0.6, 0.7, 0.8, 0.9);
+
+// $elim = new LiquidosEliminados(0.5, 0.6, 0.7, 0.8);
+
+// $bal = new BalancoHidrico('00/00/00', '2:00pm', $adm, $elim, 10, 5, 'teste');
+// echo $bal->getConclusao();

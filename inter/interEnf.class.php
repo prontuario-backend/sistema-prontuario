@@ -17,36 +17,83 @@ class InterEnf
     }
 
 
-    // public function create($nome, $coren, $senha){
-
-    // }
-    // public function read($nome, $coren, $senha){
-
-    // }
-    // public function updateNome($nome){
-
-    // }
-    // public function updateCoren($coren){
-
-    // }
-    // public function updateSenha(){
-
-    // }
+    public function create($nome, $coren, $senha)
+    {
+        $this->getConn();
+        /*
+INSERT INTO enfermeiro (nome, coren, senha)
+VALUES ('Nome do Enfermeiro', 'COREN do Enfermeiro', 'Senha do Enfermeiro');
+        */
+    }
+    public function read($nome, $coren, $senha)
+    {
+        $this->getConn();
+        /*
+SELECT * FROM enfermeiro ORDER BY coren;
+        */
+    }
+    public function updateNome($nome)
+    {
+        $this->getConn();
+        /*
+UPDATE enfermeiro
+SET nome = 'Novo Nome', coren = 'Novo COREN', senha = 'Nova Senha'
+        */
+    }
+    public function updateCoren($coren)
+    {
+        $this->getConn();
+        /*
+UPDATE enfermeiro
+SET nome = 'Novo Nome', coren = 'Novo COREN', senha = 'Nova Senha'
+        */
+    }
+    public function updateSenha()
+    {
+        $this->getConn();
+        /*
+UPDATE enfermeiro
+SET nome = 'Novo Nome', coren = 'Novo COREN', senha = 'Nova Senha'
+        */
+    }
     public function delete($nome, $coren, $senha)
     {
-
+        $this->getConn();
+        /*
+DELETE FROM enfermeiro WHERE crm = $crm;
+        */
     }
 
 
 
     public function fazerLogin($nome, $coren, $senha)
     {
-        // Lógica para fazer login
+        $this->getConn();
+        /*
+
+        */
     }
 
+
+    public function alterarNome($novoNome)
+    {
+        $this->getConn();
+        /*
+
+        */
+    }
     // Função para redefinir a senha
     function redefinirSenha(Coren $corem, string $novaSenha)
     {
+        /*
+
+        UPDATE enfermeiro
+        SET nome = 'Novo Nome', coren = 'Novo COREN', senha = 'Nova Senha'
+        */
+
+
+
+
         // Verifica se o corem é válido
         $corem = $corem->getCoren();
 
@@ -75,10 +122,7 @@ class InterEnf
             return "Erro ao redefinir a senha: " . $e->getMessage();
         }
     }
-    public function alterarNome($novoNome)
-    {
-        // Lógica para alterar nome
-    }
+
 
 
 

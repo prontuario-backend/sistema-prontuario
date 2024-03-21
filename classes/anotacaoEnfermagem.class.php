@@ -1,17 +1,17 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class AnotacaoEnfermagem
+class AnotacaoEnfermagem//ok
 {
     private string $dataRegistro;
     private string $hora;
     private string $registro;
 
-    public function anotacaoEnfermagem(string $dataRegistro, string $hora, string $registro)
+    public function __construct(string $dataRegistro, string $hora, string $registro)
     {
-        $validar = new Validacao;
-        $this->dataRegistro = $validar->valStr($dataRegistro);
-        $this->hora = $validar->valStr($hora);
-        $this->registro = $validar->valStr($registro);
+
+        $this->dataRegistro = $dataRegistro;
+        $this->hora = $hora;
+        $this->registro = $registro;
         unset($validar);
     }
 
@@ -47,3 +47,7 @@ class AnotacaoEnfermagem
         $this->registro = $registro;
     }
 }
+// $anot = new AnotacaoEnfermagem('00/00/0000', 'teste', 'teste2');
+// echo $anot->getDataRegistro() . '<br>';
+// echo $anot->getHora() . '<br>';
+// echo $anot->getRegistro() . '<br>';

@@ -17,19 +17,35 @@ class InterAnamnese
     }
     public function create(Anamnese $anamnese)
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+INSERT INTO anamnese (queixaPrincipal, historicoFamiliar, exameFisico, habitosDeVida,cpf)
+VALUES ('Queixa Principal do Paciente', 'Histórico Familiar do Paciente', 'Exame Físico do Paciente', 'Hábitos de Vida do Paciente','123456789-11');
+        */
     }
     public function read()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+SELECT * FROM anamnese ORDER BY queixaPrincipal; 
+        */
     }
     public function update()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+UPDATE anamnese
+SET queixaPrincipal = 'Nova Queixa Principal', historicoFamiliar = 'Novo Histórico Familiar', exameFisico = 'Novo Exame Físico', habitosDeVida = 'Novos Hábitos de Vida',cpf ='1345676987'
+WHERE id_anamnese = 1;  
+
+        */
     }
     public function delete()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+DELETE FROM Anamnese WHERE id = 1;
+        */
     }
     public function fecharConexao()
     {

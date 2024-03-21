@@ -7,7 +7,7 @@ class Email
     public function __construct(string $email)
     {
         $validar = new Validacao();
-        $email = $validar->valStr($email);
+        $email = $validar->valStr2($email);
         unset($validar);
         if ($this->validarEmail($email) === true) {
             $this->email = $email;
@@ -34,19 +34,17 @@ class Email
             return false;
         }
 
-        // Tentativa de envio de e-mail de verificação
-        $subject = "Verificação de e-mail";
-        $message = "Este é um e-mail de verificação.";
-        $headers = "From: your@example.com";
+        // // Tentativa de envio de e-mail de verificação
+        // $subject = "Verificação de e-mail";
+        // $message = "Este é um e-mail de verificação.";<----------- errro
+        // $headers = "From: your@example.com";
 
-        if (!mail($email, $subject, $message, $headers)) {
-            return false;
-        }
+        // if (!mail($email, $subject, $message, $headers)) {
+        //     return false;
+        // }
 
         return true;
     }
 }
-
-
-
-
+// $email = new Email('bhdevm1@gmail.com');
+// echo $email->getEmail();

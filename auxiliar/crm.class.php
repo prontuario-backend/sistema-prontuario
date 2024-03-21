@@ -8,14 +8,14 @@ os metodos de validação foram criados presumindo o recebimento de crm um não 
 exemplo crm nao formatado: 00000MG
 exemplo crm formatado: 00000-MG
 */
-class Crm
+class Crm//ok
 {
     private readonly string $crm;//apos criado o crm nao pode ser reatribuido.
     public function __construct(string $crm)
     {
 
         $validar = new Validacao();
-        $crm = $validar->valStr($crm);
+        $crm = $validar->valStr2($crm);
         $crm = $this->validaCrm($crm);
         //      $crm = $this->formataCrm($crm);
         unset($validar);
@@ -108,5 +108,5 @@ class Crm
 
     }
 }
-// $crm = new Crm('00000MG');<----------erro
+// $crm = new Crm('00000MG');
 // echo $crm->getCrm();

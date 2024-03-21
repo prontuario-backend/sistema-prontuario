@@ -1,19 +1,19 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class Medico
+class Medico//ok
 {
     private string $nome;
     private string $crm;
     private string $senha;
 
-    public function medico(string $nome, string $crm, string $senha)
+    public function __construct(string $nome, string $crm, string $senha)
     {
         $crm = new Crm($crm);
         $validar = new Validacao;
 
-        $this->nome = $validar->valStr($nome);
+        $this->nome = $validar->valStr2($nome);
         $this->crm = $crm->getCrm();
-        $this->senha = $validar->valStr($senha);
+        $this->senha = $validar->valStr2($senha);
 
         unset($validar);
         unset($crm);
@@ -32,12 +32,12 @@ class Medico
         $this->nome = $nome;
     }
 
-    public function getcrm()
+    public function getCrm()
     {
         return $this->crm;
     }
 
-    private function setcrm(string $crm)
+    private function setCrm(string $crm)
     {
         $this->crm = $crm;
     }
@@ -53,3 +53,5 @@ class Medico
     }
 
 }
+// $med = new Medico('eduardo', '00000MG', '123456');
+// echo $med->getCrm();

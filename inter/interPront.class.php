@@ -15,21 +15,33 @@ class InterProntuario
 
     public function create()
     {
-
-
-        //logica banco de dados
+        $this->getConn();
+        /*
+INSERT INTO Prontuario (paciente, anamnese,anotacaoEnfermagem, balancoHidrico)
+VALUES (1, 1, 1, 1);
+        */
     }
     public function read()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+SELECT * FROM prontuario;
+        */
     }
     public function update()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+UPDATE prontuario
+SET paciente = 'Novo Objeto Paciente', anamnese = 'Novo Objeto Anamnese', anotacaoEnfermagem = 'Novo Objeto Anotação de Enfermagem', balancoHidrico = 'Novo Objeto Balanço Hídrico' WHERE id_prontuario = 1;  
+        */
     }
     public function delete()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+DELETE FROM prontuario WHERE id = 1;
+        */
     }
 
 

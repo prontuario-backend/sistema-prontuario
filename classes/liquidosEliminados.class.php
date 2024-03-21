@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class LiquidosEliminados
+class LiquidosEliminados//ok
 {
     private float $diurese;
     private float $estase;
@@ -59,3 +59,5 @@ class LiquidosEliminados
         $this->outros = $outros;
     }
 }
+// $adm = new LiquidosEliminados(0.5, 0.6, 0.7, 0.8);
+// echo $adm->getOutros();

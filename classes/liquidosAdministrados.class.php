@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class LiquidosAdministrados
+class LiquidosAdministrados//ok
 {
     private float $viaOral;
     private float $viaParenteral;
@@ -71,3 +71,5 @@ class LiquidosAdministrados
         $this->outros = $outros;
     }
 }
+// $adm = new LiquidosAdministrados(0.5, 0.6, 0.7, 0.8, 0.9);
+// echo $adm->getViaOral();

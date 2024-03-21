@@ -1,18 +1,18 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class Enfermeiro
+class Enfermeiro//ok
 {
     private string $nome;
     private string $coren;
     private string $senha;
 
-    public function enfermeiro(string $nome, string $coren, string $senha)
+    public function __construct(string $coren, string $nome, string $senha)
     {
         $coren = new Coren($coren);
         $validar = new Validacao;
-        $this->nome = $validar->valStr($nome);
+        $this->nome = $validar->valStr2($nome);
         $this->coren = $coren->getCoren();
-        $this->senha = $validar->valStr($senha);
+        $this->senha = $validar->valStr2($senha);
         unset($validar);
         unset($coren);
     }
@@ -50,3 +50,7 @@ class Enfermeiro
     }
 
 }
+// $enf = new Enfermeiro('CORENMG00000ENF', 'eduardo', '123456');
+// echo $enf->getCoren();
+// echo $enf->getNome();
+// echo $enf->getSenha();

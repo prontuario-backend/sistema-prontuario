@@ -15,9 +15,8 @@ class Coren//ok
     public function __construct(string $coren)
     {
         $validar = new Validacao();
-        $coren = $this->validarCoren($validar->valStr($coren));
-        //       $coren = $this->formataCoren($coren);
-        unset($validar);
+        $coren = $this->validarCoren($coren);
+        //$coren = $this->formataCoren($coren);
         $this->coren = $coren;
     }
 

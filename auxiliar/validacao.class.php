@@ -5,7 +5,7 @@ ela deve ter metodos para filtrar dados no geral e tambem pode possuir metodos e
 de outras classes.
 */
 
-class Validacao
+class Validacao//ok
 {
 
     public function valStr(string $str)
@@ -14,6 +14,14 @@ class Validacao
             if (filter_var($str, HTML_SPECIALCHARS)) {
                 return $str;
             }
+        } else {
+            throw new Exception("Erro, o valor: $str não e do tipo string");
+        }
+    }
+    public function valStr2(string $str)
+    {
+        if (filter_var($str, FILTER_UNSAFE_RAW)) {
+            return $str;
         } else {
             throw new Exception("Erro, o valor: $str não e do tipo string");
         }

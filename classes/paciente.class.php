@@ -17,26 +17,26 @@ class Paciente//ok
     private string $endereco;
     private string $cpf;
 
-    public function paciente(string $nome, string $dataNasc, string $sexo, string $corRaca, string $email, float $altura, float $peso, string $nomeMae, string $nomePai, string $telefone, string $cep, string $endereco, string $cpf)
+    public function __construct(string $nome, string $dataNasc, string $sexo, string $corRaca, string $email, float $altura, float $peso, string $nomeMae, string $nomePai, string $telefone, string $cep, string $endereco, string $cpf)
     {
         $validar = new Validacao;
         $cpf = new Cpf($cpf);
         $email = new Email($email);
         $cep = new Cep($cep);
 
-        $this->nome = $validar->valStr($nome);
-        $this->dataNasc = $validar->valStr($dataNasc);
-        $this->sexo = $validar->valStr($sexo);
-        $this->corRaca = $validar->valStr($corRaca);
+        $this->nome = $validar->valStr2($nome);
+        $this->dataNasc = $validar->valStr2($dataNasc);
+        $this->sexo = $validar->valStr2($sexo);
+        $this->corRaca = $validar->valStr2($corRaca);
         $this->email = $email->getEmail();
         $this->altura = $validar->valFloat($altura);
         $this->peso = $validar->valFloat($peso);
         $this->nomeMae = $nomeMae;
         $this->nomePai = $nomePai;
-        $this->telefone = $validar->valStr($telefone);
+        $this->telefone = $validar->valStr2($telefone);
 
         $this->cep = $cep->getCep();
-        $this->endereco = $validar->valStr($endereco);
+        $this->endereco = $validar->valStr2($endereco);
         $this->cpf = $cpf->getCpf();
 
         unset($validar);
@@ -177,3 +177,5 @@ class Paciente//ok
         return $this->cpf;
     }
 }
+// $pasc = new Paciente("Maria da Silva", "01/01/1990", "Feminino", "Parda", "maria.silva@example.com", 1.65, 60.5, "Ana da Silva", "João da Silva", "(11) 91234-5678", "01001-000", "Rua das Flores, 123", "12345678910");
+// echo $pasc->getNome();

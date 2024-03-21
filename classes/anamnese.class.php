@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/includeClasses.php';
-class Anamnese
+class Anamnese//ok
 {
     private string $queixaPrincipal;
     private string $historicoFamiliar;
@@ -10,10 +10,10 @@ class Anamnese
     public function __construct(string $queixaPrincipal, string $historicoFamiliar, string $exameFisico, string $habitosDeVida)
     {
         $validar = new Validacao;
-        $this->queixaPrincipal = $validar->valStr($queixaPrincipal);
-        $this->historicoFamiliar = $validar->valStr($historicoFamiliar);
-        $this->exameFisico = $validar->valStr($exameFisico);
-        $this->habitosDeVida = $validar->valStr($habitosDeVida);
+        $this->queixaPrincipal = $validar->valStr2($queixaPrincipal);
+        $this->historicoFamiliar = $validar->valStr2($historicoFamiliar);
+        $this->exameFisico = $validar->valStr2($exameFisico);
+        $this->habitosDeVida = $validar->valStr2($habitosDeVida);
     }
 
     // Métodos getters e setters
@@ -43,7 +43,7 @@ class Anamnese
         return $this->exameFisico;
     }
 
-    public function setExameFisico(string $exameFisico)
+    private function setExameFisico(string $exameFisico)
     {
         $this->exameFisico = $exameFisico;
     }
@@ -60,3 +60,8 @@ class Anamnese
 
     }
 }
+// $anam = new Anamnese('dor nas costas', 'diabetes', 'exame fisico ok', 'sedentarismo leve');
+// echo $anam->getQueixaPrincipal() . '<br>';
+// echo $anam->getHistoricoFamiliar() . '<br>';
+// echo $anam->getExameFisico() . '<br>';
+// echo $anam->getHabitosDeVida() . '<br>';

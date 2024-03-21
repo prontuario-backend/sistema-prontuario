@@ -14,19 +14,36 @@ class InterBalHidrico
     }
     public function create()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+INSERT INTO balancoHidrico (data, hora, liquidos_administrados, liquidos_eliminados, total_quant_administrada, total_quant_eliminada, conclusao, corem_med_enf, via_oral, via_parenteral, quant_administrada, sondas, outros, diurese, estase, vomito, outros_eliminados, cpf)
+VALUES ('2024-03-20', '08:30:00', 'Líquidos administrados', 'Líquidos eliminados', 100.5, 90.5, 10.0, 'COREM Médico Enfermeiro', 50.0, 40.0, 20.0, 10.0, 5.0, 30.0, 15.0, 10.0, 5.0, '12345678901');
+        */
     }
     public function read()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+SELECT * FROM balancoHidrico;
+        */
     }
     public function update()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+UPDATE balancoHidrico
+SET conclusao = 20.0   // Aqui você está especificando qual coluna você deseja atualizar e o novo valor que
+ deseja definir para essa coluna. Neste caso, você está atualizando a coluna conclusao para ter o valor 20.0 para altera o valor da coluna 
+WHERE id_balancoHidrico = 1;
+        */
     }
     public function delete()
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+DELETE FROM balancoHidrico
+WHERE id_balancoHidrico = 1;
+        */
     }
     public function fecharConexao()
     {

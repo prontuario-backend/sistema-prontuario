@@ -15,30 +15,51 @@ class InterMedico
         unset($conexao);
     }
 
-    public function create($nome, $coren, $senha)
+    public function create($nome, $crm, $senha)
     {
-        //logica banco de dados
+        $this->getConn();
+        /*
+INSERT INTO medico (nomeComp, crm, senha)
+VALUES ('Nome do Médico', 'CRM do Médico', 'Senha do Médico');
+        */
     }
 
     public function read()
     {
+        $this->getConn();
+        /*
+SELECT * FROM medico ORDER BY crm;
+        */
         //logica banco de dados
     }
     public function update()
     {
+        $this->getConn();
+        /*
+UPDATE medico
+SET nomeComp = 'Novo Nome', crm = 'Novo CRM', senha = 'Nova Senha'
+WHERE id_medico = 0;
+        */
         //logica banco de dados
     }
     public function delete()
     {
-
+        $this->getConn();
+        /*
+DELETE FROM medico WHERE id_medico = 1;
+        */
     }
 
     public function fazerLogin($nome, $coren, $senha)
     {
+        $this->getConn();
+        /*
+
+*/
         // Lógica para fazer login
     }
 
-    function redefinirSenha(Crm $crm, string $novaSenha)
+    public function redefinirSenha(Crm $crm, string $novaSenha)
     {
         // Verifica se o corem é válido
         $crm = $crm->getCrm();
@@ -71,11 +92,19 @@ class InterMedico
 
     public function alterarNome($novoNome)
     {
+        $this->getConn();
+        /*
+
+*/
         //logica banco de dados
     }
 
     public function deslogar()
     {
+        $this->getConn();
+        /*
+
+*/
         //logica para deslogar
     }
 
