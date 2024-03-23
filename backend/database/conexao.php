@@ -8,27 +8,37 @@ getConn();
 para fechar a conexao use o metodo:
 fecharConexao();
 */
-class Conexao{
-    protected string $server = 'localhost';
-    protected string $user = 'id21959013_bhdev';
-    protected string $senha = '#Proz2022';
-    protected string $dbname = 'id21959013_prontuariodb';
+
+define('SERVER', "localhost");//credenciais de acesso do banco de dados declaradas como constantes
+define('USER', "id21959013_bhdev");//para evitar reatribuicao e acesso indevido.
+define('SENHA', "#Proz2022");
+define('DBNAME', "id21959013_prontuariodb");
+class Conexao
+{
+    protected string $server = SERVER;
+    protected string $user = USER;
+    protected string $senha = SENHA;
+    protected string $dbname = DBNAME;
     protected mysqli $conn;// tipo de dado: objeto de conexao do mysql
 
 
-    private function getServer(){
+    private function getServer()
+    {
         //retorna o atributo 'server' <- referente a onde o banco de dados esta localizado
         return $this->server;
     }
-    private function getUser(){
+    private function getUser()
+    {
         //retorna o atributo 'user' <- referente ao usuario que acessa o banco de dados
         return $this->user;
     }
-    private function getSenha(){
+    private function getSenha()
+    {
         //retorna o atributo 'senha' <- refernte a senha de acesso ao banco de dados
         return $this->senha;
     }
-    private function getDbname(){
+    private function getDbname()
+    {
         //retorna o atributo 'dbname' referente ao nome da base de dados
         return $this->dbname;
     }
@@ -36,7 +46,8 @@ class Conexao{
 
 
 
-    private function criarConexao(){
+    private function criarConexao()
+    {
         //inicia uma conexao ao banco de dados usando os parametros: 'user','server','senha','dbname'
         $this->conn = new mysqli(
             $this->getServer(),
@@ -53,20 +64,21 @@ class Conexao{
 
         if ($this->conn->connect_error) {
             //em caso de erro fecha a conexao e mostra o tipo de erro ocorrido
-            
-            die("Erro na conexão: " . $this->conn->connect_error);
-            
-        }else{
+
+            die ("Erro na conexão: " . $this->conn->connect_error);
+
+        } else {
             return true;
         }
 
-        
+
     }
 
 
 
 
-    public function __construct(){
+    public function __construct()
+    {
         // //cria uma conexao ao banco de dados
         // session_start([
         //     'name' => 'conection',
@@ -76,24 +88,26 @@ class Conexao{
         $this->criarConexao();
     }
 
-    public function fecharConexao(){
+    public function fecharConexao()
+    {
         //fecha uma conexao ja iniciada
-        if($this->conn == null){
+        if ($this->conn == null) {
             //se a conexao nao tiver sido estabelecida retorna erro
             throw new Exception('Erro, não e possivel fechar a conexão pois uma conexão ainda não foi criada.');
-        }else{
+        } else {
             // session_destroy();
             $this->conn->close();
             unset($this->conn);
         }
     }
 
-    public function getConn(){
+    public function getConn()
+    {
         //retorna um objeto de conexao mysqli referente ao atributo 'conn'
-        if($this->conn == null){
+        if ($this->conn == null) {
             //se a conexao nao tiver sido estabelecida retorna erro
             throw new Exception('Erro, não e possivel retornar o atributo $conn pois uma conexão ainda não foi criada.');
-        }else{
+        } else {
             return $this->conn;
         }
     }
