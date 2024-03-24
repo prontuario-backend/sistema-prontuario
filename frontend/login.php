@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
 
+
 if (isset ($_POST['coren']) && isset ($_POST['senha'])) {
     $corenOuCrm = $_POST['coren'];
     $senha = $_POST['senha'];
@@ -34,6 +35,8 @@ function login(string $corenOuCrm, string $senha)
         if ($logado !== false) {
             $_SESSION['cargo'] = 'MED';//salva o tipo de cargo
             $_SESSION['medNome'] = $logado['nome'];//salva o nome do medico
+            $inter->fecharConexao();
+
             redirect();//redireciona para a pagina de buscar pasciente
         }
     }
@@ -47,14 +50,14 @@ function validarEstado(string $estado)
         throw new Exception('Erro, a sigla do estado fornecido deve ter exatamente 2 caracteres. ');
     }
     if (ctype_alpha($estado) == false) {//verifica se tem números no parametro passado
-        throw new Exception(' Erro, o parametro estado não pode ser do tipo int.');
+        throw new Exception('Erro, o parametro estado não pode ser do tipo int.');
     }
     $estado = str_replace(' ', '', $estado);//remove os espaços em branco do parametro
     $estado = trim(strtoupper($estado));//remove os espaços em branco do parametro e o deixa maiusculo.
 
     //lista dos 26 estados brasileiros
     $listaEstados = [
-        ' AC',
+        'AC',
         'AL',
         'AP',
         'AM',
@@ -69,8 +72,7 @@ function validarEstado(string $estado)
         'PA',
         'PB',
         'PR',
-        'PE'
-        ,
+        'PE',
         'PI',
         'RJ',
         'RN',
@@ -95,6 +97,5 @@ function validarEstado(string $estado)
 
 function redirect()//redireciona para a pagina de cadastrar pascientes
 {
-    header("location: http://localhost/php-poo/Nova%20pasta/sistema-prontuario/frontend/paginas/buscar.html");
-    exit();
+    echo "<meta http-equiv='refresh' content='0; url=https://prontuario-backend.000webhostapp.com/frontend/paginas/buscar.php'>";
 }

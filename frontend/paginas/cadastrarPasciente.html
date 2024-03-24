@@ -1,5 +1,9 @@
+<?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,97 +52,97 @@
         <!-- FIM do NAVBAR -->
         <!-- INICIO do CONTEUDO -->
         <div class="conteudo shadow">
-        <form action="cadastrarPasciente.php" method="post">
-            <div class="container-cadastro">
+            <form action="cadastrarPasciente.php" method="post">
+                <div class="container-cadastro">
 
-                <div class="row">
-                    
-                    <div class="container-item">
-                        <label>Nome</label>
-                        <input type="text" id="nome">
-                        <div class="error-message" id="error-nome"></div>
+                    <div class="row">
+
+                        <div class="container-item">
+                            <label>Nome</label>
+                            <input type="text" id="nome">
+                            <div class="error-message" id="error-nome"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Telefone Residencial</label>
+                            <input type="text">
+                            <div class="error-message" id="error-nome-social"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Idade</label>
+                            <input type="text" id="idade">
+                            <div class="error-message" id="error-idade"></div>
+                        </div>
                     </div>
-                    <div class="container-item">
-                        <label>Telefone Residencial</label>
-                        <input type="text">
-                        <div class="error-message" id="error-nome-social"></div>
+                    <div class="row">
+                        <div class="container-item">
+                            <label>CPF</label>
+                            <input type="text" id="cpf">
+                            <div class="error-message" id="error-cpf"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Sexo</label>
+                            <input type="text" id="sexo">
+                        </div>
+                        <div class="container-item">
+                            <label>Raça</label>
+                            <input type="text" id="raca">
+                        </div>
                     </div>
-                    <div class="container-item">
-                        <label>Idade</label>
-                        <input type="text" id="idade">
-                        <div class="error-message" id="error-idade"></div>
+                    <div class="row">
+                        <div class="container-item">
+                            <label>Data de Nasc.</label>
+                            <input type="text" id="data-nascimento">
+                            <div class="error-message" id="error-data-nascimento"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Altura</label>
+                            <input type="text" id="altura">
+                            <div class="error-message" id="error-altura"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Peso</label>
+                            <input type="text" id="peso">
+                            <div class="error-message" id="error-peso"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-item">
+                            <label>Mãe</label>
+                            <input type="text" id="mae">
+                            <div class="error-message" id="error-mae"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Pai</label>
+                            <input type="text" id="pai">
+                            <div class="error-message" id="error-pai"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>CEP</label>
+                            <input type="text" id="cep">
+                            <div class="error-message" id="error-cep"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-item">
+                            <label>E-mail</label>
+                            <input type="email" id="email">
+                            <div class="error-message" id="error-email"></div>
+                        </div>
+                        <div class="container-item">
+                            <label>Endereço</label>
+                            <input type="text" id="endereco">
+                        </div>
+                        <div class="container-item">
+                            <label>Celular</label>
+                            <input type="text" id="celular">
+                            <div class="error-message" id="error-celular"></div>
+                        </div>
+                    </div>
+                    <div class="posicionar-botao">
+                        <button type="submit" id="btnCadastrar" class="botao">Cadastrar</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="container-item">
-                        <label>CPF</label>
-                        <input type="text" id="cpf">
-                        <div class="error-message" id="error-cpf"></div>
-                    </div>
-                    <div class="container-item">
-                        <label>Sexo</label>
-                        <input type="text" id="sexo">
-                    </div>
-                    <div class="container-item">
-                        <label>Raça</label>
-                        <input type="text" id="raca">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="container-item">
-                        <label>Data de Nasc.</label>
-                        <input type="text" id="data-nascimento">
-                        <div class="error-message" id="error-data-nascimento"></div>
-                    </div>
-                    <div class="container-item">
-                        <label>Altura</label>
-                        <input type="text" id="altura">
-                        <div class="error-message" id="error-altura"></div>
-                    </div>
-                    <div class="container-item">
-                        <label>Peso</label>
-                        <input type="text" id="peso">
-                        <div class="error-message" id="error-peso"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="container-item">
-                        <label>Mãe</label>
-                        <input type="text" id="mae">
-                        <div class="error-message" id="error-mae"></div>
-                    </div>
-                    <div class="container-item">
-                        <label>Pai</label>
-                        <input type="text" id="pai">
-                        <div class="error-message" id="error-pai"></div>
-                    </div>
-                    <div class="container-item">
-                        <label>CEP</label>
-                        <input type="text" id="cep">
-                        <div class="error-message" id="error-cep"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="container-item">
-                        <label>E-mail</label>
-                        <input type="email" id="email">
-                        <div class="error-message" id="error-email"></div>
-                    </div>
-                    <div class="container-item">
-                        <label>Endereço</label>
-                        <input type="text" id="endereco">
-                    </div>
-                    <div class="container-item">
-                        <label>Celular</label>
-                        <input type="text" id="celular">
-                        <div class="error-message" id="error-celular"></div>
-                    </div>
-                </div>
-                <div class="posicionar-botao">
-                    <button type="submit" id="btnCadastrar" class="botao">Cadastrar</button>
-                </div>
-            </div>
-        </form>
+            </form>
         </div>
         <!-- FIM do CONTEUDO -->
     </div>

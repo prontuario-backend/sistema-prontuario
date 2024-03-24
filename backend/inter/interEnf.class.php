@@ -91,7 +91,6 @@ DELETE FROM enfermeiro WHERE crm = $crm;
         $sql = "SELECT `id_enfermeiro`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren' AND senha = '$senha'";
 
         $consulta = $this->conn->prepare($sql);
-        $consulta->bind_param("sss", $coren, $senha);
         $consulta->execute();
 
         // Obter o resultado da consulta
