@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/anot.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- INICIO do HEADER -->
+    <div class="header shadow">
+        <div class="logo">
+            <i class="fa-solid fa-notes-medical"></i>
+            <p>UNI-TI</p>
+        </div>
+        <div class="login">
+            <i class="fa-solid fa-user-doctor"></i>
+            <p id="name">Dr. Paulo</p>
+            <p id="profissao">Médico</p>
+            <a href="/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+    </div>
+    <!-- FIM do HEADER -->
+    <!-- INICIO do conteudo principal -->
+    <div class="main">
+
+        <!-- INICIO do NAVBAR -->
+        <div class="navbar shadow">
+            <h1 class="dados">Anotações</h1>
+            <ul>
+                <a href="pacientes.html">
+                    <li class="itemList" id="navPaciente"><i class="fa-solid fa-arrow-left"></i><span
+                            class="spanNone">&nbsp;Voltar</span></li>
+                </a>
+                <li class="itemList" id="navAgenda" onclick="openPopup()"><i class="fa-solid fa-plus"></i></i><span
+                        class="spanNone">&nbsp;Nova Anotação</span></li>
+                <li class="itemList" id="navServicos" onclick="toggleExclusao()"><i
+                        class="fa-solid fa-trash"></i></i><span class="spanNone">&nbsp;Excluir anotações</span></li>
+            </ul>
+            <div class="buttonPosition">
+
+            </div>
+        </div>
+        <!-- FIM do NAVBAR -->
+
+        <!-- INICIO do CONTEUDO -->
+        <div class="conteudo shadow" id="conteudo">
+            <div class="container-conteudo">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Popup -->
+    <div class="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <input type="date" id="anotacaoDate">
+        <input type="time" id="anotacaoTime">
+        <input type="text" id="anotacaoTitle" placeholder="Título da Anotação">
+        <textarea id="anotacaoText" placeholder="Digite sua anotação" cols="40" rows="24"></textarea>
+        <button onclick="addAnotacao()" class="btn-pop-save"><strong>Salvar</strong></button>
+        <!-- Corrigido o nome da classe -->
+    </div>
+
+
+    <script src="../js/anot.js"></script>
+</body>
+
+</html>

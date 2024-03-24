@@ -12,9 +12,9 @@ class InterEnf
     private mysqli $conn;
     public function __construct()
     {
-        // $conexao = new Conexao();
-        // $this->conn = $conexao->getConn();
-        // unset($conexao);
+        $conexao = new Conexao();
+        $this->conn = $conexao->getConn();
+        unset($conexao);
     }
 
 
@@ -88,11 +88,10 @@ DELETE FROM enfermeiro WHERE crm = $crm;
     public function fazerLogin($coren, $senha)
     {
         $this->getConn();
+        $sql = "SELECT `id_enfermeiro`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren' AND senha = '$senha'";
 
-        //nome = $nome AND 
-        $sql = "SELECT * FROM  enfermeiro  WHERE coren = $coren AND senha = $senha";
         $consulta = $this->conn->prepare($sql);
-        $consulta->bind_param("sss", $nome, $coren, $senha);
+        $consulta->bind_param("sss", $coren, $senha);
         $consulta->execute();
 
         // Obter o resultado da consulta
