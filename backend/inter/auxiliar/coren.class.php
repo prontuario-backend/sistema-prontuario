@@ -1,5 +1,5 @@
 <?php
-//include_once __DIR__ . '/includeAux.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'validacao.class.php';
 /*
  Esta classe recebe  valida  e formata um coren ela aceita somente o tipo string, outros tipos de dados não são suportados;
 Para obter o coren formatado ultilize o metodo getCoren();

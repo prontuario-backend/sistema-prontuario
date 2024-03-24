@@ -1,5 +1,6 @@
 <?php
-include_once '../classes/includeClasses.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
+
 //intermediario da classe balanço hidrico
 
 class InterBalHidrico
@@ -69,16 +70,17 @@ WHERE id_balancoHidrico = 1;
     }
 }
 
-if (isset($_POST['data'])) {
-    if (isset($_POST['hora'])) {
-        if (isset($_POST['tipo'])) {
-            if(isset($_POST['elim'])) {
-            $data = $_POST['data'];
-            $hora = $_POST['hora'];
-            $tipoElim = $_POST['tipo'];
+if (isset ($_POST['data'])) {
+    if (isset ($_POST['hora'])) {
+        if (isset ($_POST['tipo'])) {
+            if (isset ($_POST['elim'])) {
+                $data = $_POST['data'];
+                $hora = $_POST['hora'];
+                $tipoElim = $_POST['tipo'];
 
-            $bal = new InterBalHidrico();
-            $val->create();
-        }}
+                $bal = new InterBalHidrico();
+                $val->create();
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 <?php
-include_once '../classes/includeClasses.php';
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
 
 //intermediario da classe anotacao enfermagem
 

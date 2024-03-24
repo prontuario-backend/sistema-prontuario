@@ -1,5 +1,5 @@
 <?php
-//include_once __DIR__ . '/includeAux.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'validacao.class.php';
 class Cep//ok
 {
     private string $cep;

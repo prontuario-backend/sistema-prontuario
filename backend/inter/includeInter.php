@@ -1,10 +1,6 @@
 <?php
-include_once __DIR__ . '\\auxiliar\\includeAux.php';
-include_once __DIR__ . '\\interAnamnese.class.php';
-include_once __DIR__ . '\\interAnotacaoEnf.class.php';
-include_once __DIR__ . '\\interBalHidrico.class.php';
-include_once __DIR__ . '\\interBalHidrico.class.php';
-include_once __DIR__ . '\\interEnf.class.php';
-include_once __DIR__ . '\\interMed.class.php';
-include_once __DIR__ . '\\interPasc.class.php';
-include_once __DIR__ . '\\interPront.class.php';
+
+require_once __DIR__ . '\\auxiliar\\includeAux.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'auxiliar' . DIRECTORY_SEPARATOR . 'includeAux.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'includeClasses.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'conexao.php';

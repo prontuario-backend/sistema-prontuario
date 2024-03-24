@@ -1,6 +1,7 @@
 <?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
 
-include_once '../auxiliar/includeAux.php';
+
 //intermediario da classe pasciente
 
 class InterPasc

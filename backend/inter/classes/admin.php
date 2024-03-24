@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/includeClasses.php';
+
 class admin
 {
     // Atributos

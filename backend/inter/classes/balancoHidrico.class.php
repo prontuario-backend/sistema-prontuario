@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/includeClasses.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeClasses.php';
 class BalancoHidrico//ok
 {
     private string $data;

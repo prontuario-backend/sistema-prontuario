@@ -1,5 +1,6 @@
 <?php
-include_once '../classes/includeClasses.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
+
 /*
 intermediario da classe medico
 esta classe responsavel por fazer o crud dos dados de um medico os valida e salva-los no banco de dados.

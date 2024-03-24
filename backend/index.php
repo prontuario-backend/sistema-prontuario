@@ -9,12 +9,7 @@
 </head>
 
 <body>
-    <?php echo __FILE__;
-    include __DIR__ . '\\interMain.php';
-
-
-
-    ?>
+    <?php require_once __DIR__ . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php' ?>
 </body>
 
 </html>

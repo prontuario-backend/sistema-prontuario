@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/includeAux.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'validacao.class.php';
 /*
  Esta classe recebe e valida  um crm ela aceita somente o tipo string, outros tipos de dados não são suportados;
 Para obter o crm formatado ultilize o metodo getCrm();
