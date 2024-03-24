@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -11,26 +14,27 @@
 
     <style>
         .container {
-           opacity: 1;
-           transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
         }
-    
+
         .container.fade-out {
-           opacity: 0;
+            opacity: 0;
         }
-    
+
         /* Remover sublinhado e cor dos links */
         .navbar ul {
-           list-style: none;
-           padding: 0;
-           margin: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-    
+
         .navbar ul li a {
-           text-decoration: none;
-           color: inherit; /* herda a cor do pai, você pode definir uma cor específica se desejar */
+            text-decoration: none;
+            color: inherit;
+            /* herda a cor do pai, você pode definir uma cor específica se desejar */
         }
-     </style>
+    </style>
 
 </head>
 
@@ -51,26 +55,26 @@
     <!-- FIM do HEADER -->
     <!-- INICIO do conteudo principal -->
     <div class="main">
-         <!-- INICIO do NAVBAR -->
-    <div class="navbar shadow">
-        <h1 class="dados">DADOS</h1>
-        <ul>
-           <li class="itemList" id="navPaciente"><a href="/paginas/pacientes.html"><i class="icon fa-solid fa-user"></i><span
-                    class="spanNone">Pacientes</span></a></li>
-           <li class="itemList" id="navAgenda"><a href="/paginas/anamnese.html"><i class="icon fa-solid fa-notes-medical"></i><span
-                    class="spanNone">Anamnese</span></a></li>
-           <li class="itemList" id="navServicos"><a href="/paginas/anotacoes.html"><i class="icon fa-solid fa-clipboard"></i><span
-                    class="spanNone">Anotações</span></a></li>
-           <li class="itemList" id="navFinanceiro"><a href="/paginas/balancohidrico.html"><i class="icon fa-solid fa-droplet"></i><span
-                    class="spanNone">Balanço Hídrico</span></a></li>
-        </ul>
-  
-        <div class="buttonPosition">
-            <div class="btn-buscar"><a href="/paginas/buscar.html">BUSCAR</a></div>
+        <!-- INICIO do NAVBAR -->
+        <div class="navbar shadow">
+            <h1 class="dados">DADOS</h1>
+            <ul>
+                <li class="itemList" id="navPaciente"><a href="/paginas/pacientes.html"><i
+                            class="icon fa-solid fa-user"></i><span class="spanNone">Pacientes</span></a></li>
+                <li class="itemList" id="navAgenda"><a href="/paginas/anamnese.html"><i
+                            class="icon fa-solid fa-notes-medical"></i><span class="spanNone">Anamnese</span></a></li>
+                <li class="itemList" id="navServicos"><a href="/paginas/anotacoes.html"><i
+                            class="icon fa-solid fa-clipboard"></i><span class="spanNone">Anotações</span></a></li>
+                <li class="itemList" id="navFinanceiro"><a href="/paginas/balancohidrico.html"><i
+                            class="icon fa-solid fa-droplet"></i><span class="spanNone">Balanço Hídrico</span></a></li>
+            </ul>
+
+            <div class="buttonPosition">
+                <div class="btn-buscar"><a href="/paginas/buscar.html">BUSCAR</a></div>
+            </div>
+
         </div>
-  
-     </div>
-     <!-- FIM do NAVBAR -->
+        <!-- FIM do NAVBAR -->
 
         <!-- INICIO do CONTEUDO -->
         <div class="conteudo shadow">
@@ -109,7 +113,7 @@
         <!-- FIM do CONTEUDO -->
     </div>
     <!-- FIM do conteudo principal -->
-    
+
 </body>
 
 </html>

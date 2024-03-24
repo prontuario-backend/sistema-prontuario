@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
+?>
 
 <head>
    <meta charset="UTF-8">
@@ -58,8 +61,8 @@
       <div class="navbar shadow">
          <h1 class="dados">DADOS</h1>
          <ul>
-            <li class="itemList" id="navPaciente"><a href="./pacientes.html"><i
-                     class="icon fa-solid fa-user"></i><span class="spanNone">Pacientes</span></a></li>
+            <li class="itemList" id="navPaciente"><a href="./pacientes.html"><i class="icon fa-solid fa-user"></i><span
+                     class="spanNone">Pacientes</span></a></li>
             <li class="itemList" id="navAgenda"><a href="./anamnese.html"><i
                      class="icon fa-solid fa-notes-medical"></i><span class="spanNone">Anamnese</span></a></li>
             <li class="itemList" id="navServicos"><a href="./anotacoes.html"><i
@@ -167,16 +170,16 @@
                   <button onclick="editarCampo('p-teleC')"><i class="fa-regular fa-pen-to-square"></i></button>
                </div>
             </div>
-            
+
          </div>
          <div id="myModal" class="modal" data-span-id=""> <!-- Aqui é onde vamos definir o data-span-id -->
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <input type="text" id="editInput">
-                <button onclick="salvarEdicao()">Salvar</button>
+               <span class="close">&times;</span>
+               <input type="text" id="editInput">
+               <button onclick="salvarEdicao()">Salvar</button>
             </div>
-        </div>
-    
+         </div>
+
 
       </div>
    </div>

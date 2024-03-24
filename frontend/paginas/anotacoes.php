@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,19 +45,19 @@
                         class="fa-solid fa-trash"></i></i><span class="spanNone">&nbsp;Excluir anotações</span></li>
             </ul>
             <div class="buttonPosition">
-                
+
             </div>
         </div>
         <!-- FIM do NAVBAR -->
 
         <!-- INICIO do CONTEUDO -->
-        <div class="conteudo shadow" id="conteudo">   
+        <div class="conteudo shadow" id="conteudo">
             <div class="container-conteudo">
 
             </div>
 
         </div>
-     
+
 
     </div>
 

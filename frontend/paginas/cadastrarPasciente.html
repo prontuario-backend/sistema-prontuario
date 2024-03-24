@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,9 +48,11 @@
         <!-- FIM do NAVBAR -->
         <!-- INICIO do CONTEUDO -->
         <div class="conteudo shadow">
+        <form action="cadastrarPasciente.php" method="post">
             <div class="container-cadastro">
 
                 <div class="row">
+                    
                     <div class="container-item">
                         <label>Nome</label>
                         <input type="text" id="nome">
@@ -134,9 +135,10 @@
                     </div>
                 </div>
                 <div class="posicionar-botao">
-                    <button type="button" id="btnCadastrar" class="botao">Cadastrar</button>
+                    <button type="submit" id="btnCadastrar" class="botao">Cadastrar</button>
                 </div>
             </div>
+        </form>
         </div>
         <!-- FIM do CONTEUDO -->
     </div>

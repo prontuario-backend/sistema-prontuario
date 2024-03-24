@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>UNI-TI</title>
+</head>
+
+<body>
+  <div class="header shadow">
+    <h1>UNI-TI</h1>
+  </div>
+  <div class="main">
+
+    <div class="container-avatar">
+      <img src="imagens/enfermeiro-prontuario.png" alt="brinca n">
+    </div>
+
+    <div class="container-login">
+      <div class="container-login-item">
+
+        <form action="./login.php" method="post">
+          <div class="form-group">
+            <label for="coren-crm">Coren/CRM:</label>
+            <input type="text" id="coren-crm" name="coren" value='CORENMG00000ENF'>
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" value='123456'>
+          </div>
+          <div class="buttonPosition">
+            <div class="btn-buscar">
+              <!--consertar a cor do botao abaixo-->
+              <button type='submit' id='btn'>ENTRAR</button>
+            </div>
+          </div>
+          <p>Crie seu cadastro <a href="./paginas/login.php">aqui</a></p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
