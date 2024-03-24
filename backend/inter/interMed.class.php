@@ -16,48 +16,94 @@ class InterMedico
         unset($conexao);
     }
 
-    public function create($nome, $crm, $senha)
+    public function create(Medico $medico)
     {
         $this->getConn();
-        /*
-INSERT INTO medico (nomeComp, crm, senha)
-VALUES ('Nome do Médico', 'CRM do Médico', 'Senha do Médico');
-        */
+
+        $nome = $medico->getNome();
+        $crm = $medico->getCrm();
+        $senha = $medico->getSenha();
+        $sql = "INSERT INTO medico (nomeComp, crm, senha)
+        VALUES ('$nome', '$crm', '$senha')";
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+
+
     }
 
     public function read()
     {
         $this->getConn();
-        /*
-SELECT * FROM medico ORDER BY crm;
-        */
-        //logica banco de dados
+
+        $sql = "SELECT * FROM medico ORDER BY crm; ";
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+
     }
-    public function update()
+    public function update($nome, $crm, $senha)
     {
         $this->getConn();
-        /*
-UPDATE medico
-SET nomeComp = 'Novo Nome', crm = 'Novo CRM', senha = 'Nova Senha'
-WHERE id_medico = 0;
-        */
-        //logica banco de dados
+
+
+        $sql = "UPDATE medico
+        SET nomeComp = '$nome',
+            crm = '$crm',
+            senha = '$senha'
+        WHERE id_medico = 1";
+
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+
     }
     public function delete()
     {
         $this->getConn();
-        /*
-DELETE FROM medico WHERE id_medico = 1;
-        */
+        $sql = "DELETE FROM medico WHERE id_medico = 1";
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+
     }
 
-    public function fazerLogin($nome, $coren, $senha)
+    public function fazerLogin($nome, $crm, $senha)
     {
         $this->getConn();
-        /*
 
-*/
-        // Lógica para fazer login
+        try {
+            // Preparar a consulta SQL usando prepared statements
+            $sql = "SELECT * FROM medico WHERE nomeComp = '$nome' AND crm = '$crm'";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("ss", $nome, $crm);
+            $stmt->execute();
+
+            // Obter o resultado da consulta
+            $result = $stmt->get_result();
+
+            // Verificar se encontrou algum médico
+            if ($result->num_rows == 1) {
+                $medico = $result->fetch_assoc();
+                // Verificar se a senha está correta
+                if (password_verify($senha, $medico['senha'])) {
+                    // Senha correta, login bem-sucedido
+                    return true;
+                } else {
+                    // Senha incorreta
+                    return false;
+                }
+            } else {
+                // Médico não encontrado
+                return false;
+            }
+        } catch (Exception $e) {
+            // Tratar qualquer exceção que ocorra durante a execução da consulta
+            echo "Erro ao fazer login: " . $e->getMessage();
+            return false;
+        } finally {
+            // Fechar a consulta
+            $stmt->close();
+        }
     }
 
     public function redefinirSenha(Crm $crm, string $novaSenha)
@@ -77,10 +123,10 @@ DELETE FROM medico WHERE id_medico = 1;
 
         // Atualize a senha no banco de dados
         try {
-            $mysqli = new PDO("mysql:host=localhost;dbname=seu_banco_de_dados_Ezequiel", "seu_usuario", "sua_senha");
+            $mysqli = new PDO("mysql:host=localhost:3306;dbname=id21959013_prontuariodb", "id21959013_bhdev", "#Proz2022");
             $mysqli->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $mysqli->prepare("UPDATE usuarios SET senha_hash = :senhaHash WHERE corem = :corem");
+            $stmt = $mysqli->prepare("UPDATE medico SET senha_hash = '$senhaHash'WHERE corem = '$crm'");
             $stmt->bindParam(':senhaHash', $senhaHash);
             $stmt->bindParam(':crm', $crm);
             $stmt->execute();
@@ -91,25 +137,47 @@ DELETE FROM medico WHERE id_medico = 1;
         }
     }
 
-    public function alterarNome($novoNome)
+    public function alterarNome($novoNome, $crm)
     {
         $this->getConn();
-        /*
 
-*/
-        //logica banco de dados
+        try {
+            // Preparar a consulta SQL usando prepared statements
+            $sql = "UPDATE medico SET nomeComp = '$novoNome' WHERE crm = '$crm'";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("ss", $novoNome, $crm);
+            $stmt->execute();
+
+            // Verificar se a alteração foi bem-sucedida
+            if ($stmt->affected_rows > 0) {
+                // Nome alterado com sucesso
+                return true;
+            } else {
+                // Não foi possível alterar o nome
+                return false;
+            }
+        } catch (Exception $e) {
+            // Tratar qualquer exceção que ocorra durante a execução da consulta
+            echo "Erro ao alterar o nome: " . $e->getMessage();
+            return false;
+        } finally {
+            // Fechar a consulta
+            $stmt->close();
+        }
     }
 
     public function deslogar()
     {
-        $this->getConn();
-        /*
+        // Iniciar a sessão (se ainda não estiver iniciada)
+        session_start();
 
-*/
-        //logica para deslogar
+        // Destruir a sessão, o que remove todas as variáveis de sessão
+        session_destroy();
+
+        // Redirecionar o usuário de volta para a página de login
+        header("Location: pagina_de_login.php");//se existir claro, pois n econtrei no projeto...
+        exit; // Certifique-se de que o script seja encerrado após o redirecionamento
     }
-
-
 
 
 

@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
-
 //intermediario da classe balanço hidrico
 
 class InterBalHidrico
@@ -13,38 +12,60 @@ class InterBalHidrico
         $this->conn = $conexao->getConn();
         unset($conexao);
     }
-    public function create()
+    public function create(BalancoHidrico $balancoHidrico, Enfermeiro $enfermeiro, LiquidosAdministrados $liquidos_administrados, LiquidosEliminados $liquidos_eliminados, Paciente $paciente)
     {
         $this->getConn();
-        /*
-INSERT INTO balancoHidrico (data, hora, liquidos_administrados, liquidos_eliminados, total_quant_administrada, total_quant_eliminada, conclusao, corem_med_enf, via_oral, via_parenteral, quant_administrada, sondas, outros, diurese, estase, vomito, outros_eliminados, cpf)
-VALUES ('2024-03-20', '08:30:00', 'Líquidos administrados', 'Líquidos eliminados', 100.5, 90.5, 10.0, 'COREM Médico Enfermeiro', 50.0, 40.0, 20.0, 10.0, 5.0, 30.0, 15.0, 10.0, 5.0, '12345678901');
-        */
+        $data = $balancoHidrico->getData();
+        $hora = $balancoHidrico->getHora();
+        $liquidos_administrados = $balancoHidrico->getLiquidosAdministrados();
+        $liquidos_eliminados = $balancoHidrico->getLiquidosEliminados();
+        $total_quant_elimi = $balancoHidrico->getLiquidosEliminados();
+        $total_quanti_admini = $balancoHidrico->getTotalQuantAdministrada();
+        $conclusao = $balancoHidrico->getConclusao();
+        $corem_med_enf = $enfermeiro->getCoren();
+        $via_oral = $liquidos_administrados->getViaOral();
+        $via_patental = $liquidos_administrados->getViaParenteral();
+        $quant_administrada = $liquidos_administrados->getQuantAdminstrada();
+        $sondas = $liquidos_administrados->getSondas();
+        $outros = $liquidos_administrados->getOutros();
+        $diurese = $liquidos_eliminados->getDiurese();
+        $estase = $liquidos_eliminados->getEstase();
+        $vomito = $liquidos_eliminados->getVomito();
+        $outros_eliminados = $liquidos_eliminados->getOutros();
+        $cpf = $paciente->getCpf();
+
+
+        $sql = "INSERT INTO balancoHidrico (data, hora, liquidos_administrados, total_quant_administrada, total_quant_eliminada, conclusao, corem_med_enf, via_oral, via_parenteral, quant_administrada, sondas, outros, diurese, estase, vomito, outros_eliminados, cpf) 
+        VALUES ('$data','$hora','$liquidos_administrados',$total_quanti_admini,$total_quant_elimi,'$conclusao','$corem_med_enf',$via_oral,$via_patental,$quant_administrada,$sondas,'$outros',$diurese,$estase,$vomito,'$outros_eliminados','$cpf')";
+
+
+        $this->getConn()->query($sql);
     }
     public function read()
     {
         $this->getConn();
-        /*
-SELECT * FROM balancoHidrico;
-        */
+        $sql = "SELECT * FROM balancoHidrico; ";
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
     }
-    public function update()
+    public function update($conclusao)
     {
         $this->getConn();
-        /*
-UPDATE balancoHidrico
-SET conclusao = 20.0   // Aqui você está especificando qual coluna você deseja atualizar e o novo valor que
- deseja definir para essa coluna. Neste caso, você está atualizando a coluna conclusao para ter o valor 20.0 para altera o valor da coluna 
-WHERE id_balancoHidrico = 1;
-        */
+        $sql = "UPDATE balancoHidrico
+        SET conclusao = '$conclusao'
+        WHERE id_balancoHidrico = 1";
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
     }
     public function delete()
     {
+
         $this->getConn();
-        /*
-DELETE FROM balancoHidrico
-WHERE id_balancoHidrico = 1;
-        */
+        $sql = "DELETE FROM balancoHidrico WHERE id_balancoHidrico= 1";
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+
     }
     public function fecharConexao()
     {

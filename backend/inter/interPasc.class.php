@@ -6,8 +6,8 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
 
 class InterPasc
 {
-
     private mysqli $conn;
+
     public function __construct()
     {
         $conexao = new Conexao();

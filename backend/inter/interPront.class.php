@@ -3,10 +3,11 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
 
 //intermediario da classe prontuario
 
+// Intermediário da classe prontuario
 class InterProntuario
 {
-
     private mysqli $conn;
+
     public function __construct()
     {
         $conexao = new Conexao();
@@ -14,56 +15,72 @@ class InterProntuario
         unset($conexao);
     }
 
-    public function create()
+    public function create(Prontuario $prontuario)
     {
         $this->getConn();
-        /*
-INSERT INTO Prontuario (paciente, anamnese,anotacaoEnfermagem, balancoHidrico)
-VALUES (1, 1, 1, 1);
-        */
+
+        $idpaciente = $prontuario->getPaciente();
+        $idanamnese = $prontuario->getAnamnese();
+        $idanotacaoEnfermagem = $prontuario->getAnotacaoEnfermagem();
+        $idbalancoHidrico = $prontuario->getBalancoHidrico();
+
+        $sql = "INSERT INTO prontuario (paciente, anamnese, anotacaoEnfermagem, balancoHidrico)
+                VALUES ($idpaciente, $idanamnese, $idanotacaoEnfermagem, $idbalancoHidrico)";
+
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
     }
+
     public function read()
     {
         $this->getConn();
-        /*
-SELECT * FROM prontuario;
-        */
-    }
-    public function update()
-    {
-        $this->getConn();
-        /*
-UPDATE prontuario
-SET paciente = 'Novo Objeto Paciente', anamnese = 'Novo Objeto Anamnese', anotacaoEnfermagem = 'Novo Objeto Anotação de Enfermagem', balancoHidrico = 'Novo Objeto Balanço Hídrico' WHERE id_prontuario = 1;  
-        */
-    }
-    public function delete()
-    {
-        $this->getConn();
-        /*
-DELETE FROM prontuario WHERE id = 1;
-        */
+
+        $sql = "SELECT * FROM prontuario";
+        $result = $this->conn->query($sql);
+        return $result;
     }
 
+    public function update($id, $idpaciente, $idanamnese, $idanotacaoEnfermagem, $idbalancoHidrico)
+    {
+        $this->getConn();
+
+        $sql = "UPDATE prontuario SET 
+                paciente = $idpaciente, 
+                anamnese = $idanamnese, 
+                anotacaoEnfermagem = $idanotacaoEnfermagem, 
+                balancoHidrico = $idbalancoHidrico 
+                WHERE id_prontuario = $id";
+
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+    }
+
+    public function delete($id)
+    {
+        $this->getConn();
+
+        $sql = "DELETE FROM prontuario WHERE id_prontuario = $id";
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+    }
 
     public function fecharConexao()
     {
-        //fecha uma conexao ja iniciada
         if ($this->conn == null) {
-            //se a conexao nao tiver sido estabelecida retorna erro
-            throw new Exception('Erro, não e possivel fechar a conexão pois uma conexão ainda não foi criada.');
+            throw new Exception('Erro, não é possível fechar a conexão pois uma conexão ainda não foi criada.');
         } else {
-            // session_destroy();
             $this->conn->close();
             unset($this->conn);
         }
     }
+
     public function getConn()
     {
-        //retorna um objeto de conexao mysqli referente ao atributo 'conn'
         if ($this->conn == null) {
-            //se a conexao nao tiver sido estabelecida retorna erro
-            throw new Exception('Erro, não e possivel retornar o atributo $conn pois uma conexão ainda não foi criada.');
+            throw new Exception('Erro, não é possível retornar o atributo $conn pois uma conexão ainda não foi criada.');
         } else {
             return $this->conn;
         }

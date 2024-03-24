@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
-
 //intermediario da classe anotacao enfermagem
 
 class InterAnotacaoEnf
@@ -15,40 +13,53 @@ class InterAnotacaoEnf
         unset($conexao);
     }
 
-    public function create()
+    public function create(AnotacaoEnfermagem $anotacaoEnfermagem, Paciente $paciente)
     {
         $this->getConn();
-        /*
-INSERT INTO anotacaoEnfermagem (dataRegistro, cpf, hora, registro)
-VALUES ('2024-03-20', '12345678901', '08:30:00', 'Alguma anotação');
+        $data_registro = $anotacaoEnfermagem->getDataRegistro();
+        $cpf = $paciente->getCpf();
+        $hora = $anotacaoEnfermagem->getHora();
+        $registro = $anotacaoEnfermagem->getRegistro();
+        $sql = "INSERT INTO anotacaoEnfermagem (dataRegistro, cpf, hora, registro)
+        VALUES ('$data_registro', '$cpf', '$hora', '$registro')";
 
-        */
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
+
     }
     public function read()
     {
         $this->getConn();
-        /*
-SELECT * FROM anotacaoEnfermagem ORDER BY dataRegistro, hora; 
-        */
+        $sql = "SELECT * FROM anotacaoEnfermagem ORDER BY dataRegistro, hora;";
+        $result = $this->getConn()->query($sql);
+        return $result;
     }
-    public function update()
+
+    public function update(AnotacaoEnfermagem $anotacaoEnfermagem, Paciente $paciente)
     {
         $this->getConn();
-        /*
-UPDATE anotacaoEnfermagem
-SET dataRegistro = '2024-03-20',
-    cpf = '12345678901',
-    hora = '08:30:00',
-    registro = 'Nova anotação'
-WHERE id_anotacaoEnfermagem = 1;
-        */
+        $data_registro = $anotacaoEnfermagem->getDataRegistro();
+        $cpf = $paciente->getCpf();
+        $hora = $anotacaoEnfermagem->getHora();
+        $registro = $anotacaoEnfermagem->getRegistro();
+
+        $sql = "UPDATE anotacaoEnfermagem
+        SET dataRegistro = '$data_registro',
+            cpf ='$cpf',
+            hora ='$hora',
+            registro ='$registro'
+            WHERE id_anotacaoEnfermagem = 1";
+
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
     }
     public function delete()
     {
         $this->getConn();
-        /*
-DELETE FROM anotacaoEnfermagem WHERE id_anotacaoEnfermagem = 1;
-        */
+        $sql = "DELETE FROM anotacaoEnfermagem WHERE id_anotacaoEnfermagem  = 1";
+        $resultado = $this->getConn()->query($sql);
+        return $resultado;
     }
 
 
