@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*                                      Variaveis de cores*/
+:root {
+    --white-color: #f2f2f2;
+    --main-color: #a3ddbe;
+    --secondary-color: #c0e0de;
+    --shadow-color: #;
+    --text-color-900: #;
+    --text-color-700: #;
+    --bg-color: #0c544f;
+    --bg-color-2: #25485c;
+    --bg-degrade: #00df74;
+    --bg-degrade-2: #005ac1;
+}
+
+/*                                      Usos avulsos*/
+.hidden {
+    display: none;
+}
+
+.shadow {
+    border: 1px solid rgba(0, 0, 0, 0.527);
+}
+
+/*                                      Inicio Css body*/
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--main-color);
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    height: 50vh;
+    display: grid;
+    grid-template-areas:
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c "
+        "c c c c    c c c c    c c c c ";
+    gap: 10px;
+    margin: 0px;
+    /*
+       .header = grid-area: a;
+       .navbar = grid-area: b;
+       .conteudo = grid-area: c;
+   
+   */
+}
+
+.header {
+    background-color: var(--white-color);
+    display: flex;
+    height: 100px;
+}
+
+.header .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 5%;
+}
+
+.header .logo i,
+.header .logo p {
+    padding: 5px;
+}
+
+.header .logo i {
+    font-size: 2rem;
+}
+
+.header .logo p {
+    font-size: 1.8rem;
+}
+
+.header .login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 5%;
+}
+
+.header .login i,
+.header .login p {
+    padding: 5px;
+}
+
+.header .login i {
+    font-size: 2rem;
+}
+
+.header .login p {
+    font-size: 1.6rem;
+}
+
+.header .login a {
+    text-decoration: none;
+    color: black;
+}
+
+.header .login a:hover {
+    color: var(--bg-color);
+}
+
+.navbar {
+    grid-area: b;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.navbar h1 {
+    background-color: var(--bg-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    height: 60px;
+    color: var(--white-color);
+}
+
+.navbar ul {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-auto-flow: column;
+}
+
+.navbar ul li {
+    letter-spacing: 2px;
+    padding: 20px 0;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color-900);
+    cursor: pointer;
+}
+
+.navbar ul li:first-child {
+    margin-top: 20px;
+}
+
+.buttonPosition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.btn {
+    width: 90%;
+    height: 70px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: var(--bg-color-2);
+    color: var(--white-color);
+}
+
+.icon {
+    color: black;
+    padding-right: 7px;
+    font-size: 30px;
+}
+
+.conteudo {
+    grid-area: c;
+    background-image: linear-gradient(
+        to right,
+        var(--bg-degrade-2),
+        var(--bg-degrade)
+    );
+    border-radius: 10px;
+}
+
+.titulo {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    color: white;
+    font-family: "Poppins";
+    font-size: 30px;
+    background-image: linear linear-gradient();
+}
+
+.buttoncadastro {
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--bg-color-2);
+    color: var(--white-color);
+}
+
+.positionbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.pesquisa {
+    padding-top: 0px;
+    width: 100%;
+    margin-top: 20px;
+    height: 140px;
+    justify-content: center;
+    display: flex;
+    padding-top: 80px;
+}
+
+.inputposition {
+    width: 400px;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    border: solid 2px;
+}
+
+.caixa {
+    background-color: white;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.buttonbuscar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #009e22;
+    border-radius: 15px;
+    height: 40px;
+    width: 110px;
+    color: white;
+}
+
+.input {
+    height: 30px;
+    width: 240px;
+    border: none;
+    outline: none;
+}
+
+.conteudo2position {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo2 {
+    background-color: #1d827c;
+    width: 70%;
+    height: 100px;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+.buttonseguir {
+    background-color: #61b869;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 15px;
+}
+
+.botao {
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 30px;
+    color: black;
+
+}
+
+/*                                                          @Medias*/
+
+@media screen and (max-width: 1300px) {
+    .main {
+        grid-template-areas:
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c";
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .main {
+        grid-template-areas:
+            "b b b b    b b b b    b b b b"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c"
+            "c c c c    c c c c    c c c c";
+    }
+
+    .header .logo p {
+        font-size: 1.3rem;
+    }
+
+    .header .login p {
+        font-size: 1.3rem;
+    }
+
+    .navbar ul {
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-auto-flow: column;
+        justify-content: space-around;
+        margin-left: 0px;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .navbar ul li {
+        letter-spacing: 2px;
+        padding: 0;
+    }
+
+    .navbar ul li:first-child {
+        margin-top: 0px;
+    }
+
+    .spanNone {
+        display: none;
+    }
+
+    .buttonPosition {
+        margin-top: 0;
+    }
+
+    .buttoncadastro {
+        width: 200px;
+        height: 50px;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        cursor: pointer;
+        background-color: var(--bg-color-2);
+        color: var(--white-color);
+    }
+
+    .positionbutton {
+        margin-top: 70px;
+    }
+
+    .titulo {
+        font-size: 15px;
+    }
+
+    .conteudo2 {
+        width: 70%;
+        height: 300px;
+        flex-direction: column;
+        display: flex;
+        padding-top: 20px;
+        padding-block: 20px;
+    }
+}

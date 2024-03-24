@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container-cadastro {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-item {
+    padding: 20px 10px;
+}
+
+.conteudo {
+    grid-area: c;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 24px;
+    overflow: auto;
+}
+
+.header .login a {
+    text-decoration: none;
+    color: black;
+}
+
+.header .login a:hover {
+    color: var(--bg-color);
+}
+
+/*                                                               input*/
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 3px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.posicionar-botao {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: #25485c;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 1300px) {
+
+    .navbar {
+        width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .navbar {
+        width: 100%;
+    }
+
+}
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.btn-buscar {
+    width: 50%;
+    border-radius: 15px;
+    height: 70px;
+    cursor: pointer;
+    background-color: var(--bg-color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-buscar a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 13px 32px;
+}

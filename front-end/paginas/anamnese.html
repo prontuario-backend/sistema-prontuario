@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anamnese</title>
+    <link rel="stylesheet" href="../css/anamnese.css" />
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        .container {
+           opacity: 1;
+           transition: opacity 0.5s ease-in-out;
+        }
+    
+        .container.fade-out {
+           opacity: 0;
+        }
+    
+        /* Remover sublinhado e cor dos links */
+        .navbar ul {
+           list-style: none;
+           padding: 0;
+           margin: 0;
+        }
+    
+        .navbar ul li a {
+           text-decoration: none;
+           color: inherit; /* herda a cor do pai, você pode definir uma cor específica se desejar */
+        }
+     </style>
+
+</head>
+
+<body>
+    <!-- INICIO do HEADER -->
+    <div class="header shadow">
+        <div class="logo">
+            <i class="fa-solid fa-notes-medical"></i>
+            <p>UNI-TI</p>
+        </div>
+        <div class="login">
+            <i class="fa-solid fa-user-doctor"></i>
+            <p id="name">Dr. Paulo</p>
+            <p id="profissao">Médico</p>
+            <a href="/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+    </div>
+    <!-- FIM do HEADER -->
+    <!-- INICIO do conteudo principal -->
+    <div class="main">
+         <!-- INICIO do NAVBAR -->
+    <div class="navbar shadow">
+        <h1 class="dados">DADOS</h1>
+        <ul>
+           <li class="itemList" id="navPaciente"><a href="/paginas/pacientes.html"><i class="icon fa-solid fa-user"></i><span
+                    class="spanNone">Pacientes</span></a></li>
+           <li class="itemList" id="navAgenda"><a href="/paginas/anamnese.html"><i class="icon fa-solid fa-notes-medical"></i><span
+                    class="spanNone">Anamnese</span></a></li>
+           <li class="itemList" id="navServicos"><a href="/paginas/anotacoes.html"><i class="icon fa-solid fa-clipboard"></i><span
+                    class="spanNone">Anotações</span></a></li>
+           <li class="itemList" id="navFinanceiro"><a href="/paginas/balancohidrico.html"><i class="icon fa-solid fa-droplet"></i><span
+                    class="spanNone">Balanço Hídrico</span></a></li>
+        </ul>
+  
+        <div class="buttonPosition">
+            <div class="btn-buscar"><a href="/paginas/buscar.html">BUSCAR</a></div>
+        </div>
+  
+     </div>
+     <!-- FIM do NAVBAR -->
+
+        <!-- INICIO do CONTEUDO -->
+        <div class="conteudo shadow">
+            <div class="editar">
+                <div class="edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+            </div>
+
+            <div class="conteudo1">
+                <div class="queixa conteudo2"><label for="queixa">Queixa principal</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="historico conteudo2"><label for="historico">Histórico Familiar</label><br>
+                    <input type="text">
+                </div>
+
+
+                <div class="exame conteudo2"><label for="exame">Exame Físico</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="habitos conteudo2"><label for="habitos">Hábitos de Vida</label><br>
+                    <input type="text">
+                </div>
+
+            </div>
+
+            <!-- INICIO do BOTAO -->
+            <div class="positionbutton">
+                <div class="botao">SALVAR</div>
+            </div>
+        </div>
+        <!-- FIM do BOTAO -->
+        <!-- FIM do CONTEUDO -->
+    </div>
+    <!-- FIM do conteudo principal -->
+    
+</body>
+
+</html>

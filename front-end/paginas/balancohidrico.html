@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanço Hídrico</title>
+    <link rel="stylesheet" href="../css/balancohidrico.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="">
+
+</head>
+
+<body>
+    <!-- INICIO do HEADER -->
+    <div class="header shadow">
+        <div class="logo">
+            <i class="fa-solid fa-notes-medical"></i>
+            <p>UNI-TI</p>
+        </div>
+        <div class="login">
+            <i class="fa-solid fa-user-doctor"></i>
+            <p id="name">Dr. Paulo</p>
+            <p id="profissao">Médico</p>
+            <a href="/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+    </div>
+    <!-- FIM do HEADER -->
+    <!-- INICIO do conteudo principal -->
+    <div class="main">
+        <!-- INICIO do NAVBAR -->
+        <div class="navbar shadow">
+            <h1 class="dados">DADOS</h1>
+            <ul>
+                <li class="itemList" id="navPaciente"><a href="/paginas/pacientes.html"><i
+                            class="icon fa-solid fa-user"></i><span class="spanNone">Pacientes</span></a></li>
+                <li class="itemList" id="navAgenda"><a href="/paginas/anamnese.html"><i
+                            class="icon fa-solid fa-notes-medical"></i><span class="spanNone">Anamnese</span></a></li>
+                <li class="itemList" id="navServicos"><a href="/paginas/anotacoes.html"><i
+                            class="icon fa-solid fa-clipboard"></i><span class="spanNone">Anotações</span></a></li>
+                <li class="itemList" id="navFinanceiro"><a href="/paginas/balancohidrico.html"><i
+                            class="icon fa-solid fa-droplet"></i><span class="spanNone">Balanço Hídrico</span></a></li>
+            </ul>
+
+            <div class="buttonPosition">
+                <div class="btn-buscar"><a href="/paginas/buscar.html">BUSCAR</a></div>
+            </div>
+
+        </div>
+        <!-- FIM do NAVBAR -->
+
+        <!-- INICIO do CONTEUDO -->
+        <div class="conteudo shadow">
+            <div class="header-table"><span>BALANÇO HÍDRICO</span>
+                <button onclick="openModal()" id="new">Incluir</button>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><abbr title="Data" style="cursor: pointer;">Dt</abbr></th>
+                            <th><abbr title="Hora" style="cursor: pointer;">Hr</abbr></th>
+                            <th><abbr title="Líquidos Administrados" style="cursor: pointer;">L.A</abbr></th>
+                            <th><abbr title="Líquidos Eliminados" style="cursor: pointer;">L.E</abbr></th>
+                            <th><abbr title="Conclusão" style="cursor: pointer;">Con</abbr></th>
+                            <th><abbr title="Via Oral" style="cursor: pointer;">VO</abbr></th>
+                            <th><abbr title="Via Parental" style="cursor: pointer;">VP</abbr></th>
+                            <th><abbr title="Quantidade Administrada" style="cursor: pointer;">QA</abbr></th>
+                            <th><abbr title="Sonda" style="cursor: pointer;">Son</abbr></th>
+                            <th><abbr title="Outros" style="cursor: pointer;">Ou</abbr></th>
+                            <th><abbr title="Diurese" style="cursor: pointer;">DR</abbr></th>
+                            <th><abbr title="Estase" style="cursor: pointer;">ES</abbr></th>
+                            <th><abbr title="Vomito" style="cursor: pointer;">VT</abbr></th>
+                            <th><abbr title="Outros" style="cursor: pointer;">Ou</abbr></th>
+
+                            <th class="acao">Editar</th>
+                            <th class="acao">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-container">
+                <div class="modal">
+                    <form>
+                        <div class="form-row">
+                            <div class="column">
+                                <label for="mdata">Data</label>
+                                <input type="date" name="m-data" id="data" required>
+
+                                <label for="mhora">Hora</label>
+                                <input type="time" name="m-hora" id="hora" required>
+
+                                <label for="mlqdA">Líquido Administrado</label>
+                                <input type="number" name="m-lqdA" id="lqdA" step="0.01" required>
+
+                                <label for="mlqdE">Líquidos Eliminados</label>
+                                <input type="number" name="m-lqdE" id="lqdE" step="0.01" required>
+
+                                <label for="mconc">Conclusão</label>
+                                <input type="number" name="m-conc" id="conc" step="0.01" required>
+                            </div>
+                            <div class="column">
+                                <label for="mvoral">Via Oral</label>
+                                <input type="number" name="m-voral" id="voral" step="0.01" required>
+
+                                <label for="mvpare">Via Parental</label>
+                                <input type="number" name="m-vpare" id="vpare" step="0.01" required>
+
+                                <label for="mqAdm">Quantidade Administrada</label>
+                                <input type="number" name="m-qAdm" id="qAdm" step="0.01" required>
+
+                                <label for="msonda">Sondas</label>
+                                <input type="number" name="m-sonda" id="sonda" step="0.01" required>
+                            </div>
+                            <div class="column">
+                                <label for="mlaOutro">Outros</label>
+                                <input type="number" name="m-laOutro" id="laOutro" step="0.01" required>
+
+                                <label for="mdiurese">Diurese</label>
+                                <input type="number" name="m-diurese" id="diurese" step="0.01" required>
+
+                                <label for="mestase">Estase</label>
+                                <input type="number" name="m-outro" id="estase" step="0.01" required>
+
+                                <label for="mvomito">Vomito</label>
+                                <input type="number" name="m-vomito" id="vomito" step="0.01" required>
+
+                                <label for="mleOutro">Outros</label>
+                                <input type="number" name="m-leOutro" id="leOutro" step="0.01" required>
+                            </div>
+                        </div>
+
+                        <button id="btnSalvar">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- FIM DO CONTEUDO -->
+
+
+        <script src="../js/balancohidrico.js"></script>
+</body>
+
+</html>
