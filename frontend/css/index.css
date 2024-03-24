@@ -129,7 +129,7 @@ input[type="submit"] {
    margin: 20px 0;
 }
 
-.btn-buscar {
+.btn-buscar{
    width: 25%;
    border-radius: 15px;
    height: 45px;
@@ -140,13 +140,23 @@ input[type="submit"] {
    justify-content: center;
 }
 
-.btn-buscar a {
+.btn-buscar {
    text-decoration: none;
    color: var(--white-color);
    font-weight: bold;
    font-size: 1rem;
    padding: 13px 32px;
 }
+#btn{
+   border-radius: 15px;
+   background-color: var(--bg-color-2);
+   text-decoration: none;
+   color: var(--white-color);
+   font-weight: bold;
+   font-size: 1rem;
+   padding: 13px 32px;
+}
+
 
 @media screen and (max-width: 930px) {
 

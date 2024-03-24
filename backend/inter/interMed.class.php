@@ -5,7 +5,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
 intermediario da classe medico
 esta classe responsavel por fazer o crud dos dados de um medico os valida e salva-los no banco de dados.
 */
-class InterMedico
+class InterMed
 {
 
     private mysqli $conn;
@@ -35,7 +35,6 @@ class InterMedico
     public function read()
     {
         $this->getConn();
-
         $sql = "SELECT * FROM medico ORDER BY crm; ";
         $resultado = $this->getConn()->query($sql);
         return $resultado;
@@ -67,13 +66,13 @@ class InterMedico
 
     }
 
-    public function fazerLogin($nome, $crm, $senha)
+    public function fazerLogin($crm, $senha)
     {
         $this->getConn();
 
         try {
             // Preparar a consulta SQL usando prepared statements
-            $sql = "SELECT * FROM medico WHERE nomeComp = '$nome' AND crm = '$crm'";
+            $sql = "SELECT * FROM medico WHERE crm = '$crm'";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("ss", $nome, $crm);
             $stmt->execute();
@@ -87,7 +86,7 @@ class InterMedico
                 // Verificar se a senha está correta
                 if (password_verify($senha, $medico['senha'])) {
                     // Senha correta, login bem-sucedido
-                    return true;
+                    return mysqli_fetch_assoc($result);
                 } else {
                     // Senha incorreta
                     return false;

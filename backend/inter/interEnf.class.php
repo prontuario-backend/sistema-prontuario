@@ -12,9 +12,9 @@ class InterEnf
     private mysqli $conn;
     public function __construct()
     {
-        $conexao = new Conexao();
-        $this->conn = $conexao->getConn();
-        unset($conexao);
+        // $conexao = new Conexao();
+        // $this->conn = $conexao->getConn();
+        // unset($conexao);
     }
 
 
@@ -85,12 +85,12 @@ DELETE FROM enfermeiro WHERE crm = $crm;
      */
     }
 
-    public function fazerLogin($nome, $coren, $senha)
+    public function fazerLogin($coren, $senha)
     {
         $this->getConn();
 
-
-        $sql = "SELECT * FROM  enfermeiro  WHERE nome = $nome AND coren = $coren AND senha = $senha";
+        //nome = $nome AND 
+        $sql = "SELECT * FROM  enfermeiro  WHERE coren = $coren AND senha = $senha";
         $consulta = $this->conn->prepare($sql);
         $consulta->bind_param("sss", $nome, $coren, $senha);
         $consulta->execute();
@@ -100,15 +100,12 @@ DELETE FROM enfermeiro WHERE crm = $crm;
 
         // Verificar se encontrou algum usuário
         if ($result->num_rows == 1) {
-
-            return true;
+            return mysqli_fetch_assoc($result);
         } else {
-
             return false;
         }
 
         // Fechar a consulta
-        $consulta->close();
     }
 
 
@@ -122,31 +119,32 @@ DELETE FROM enfermeiro WHERE crm = $crm;
         $consulta = $this->conn->prepare($sql);
         $consulta->bind_param("ss", $novoNome, $coren);
         $consulta->execute();
-
+        $consulta->close();
         // Verificar se a atualização foi bem-sucedida
         if ($consulta->affected_rows > 0) {
             // Nome alterado com sucesso
             return true;
+
         } else {
             // Não foi possível alterar o nome
             return false;
         }
 
         // Fechar a consulta
-        $consulta->close();
+
     }
 
     // Função para redefinir a senha
     function redefinirSenha(Coren $corem, string $novaSenha, $nome, $coren, $senha)
     {
 
-        $sql = "UPDATE enfermeiro
-        SET nome = '$nome',
-          coren = '$coren',
-            exameFisico = '$senha',
-        WHERE id_enfermeiro = 1";
-        $resultado = $this->getConn()->query($sql);
-        return $resultado;
+        // $sql = "UPDATE enfermeiro
+        // SET nome = '$nome',
+        //   coren = '$coren',
+        //     exameFisico = '$senha',
+        // WHERE id_enfermeiro = 1";
+        // $resultado = $this->getConn()->query($sql);
+        // return $resultado;
         /*
 
         UPDATE enfermeiro

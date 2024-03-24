@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,8 +41,8 @@
           <div class="buttonPosition">
             <div class="btn-buscar"><a href="./buscar.html">ENTRAR</a></div>
           </div>
-        
-          <p>Ja tem conta? clique <a href="../index.html">aqui</a></p>
+
+          <p>Ja tem conta? clique <a href="../index.php">aqui</a></p>
         </form>
       </div>
     </div>
