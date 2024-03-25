@@ -1,17 +1,3 @@
-<?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'cadastro.php';
-
-// Verifica se a sessão 'user' está definida e não está vazia
-if (isset ($_SESSION['user']) && !empty ($_SESSION['user'])) {
-    $cargo = $_SESSION['user'][0];
-    $nome = $_SESSION['user'][1];
-} else {
-    // Redireciona para a página de login se a sessão 'user' não estiver definida
-    // echo "<meta http-equiv='refresh' content='0; url=https://prontuario-backend.000webhostapp.com/frontend/'>";
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -34,10 +20,10 @@ if (isset ($_SESSION['user']) && !empty ($_SESSION['user'])) {
         <div class="login">
             <i class="fa-solid fa-user-doctor"></i>
             <p id="name">
-                <?php echo $nome; ?>
+                Seu nome
             </p>
             <p id="profissao">
-                <?php echo $cargo; ?>
+                ENF
             </p>
             <a href="/frontend/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
