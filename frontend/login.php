@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
-
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'paginas'
+    . DIRECTORY_SEPARATOR . 'interFront.php';
 
 if (isset ($_POST['coren']) && isset ($_POST['senha'])) {
     $corenOuCrm = $_POST['coren'];
@@ -19,27 +20,21 @@ function login(string $corenOuCrm, string $senha)
         //CORENMG00000ENF <- ezemplo coren  
         $coren = new Coren($corenOuCrm);
         $inter = new InterEnf();
-        $logado = $inter->fazerLogin($coren->getCoren(), $senha);
-        if ($logado !== false) {
-            $_SESSION['cargo'] = 'ENF';//salva o tipo de cargo
-            $_SESSION['enfNome'] = $logado['nome'];//salva o nome do enfermeiro
-            $inter->fecharConexao();
-            redirect();//redireciona para a pagina de buscar pasciente
-        }
+        $logado = $inter->read($coren->getCoren(), $senha);
+        $inter->fecharConexao();
+        redirect1('ENF', $logado['nome']);//redireciona para a pagina de buscar pasciente
+
 
     }
-    if (strlen($corenOuCrm) > 0 && strlen($corenOuCrm) < 6) {
+    if (strlen($corenOuCrm) > 0 && strlen($corenOuCrm) <= 7) {
         //00000MG <- exemplo crm
         $crm = new Crm($corenOuCrm);
         $inter = new InterMed();
-        $logado = $inter->fazerLogin($crm->getCrm(), $senha);
-        if ($logado !== false) {
-            $_SESSION['cargo'] = 'MED';//salva o tipo de cargo
-            $_SESSION['medNome'] = $logado['nome'];//salva o nome do medico
-            $inter->fecharConexao();
+        $logado = $inter->read($crm->getCrm());
+        $inter->fecharConexao();
 
-            redirect();//redireciona para a pagina de buscar pasciente
-        }
+        redirect1('MED', $logado['nome']);//redireciona para a pagina de buscar pasciente
+
     }
 }
 
@@ -96,7 +91,16 @@ function validarEstado(string $estado)
     }
 }
 
-function redirect()//redireciona para a pagina de cadastrar pascientes
+function redirect1($cargo, $nome)//redireciona para a pagina de cadastrar pascientes
 {
+    // Inicia a sessão, se ainda não estiver iniciada
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $_SESSION['user'] = [$cargo, $nome];
+    echo "<pre>";
+    print_r($_SESSION);
+    echo "</pre>";
     echo "<meta http-equiv='refresh' content='0; url=https://prontuario-backend.000webhostapp.com/frontend/paginas/buscar.php'>";
 }

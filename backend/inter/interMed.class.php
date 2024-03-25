@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'includeInter.php';
-
 /*
 intermediario da classe medico
 esta classe responsavel por fazer o crud dos dados de um medico os valida e salva-los no banco de dados.
@@ -19,31 +18,24 @@ class InterMed
     public function create(Medico $medico)
     {
         $this->getConn();
-        $res = $this->fazerVerificaMed($medico->getCrm());
-        if ($res === false) {
-            $nome = $medico->getNome();
-            $crm = $medico->getCrm();
-            $senha = $medico->getSenha();
-            unset($medico);
-            $sql = "INSERT INTO medico (nomeComp, crm, senha)
-            VALUES ('$nome', '$crm', '$senha')";
+        // $res = $this->fazerVerificaMed($medico->getCrm());
+        $nome = $medico->getNome();
+        $crm = $medico->getCrm();
+        $senha = $medico->getSenha();
+        unset($medico);
+        $sql = "INSERT INTO medico (id, nome, crm, senha)
+            VALUES (default, '$nome', '$crm', '$senha')";
 
-            $resultado = $this->getConn()->query($sql);
-            return $resultado;
-        } else {
-            throw new Exception('ja existe um usuario com estas credenciais.');
-        }
-
-
-
-    }
-
-    public function read()
-    {
-        $this->getConn();
-        $sql = "SELECT * FROM medico ORDER BY crm; ";
         $resultado = $this->getConn()->query($sql);
         return $resultado;
+    }
+
+    public function read($crm)
+    {
+        $this->getConn();
+        $sql = "SELECT * FROM medico WHERE crm = '$crm'";
+        $resultado = $this->getConn()->query($sql);
+        return $resultado->fetch_assoc();
 
     }
     public function update($nome, $crm, $senha)
@@ -78,9 +70,9 @@ class InterMed
 
         try {
             // Preparar a consulta SQL usando prepared statements
-            $sql = "SELECT * FROM medico WHERE crm = '$crm'";
+            $sql = "SELECT * FROM medico WHERE crm = '$crm' AND senha = '$senha'";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param("ss", $nome, $crm);
+            // $stmt->bind_param("ss", $nome, $crm);
             $stmt->execute();
 
             // Obter o resultado da consulta

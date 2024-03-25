@@ -27,8 +27,8 @@ class InterEnf
         unset($enfermeiro);
         $res = $this->verificaEnf($coren);
         if ($res !== true) {
-            $sql = "INSERT INTO enfermeiro (nome, coren, senha)
-            VALUES ('$nome', '$coren', '$senha');";
+            $sql = "INSERT INTO enfermeiro (id, nome, coren, senha)
+            VALUES (default, '$nome', '$coren', '$senha');";
             $resultado = $this->getConn()->query($sql);
             return $resultado;
         } else {
@@ -36,13 +36,13 @@ class InterEnf
         }
 
     }
-    public function read()
+    public function read($coren, $senha)
     {
 
         $this->getConn();
-        $sql = "SELECT * FROM enfermeiro ORDER BY coren ";
+        $sql = "SELECT * FROM enfermeiro where coren = '$coren'";
         $resultado = $this->getConn()->query($sql);
-        return $resultado;
+        return $resultado->fetch_assoc();
     }
     public function updateNome($nome, )
     {
@@ -92,7 +92,7 @@ DELETE FROM enfermeiro WHERE crm = $crm;
     public function fazerLogin($coren, $senha)
     {
         $this->getConn();
-        $sql = "SELECT `id_enfermeiro`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren' AND senha = '$senha'";
+        $sql = "SELECT `id`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren' AND senha = '$senha'";
 
         $consulta = $this->conn->prepare($sql);
         $consulta->execute();
@@ -113,7 +113,7 @@ DELETE FROM enfermeiro WHERE crm = $crm;
     public function verificaEnf($coren)
     {
         $this->getConn();
-        $sql = "SELECT `id_enfermeiro`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren'";
+        $sql = "SELECT `id`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren'";
 
         $consulta = $this->conn->prepare($sql);
         $consulta->execute();
