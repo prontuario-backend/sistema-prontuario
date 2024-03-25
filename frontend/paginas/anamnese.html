@@ -105,7 +105,7 @@
 
             <!-- INICIO do BOTAO -->
             <div class="positionbutton">
-                <div onclick="save()" class="botao" type="submit">SALVAR</div>
+                <div onclick="save()" class="botao" type="button">SALVAR</div>
                 
             </div>
         </div>
@@ -116,18 +116,34 @@
     <!-- FIM do conteudo principal -->
     <script>
         function save(){
+            if (window.localStorage.getItem('anamnese' != null&& window.localStorage.getItem('anamnese' != undefined))){
+                let json =JSON.parse(window.localStorage.getItem('anamnese'));
+                let queixa = document.querySelector('#queixa').value=json.queixa;
+                let historico = document.querySelector('#historico').value=json.historico;
+                let exame = document.querySelector('#exame').value=json.exame;
+                let habitos = document.querySelector('#habitos').value=json.habitos;
+            }
             console.log(window.localStorage.getItem('anamnese'));
             let queixa = document.querySelector('#queixa');
             let historico = document.querySelector('#historico');
             let exame = document.querySelector('exame');
             let habitos = document.querySelector('#habitos');
         }
-        let json = {
-            "queixa":$(queixa).value,
-            "historico":$(historico).value,
-            "exame":$(exame).value,
-            "habitos":$(habitos).value,
-        };
+
+        class Form_Anamnese{
+            queixa;
+            historico;
+            exame;
+            habitos;
+            constructor (queixa, historico, exame, habitos){
+                this.queixa= queixa ;
+                this.historico= historico ;
+                this.exame= exame ;
+                this.habitos= habitos ;
+            }
+        }
+        let json = new Form_Anamnese (queixa, historico, exame, habitos)
+
         JSON.stringify(json);
         window.localStorage.setItem('anamnese',json)
     </script>
