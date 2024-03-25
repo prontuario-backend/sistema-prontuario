@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./../css/login.css" />
+		<title>Cadastro</title>
+	</head>
 
-<?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
-?>
+	<body>
+		<div class="header shadow">
+			<h1>UNI-TI</h1>
+		</div>
+		<div class="main">
+			<div class="container-avatar">
+				<img src="../imagens/enfermeiro-prontuario.png" alt="brinca n" />
+			</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
-    <title>Cadastro</title>
-</head>
+			<div class="container-cadastrar">
+				<div class="container-cadastrar-item">
+					<form method="post" action="cadastro.php">
+						<div class="form-group">
+							<label for="nome">Nome:</label>
+							<input type="text" id="nome" name="nome" />
+						</div>
+						<div class="form-group">
+							<label for="coren">Coren/CRM:</label>
+							<input type="text" id="coren" name="coren" />
+						</div>
+						<div class="form-group">
+							<label for="senha">Senha:</label>
+							<input type="password" id="senha" name="senha" />
+						</div>
+						<div class="form-group">
+							<label for="senha">Confirmar:</label>
+							<input type="password" id="csenha" name="senha" />
+						</div>
+						<div class="buttonPosition">
+							<div class="btn-buscar">
+								<button type="submit" id="btn" name="btn">CADASTRAR</button>
+							</div>
+						</div>
 
-<body>
-    <div class="header shadow">
-        <h1>UNI-TI</h1>
-    </div>
-    <div class="main">
-
-        <div class="container-avatar">
-            <img src="../imagens/enfermeiro-prontuario.png" alt="brinca n">
-        </div>
-
-        <div class="container-cadastrar">
-            <div class="container-cadastrar-item">
-                <form>
-                    <div class="form-group">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="coren">Coren/CRM:</label>
-                        <input type="text" id="coren" name="coren">
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha:</label>
-                        <input type="password" id="senha" name="senha">
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Confirmar:</label>
-                        <input type="password" id="csenha" name="senha">
-                    </div>
-                    <div class="buttonPosition">
-                        <div class="btn-buscar"><a href="./buscar.html">ENTRAR</a></div>
-                    </div>
-
-                    <p>Ja tem conta? clique <a href="../index.php">aqui</a></p>
-                </form>
-            </div>
-        </div>
-    </div>
-</body>
-
+						<p>Ja tem conta? clique <a href="../index.html">aqui</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

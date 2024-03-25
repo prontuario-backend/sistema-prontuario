@@ -23,6 +23,7 @@ function login(string $corenOuCrm, string $senha)
         if ($logado !== false) {
             $_SESSION['cargo'] = 'ENF';//salva o tipo de cargo
             $_SESSION['enfNome'] = $logado['nome'];//salva o nome do enfermeiro
+            $inter->fecharConexao();
             redirect();//redireciona para a pagina de buscar pasciente
         }
 

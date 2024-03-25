@@ -24,13 +24,17 @@ class InterEnf
         $nome = $enfermeiro->getNome();
         $coren = $enfermeiro->getCoren();
         $senha = $enfermeiro->getSenha();
+        unset($enfermeiro);
+        $res = $this->verificaEnf($coren);
+        if ($res !== true) {
+            $sql = "INSERT INTO enfermeiro (nome, coren, senha)
+            VALUES ('$nome', '$coren', '$senha');";
+            $resultado = $this->getConn()->query($sql);
+            return $resultado;
+        } else {
+            throw new Exception('ja exite um usuario com estas credenciais.');
+        }
 
-        $sql = "INSERT INTO enfermeiro (nome, coren, senha)
-        VALUES ('$nome', '$coren', '$senha')";
-
-
-        $resultado = $this->getConn()->query($sql);
-        return $resultado;
     }
     public function read()
     {
@@ -106,6 +110,26 @@ DELETE FROM enfermeiro WHERE crm = $crm;
         // Fechar a consulta
     }
 
+    public function verificaEnf($coren)
+    {
+        $this->getConn();
+        $sql = "SELECT `id_enfermeiro`, `nome`, `coren`, `senha` FROM `enfermeiro` WHERE coren = '$coren'";
+
+        $consulta = $this->conn->prepare($sql);
+        $consulta->execute();
+
+        // Obter o resultado da consulta
+        $result = $consulta->get_result();
+
+        // Verificar se encontrou algum usuário
+        if ($result->num_rows == 1) {
+            return mysqli_fetch_assoc($result);
+        } else {
+            return false;
+        }
+
+        // Fechar a consulta
+    }
 
 
     public function alterarNome($novoNome, $coren)

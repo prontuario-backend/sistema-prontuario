@@ -19,15 +19,21 @@ class InterMed
     public function create(Medico $medico)
     {
         $this->getConn();
+        $res = $this->fazerVerificaMed($medico->getCrm());
+        if ($res === false) {
+            $nome = $medico->getNome();
+            $crm = $medico->getCrm();
+            $senha = $medico->getSenha();
+            unset($medico);
+            $sql = "INSERT INTO medico (nomeComp, crm, senha)
+            VALUES ('$nome', '$crm', '$senha')";
 
-        $nome = $medico->getNome();
-        $crm = $medico->getCrm();
-        $senha = $medico->getSenha();
-        $sql = "INSERT INTO medico (nomeComp, crm, senha)
-        VALUES ('$nome', '$crm', '$senha')";
+            $resultado = $this->getConn()->query($sql);
+            return $resultado;
+        } else {
+            throw new Exception('ja existe um usuario com estas credenciais.');
+        }
 
-        $resultado = $this->getConn()->query($sql);
-        return $resultado;
 
 
     }
@@ -91,6 +97,39 @@ class InterMed
                     // Senha incorreta
                     return false;
                 }
+            } else {
+                // Médico não encontrado
+                return false;
+            }
+        } catch (Exception $e) {
+            // Tratar qualquer exceção que ocorra durante a execução da consulta
+            echo "Erro ao fazer login: " . $e->getMessage();
+            return false;
+        } finally {
+            // Fechar a consulta
+            $stmt->close();
+        }
+    }
+    public function fazerVerificaMed($crm)
+    {
+        $this->getConn();
+
+        try {
+            // Preparar a consulta SQL usando prepared statements
+            $sql = "SELECT * FROM medico WHERE crm = '$crm'";
+            $stmt = $this->conn->prepare($sql);
+            // $stmt->bind_param("ss", $nome, $crm);
+            $stmt->execute();
+
+            // Obter o resultado da consulta
+            $result = $stmt->get_result();
+
+            // Verificar se encontrou algum médico
+            if ($result->num_rows == 1) {
+                $medico = $result->fetch_assoc();
+                // Verificar se a senha está correta
+                // Senha correta, login bem-sucedido
+                return $medico;
             } else {
                 // Médico não encontrado
                 return false;
