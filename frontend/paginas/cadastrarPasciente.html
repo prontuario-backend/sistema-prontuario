@@ -81,7 +81,7 @@
 							</div>
 							<div class="container-item">
 								<label>Telefone Residencial</label>
-								<input type="text" id="tel">
+								<input type="text" id="telefone" />
 								<div class="error-message" id="error-nome-social"></div>
 							</div>
 							<div class="container-item">
@@ -171,28 +171,33 @@
 			<!-- FIM do CONTEUDO -->
 		</div>
 		<script>
-            if(window.localStorage.getItem('paciente') != null){
-                let json = JSON.parse()
-                let nome = document.querySelector("#nome").value;
-				let tel = document.querySelector("#tel").value;
-				let idade = document.querySelector("#idade").value;
-				let cpf = document.querySelector("#cpf").value;
-				let sexo = document.querySelector("#sexo").value;
-				let raca = document.querySelector("#raca").value;
-				let data_nasc = document.querySelector("#data-nascimento").value;
-				let peso = document.querySelector("#peso").value;
-				let altura = document.querySelector("#altura").value;
-				let mae = document.querySelector("#mae").value;
-				let pai = document.querySelector("#pai").value;
-				let cep = document.querySelector("#cep").value;
-				let email = document.querySelector("#email").value;
-				let endereco = document.querySelector("#endereco").value;
-				let celular = document.querySelector("#celular").value;
-            }
-            console.log(window.localStorage.getItem('paciente'));
+			if (
+				window.localStorage.getItem("paciente") != null &&
+				window.localStorage.getItem("paciente") != undefined
+			) {
+				let json = JSON.parse(window.localStorage.getItem("paciente"));
+				let nome = (document.querySelector("#nome").value = json.nome);
+				let tel = (document.querySelector("#telefone").value = json.tel);
+				let idade = (document.querySelector("#idade").value = json.idade);
+				let cpf = (document.querySelector("#cpf").value = json.cpf);
+				let sexo = (document.querySelector("#sexo").value = json.sexo);
+				let raca = (document.querySelector("#raca").value = json.raca);
+				let data_nasc = (document.querySelector("#data-nascimento").value =
+					json.data_nasc);
+				let peso = (document.querySelector("#peso").value = json.peso);
+				let altura = (document.querySelector("#altura").value = json.altura);
+				let mae = (document.querySelector("#mae").value = json.mae);
+				let pai = (document.querySelector("#pai").value = json.pai);
+				let cep = (document.querySelector("#cep").value = json.cep);
+				let email = (document.querySelector("#email").value = json.email);
+				let endereco = (document.querySelector("#endereco").value =
+					json.endereco);
+				let celular = (document.querySelector("#celular").value = json.celular);
+			}
+			console.log(window.localStorage.getItem("paciente"));
 			function save() {
 				let nome = document.querySelector("#nome").value;
-				let tel = document.querySelector("#tel").value;
+				let tel = document.querySelector("#telefone").value;
 				let idade = document.querySelector("#idade").value;
 				let cpf = document.querySelector("#cpf").value;
 				let sexo = document.querySelector("#sexo").value;
@@ -207,26 +212,62 @@
 				let endereco = document.querySelector("#endereco").value;
 				let celular = document.querySelector("#celular").value;
 
-                let json = `{
-                    "nome": ${nome},
-                    "tel":${tel},
-                    "idade":${idade},
-                    "cpf":${cpf},
-                    "sexo":${sexo},
-                    "raca":${raca},
-                    "data_nasc":${data_nasc},
-                    "peso":${peso},
-                    "altura":${altura},
-                    "mae":${mae},
-                    "pai":${pai},
-                    "cep":${cep},
-                    "email":${email},
-                    "endereco":${endereco},
-                    "celular":${celular}
-                }`;
-                
-                json = JSON.stringify(json);
-                window.localStorage.setItem('paciente', json);
+				class User {
+					nome;
+					tel;
+					idade;
+					cpf;
+					sexo;
+					raca;
+					data_nasc;
+					peso;
+					altura;
+					peso;
+					mae;
+					pai;
+					cep;
+					email;
+					endereco;
+					celular;
+					constructor(
+						nome,
+						tel,
+						idade,
+						cpf,
+						sexo,
+						raca,
+						data_nasc,
+						peso,
+						altura,
+						mae,
+						pai,
+						cep,
+						email,
+						endereco,
+						celular
+					) {
+						this.nome = nome;
+						this.tel = tel;
+						this.idade = idade;
+						this.cpf = cpf;
+						this.sexo = sexo;
+						this.raca = raca;
+						this.data_nasc = data_nasc;
+						this.peso = peso;
+						this.altura = altura;
+						this.peso = peso;
+						this.mae = mae;
+						this.pai = pai;
+						this.cep = cep;
+						this.email = email;
+						this.endereco = endereco;
+						this.celular = celular;
+					}
+				}
+				let json = new User(nome, tel, idade, cpf, sexo, raca, data_nasc, peso, altura, mae, pai, cep, email, endereco, celular);
+                telefone.value = '';
+				json = JSON.stringify(json);
+				window.localStorage.setItem("paciente", json);
 			}
 		</script>
 	</body>
