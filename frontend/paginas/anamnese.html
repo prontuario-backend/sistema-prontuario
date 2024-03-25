@@ -116,6 +116,7 @@
     <!-- FIM do conteudo principal -->
     <script>
         function save(){
+            console.log(window.localStorage.getItem('anamnese'));
             let queixa = document.querySelector('#queixa');
             let historico = document.querySelector('#historico');
             let exame = document.querySelector('exame');
@@ -127,6 +128,8 @@
             "exame":$(exame).value,
             "habitos":$(habitos).value,
         };
+        JSON.stringify(json);
+        window.localStorage.setItem('anamnese',json)
     </script>
 
 </body>
