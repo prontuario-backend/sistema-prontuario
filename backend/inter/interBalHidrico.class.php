@@ -12,7 +12,7 @@ class InterBalHidrico
         $this->conn = $conexao->getConn();
         unset($conexao);
     }
-    public function create(BalancoHidrico $balancoHidrico, Enfermeiro $enfermeiro, LiquidosAdministrados $liquidos_administrados, LiquidosEliminados $liquidos_eliminados, Paciente $paciente)
+    public function create(BalancoHidrico $balancoHidrico, $cpf = '179.982.092.74')
     {
         $this->getConn();
         $data = $balancoHidrico->getData();
@@ -22,7 +22,7 @@ class InterBalHidrico
         $total_quant_elimi = $balancoHidrico->getLiquidosEliminados();
         $total_quanti_admini = $balancoHidrico->getTotalQuantAdministrada();
         $conclusao = $balancoHidrico->getConclusao();
-        $corem_med_enf = $enfermeiro->getCoren();
+
         $via_oral = $liquidos_administrados->getViaOral();
         $via_patental = $liquidos_administrados->getViaParenteral();
         $quant_administrada = $liquidos_administrados->getQuantAdminstrada();
@@ -32,11 +32,10 @@ class InterBalHidrico
         $estase = $liquidos_eliminados->getEstase();
         $vomito = $liquidos_eliminados->getVomito();
         $outros_eliminados = $liquidos_eliminados->getOutros();
-        $cpf = $paciente->getCpf();
 
 
         $sql = "INSERT INTO balancoHidrico (data, hora, liquidos_administrados, total_quant_administrada, total_quant_eliminada, conclusao, corem_med_enf, via_oral, via_parenteral, quant_administrada, sondas, outros, diurese, estase, vomito, outros_eliminados, cpf) 
-        VALUES ('$data','$hora','$liquidos_administrados',$total_quanti_admini,$total_quant_elimi,'$conclusao','$corem_med_enf',$via_oral,$via_patental,$quant_administrada,$sondas,'$outros',$diurese,$estase,$vomito,'$outros_eliminados','$cpf')";
+        VALUES ('$data','$hora','$liquidos_administrados',$total_quanti_admini,$total_quant_elimi,'$conclusao',,$via_oral,$via_patental,$quant_administrada,$sondas,'$outros',$diurese,$estase,$vomito,'$outros_eliminados','$cpf')";
 
 
         $this->getConn()->query($sql);
