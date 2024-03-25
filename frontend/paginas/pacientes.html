@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'inter' . DIRECTORY_SEPARATOR . 'includeInter.php';
-?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +45,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' .
             <i class="fa-solid fa-user-doctor"></i>
             <p id="name">Dr. Paulo</p>
             <p id="profissao">Médico</p>
-            <a href="/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <a href="/frontend/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
     </div>
     <!-- FIM do HEADER -->
@@ -61,18 +57,18 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' .
         <div class="navbar shadow">
             <h1 class="dados">DADOS</h1>
             <ul>
-                <li class="itemList" id="navPaciente"><a href="./pacientes.html"><i
+                <li class="itemList" id="navPaciente"><a href="/frontend/paginas/pacientes.html"><i
                             class="icon fa-solid fa-user"></i><span class="spanNone">Pacientes</span></a></li>
-                <li class="itemList" id="navAgenda"><a href="./anamnese.html"><i
+                <li class="itemList" id="navAgenda"><a href="/frontend/paginas/anamnese.html"><i
                             class="icon fa-solid fa-notes-medical"></i><span class="spanNone">Anamnese</span></a></li>
-                <li class="itemList" id="navServicos"><a href="./anotacoes.html"><i
+                <li class="itemList" id="navServicos"><a href="/frontend/paginas/anotacoes.html"><i
                             class="icon fa-solid fa-clipboard"></i><span class="spanNone">Anotações</span></a></li>
-                <li class="itemList" id="navFinanceiro"><a href="./balancohidrico.html"><i
+                <li class="itemList" id="navFinanceiro"><a href="/frontend/paginas/balancohidrico.html"><i
                             class="icon fa-solid fa-droplet"></i><span class="spanNone">Balanço Hídrico</span></a></li>
             </ul>
 
             <div class="buttonPosition">
-                <div class="btn-buscar"><a href="./buscar.html">BUSCAR</a></div>
+                <div class="btn-buscar"><a href="/frontend/paginas/buscar.html">BUSCAR</a></div>
             </div>
 
         </div>
@@ -88,7 +84,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' .
                 <div class="row">
                     <div class="container-item">
                         <label for="nome">Nome</label>
-                        <span id="p-nome">Fernando Martins de Oliveira</span>
+                        <span id="p-nome">Fulano da Silva Junior</span>
                         <button onclick="editarCampo('p-nome')"><i class="fa-regular fa-pen-to-square"></i></button>
                     </div>
                     <div class="container-item">
@@ -105,12 +101,12 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' .
                 <div class="row">
                     <div class="container-item">
                         <label for="nasc">Data de nascimento</label>
-                        <span id="p-nasc">01/10/2002</span>
+                        <span id="p-nasc">01/01/2000</span>
                         <button onclick="editarCampo('p-nasc')"><i class="fa-regular fa-pen-to-square"></i></button>
                     </div>
                     <div class="container-item">
                         <label for="idade">Idade</label>
-                        <span id="p-idade">21</span>
+                        <span id="p-idade">24</span>
                         <button onclick="editarCampo('p-idade')"><i class="fa-regular fa-pen-to-square"></i></button>
                     </div>
                     <div class="container-item">
