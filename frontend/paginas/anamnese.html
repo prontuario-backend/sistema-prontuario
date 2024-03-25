@@ -67,7 +67,7 @@
             </ul>
 
             <div class="buttonPosition">
-                <div class="btn-buscar"><a href="/frontend/paginas/buscar.html">BUSCAR</a></div>
+                <div class="btn-buscar"><a href="/frontend/paginas/buscar.php">BUSCAR</a></div>
             </div>
 
         </div>
@@ -75,6 +75,7 @@
 
         <!-- INICIO do CONTEUDO -->
         <div class="conteudo shadow">
+            <form id="form-anamnese">
             <div class="editar">
                 <div class="edit">
                     <i class="fa-solid fa-pen-to-square"></i>
@@ -82,20 +83,21 @@
             </div>
 
             <div class="conteudo1">
-                <div class="queixa conteudo2"><label for="queixa">Queixa principal</label><br>
-                    <input type="text">
+                <div class="queixa conteudo2" id="queixa"><label for="queixa">Queixa principal</label><br>
+                    <input type="text" id="queixa"> 
+                    
                 </div>
 
                 <div class="historico conteudo2"><label for="historico">Histórico Familiar</label><br>
-                    <input type="text">
+                    <input type="text" id="historico">
                 </div>
 
 
                 <div class="exame conteudo2"><label for="exame">Exame Físico</label><br>
-                    <input type="text">
+                    <input type="text" id="exame">
                 </div>
 
-                <div class="habitos conteudo2"><label for="habitos">Hábitos de Vida</label><br>
+                <div class="habitos conteudo2"id="habitos"><label for="habitos">Hábitos de Vida</label><br>
                     <input type="text">
                 </div>
 
@@ -103,13 +105,32 @@
 
             <!-- INICIO do BOTAO -->
             <div class="positionbutton">
-                <div class="botao">SALVAR</div>
+                <div onclick="save()" class="botao" type="submit">SALVAR</div>
+                
             </div>
         </div>
+    </form>
         <!-- FIM do BOTAO -->
         <!-- FIM do CONTEUDO -->
     </div>
     <!-- FIM do conteudo principal -->
+    <script>
+        function save(){
+            console.log(window.localStorage.getItem('anamnese'));
+            let queixa = document.querySelector('#queixa');
+            let historico = document.querySelector('#historico');
+            let exame = document.querySelector('exame');
+            let habitos = document.querySelector('#habitos');
+        }
+        let json = {
+            "queixa":$(queixa).value,
+            "historico":$(historico).value,
+            "exame":$(exame).value,
+            "habitos":$(habitos).value,
+        };
+        JSON.stringify(json);
+        window.localStorage.setItem('anamnese',json)
+    </script>
 
 </body>
 

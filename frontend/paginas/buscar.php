@@ -54,7 +54,7 @@ session_start();
                 </div>
 
                 <div class="positionbutton">
-                    <a href="/frontend/paginas/cadastrarPaciente.html">
+                    <a href="/frontend/paginas/cadastrarPasciente.html">
                         <button type="button" class="btn">CADASTRAR PACIENTE</button>
                     </a>
                 </div>
