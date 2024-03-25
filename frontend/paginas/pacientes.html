@@ -182,6 +182,111 @@
     <!-- FIM do CONTEUDO -->
     </div>
     <script src="../js/editarpacientes.js"></script>
+    <script>
+        addEventListener("DOMContentLoaded", loader());
+        function loader(){
+            if (
+				window.localStorage.getItem("paciente") != null &&
+				window.localStorage.getItem("paciente") != undefined
+			) {
+				let json = JSON.parse(window.localStorage.getItem("paciente"));
+				let nome = (document.querySelector("#p-nome").value = json.nome);
+				let tel = (document.querySelector("#p-teleR").value = json.tel);
+				let idade = (document.querySelector("#p-idade").value = json.idade);
+				let cpf = (document.querySelector("#p-cpf").value = json.cpf);
+				let sexo = (document.querySelector("#p-sexo").value = json.sexo);
+				let raca = (document.querySelector("#p-raca").value = json.raca);
+				let data_nasc = (document.querySelector("#p-nasc").value =
+					json.data_nasc);
+				let peso = (document.querySelector("#p-peso").value = json.peso);
+				let altura = (document.querySelector("#p-altura").value = json.altura);
+				let mae = (document.querySelector("#p-mae").value = json.mae);
+				let pai = (document.querySelector("#p-pai").value = json.pai);
+				let cep = (document.querySelector("#p-cep").value = json.cep);
+				let email = (document.querySelector("#p-email").value = json.email);
+				let endereco = (document.querySelector("#p-endereco").value =
+					json.endereco);
+				let celular = (document.querySelector("#p-celular").value = json.celular);
+			}
+			
+        }
+        console.log(window.localStorage.getItem("paciente"));
+			function save() {
+				let nome = document.querySelector("#p-nome").value;
+				let tel = document.querySelector("#p-teleR").value;
+				let idade = document.querySelector("#p-idade").value ;
+				let cpf = document.querySelector("#p-cpf").value;
+				let sexo = document.querySelector("#sexo").value;
+				let raca = document.querySelector("#p-raca").value;
+				let data_nasc = document.querySelector("#p-nasc").value;
+				let peso = document.querySelector("#p-peso").value;
+				let altura = document.querySelector("#p-altura").value;
+				let mae = document.querySelector("#p-mae").value;
+				let pai = document.querySelector("#p-pai").value;
+				let cep = document.querySelector("#p-cep").value;
+				let email = document.querySelector("#p-email").value ;
+				let endereco = document.querySelector("#p-endereco").value;
+				let celular = document.querySelector("#p-celular").value;
+
+				class User {
+					nome;
+					tel;
+					idade;
+					cpf;
+					sexo;
+					raca;
+					data_nasc;
+					peso;
+					altura;
+					peso;
+					mae;
+					pai;
+					cep;
+					email;
+					endereco;
+					celular;
+					constructor(
+						nome,
+						tel,
+						idade,
+						cpf,
+						sexo,
+						raca,
+						data_nasc,
+						peso,
+						altura,
+						mae,
+						pai,
+						cep,
+						email,
+						endereco,
+						celular
+					) {
+						this.nome = nome;
+						this.tel = tel;
+						this.idade = idade;
+						this.cpf = cpf;
+						this.sexo = sexo;
+						this.raca = raca;
+						this.data_nasc = data_nasc;
+						this.peso = peso;
+						this.altura = altura;
+						this.peso = peso;
+						this.mae = mae;
+						this.pai = pai;
+						this.cep = cep;
+						this.email = email;
+						this.endereco = endereco;
+						this.celular = celular;
+					}
+				}
+				let json = new User(nome, tel, idade, cpf, sexo, raca, data_nasc, peso, altura, mae, pai, cep, email, endereco, celular);
+                telefone.value = '';
+				json = JSON.stringify(json);
+				window.localStorage.setItem("paciente", json);
+            }
+            window.onclose(save());
+    </script>
 </body>
 
 </html>
