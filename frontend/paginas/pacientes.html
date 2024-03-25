@@ -183,8 +183,7 @@
     </div>
     <script src="../js/editarpacientes.js"></script>
     <script>
-        addEventListener("DOMContentLoaded", loader());
-        function loader(){
+
             if (
 				window.localStorage.getItem("paciente") != null &&
 				window.localStorage.getItem("paciente") != undefined
@@ -206,17 +205,17 @@
 				let email = (document.querySelector("#p-email").value = json.email);
 				let endereco = (document.querySelector("#p-endereco").value =
 					json.endereco);
-				let celular = (document.querySelector("#p-celular").value = json.celular);
+				let celular = (document.querySelector("#p-teleC").value = json.celular);
 			}
 			
-        }
+        
         console.log(window.localStorage.getItem("paciente"));
 			function save() {
 				let nome = document.querySelector("#p-nome").value;
 				let tel = document.querySelector("#p-teleR").value;
 				let idade = document.querySelector("#p-idade").value ;
 				let cpf = document.querySelector("#p-cpf").value;
-				let sexo = document.querySelector("#sexo").value;
+				let sexo = document.querySelector("#p-sexo").value;
 				let raca = document.querySelector("#p-raca").value;
 				let data_nasc = document.querySelector("#p-nasc").value;
 				let peso = document.querySelector("#p-peso").value;
@@ -226,7 +225,7 @@
 				let cep = document.querySelector("#p-cep").value;
 				let email = document.querySelector("#p-email").value ;
 				let endereco = document.querySelector("#p-endereco").value;
-				let celular = document.querySelector("#p-celular").value;
+				let celular = document.querySelector("#p-teleC").value;
 
 				class User {
 					nome;
