@@ -184,6 +184,26 @@ a {
     background-color: var(--bg-color-2);
     color: var(--white-color);
 }
+.btn-buscar {
+    width: 90%;
+    height: 70px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: var(--bg-color-2);
+    color: var(--white-color);
+}
+
+.buttonbuscar button {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 12px 28px;
+    cursor: pointer;
+}
+
 
 .icon {
     color: black;
@@ -273,6 +293,7 @@ a {
     height: 40px;
     width: 110px;
     color: white;
+    text-decoration: none;
 }
 
 .input {
@@ -325,6 +346,21 @@ a {
     color: black;
 
 }
+
+ 
+ .btn-buscar {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 13px 32px;
+    border: none;
+    outline: none;
+    background: transparent;
+
+ }
+
+
 
 /*                                                          @Medias*/
 

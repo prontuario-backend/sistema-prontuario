@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -34,26 +38,30 @@
         <h1>SEU SISTEMA ONLINE</h1>
     </div>
 
-    <div class="main">
-        <div class="conteudo">
-            <div class="pesquisa">
-                <div class="caixa">
-                    <div class="inputposition">
-                        <input class="input" type="text" placeholder="Pesquise o paciente pelo nome ou CPF">
-                        <div onclick="a()" class="buttonbuscar">
-                            BUSCAR
+    <form action="buscar2.php" method="post">
+        <div class="main">
+            <div class="conteudo">
+                <div class="pesquisa">
+                    <div class="caixa">
+                        <div class="inputposition">
+                            <input class="input" type="text" placeholder="Pesquise o paciente pelo nome ou CPF"
+                                name="inputPasciente">
+                            <div onclick="a()" class="buttonbuscar">
+                                <button type="submit">BUSCAR</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="positionbutton">
-                <a href="/frontend/paginas/cadastrarPaciente.html"><button type="button" class="btn">CADASTRAR
-                        PACIENTE</button></a>
-            </div>
+                <div class="positionbutton">
+                    <a href="/frontend/paginas/cadastrarPaciente.html">
+                        <button type="button" class="btn">CADASTRAR PACIENTE</button>
+                    </a>
+                </div>
 
+            </div>
         </div>
-    </div>
+    </form>
     <!-- FIM do conteudo principal -->
 
     <div class="titulo">

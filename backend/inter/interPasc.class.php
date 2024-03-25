@@ -25,9 +25,12 @@ VALUES ('Nome do Paciente', '2005-08-16', 'Gênero do Paciente', 'Raça do Pacie
     public function read()
     {
         $this->getConn();
-        /*
-SELECT * FROM paciente ORDER BY nome; 
-        */
+        $sql = "SELECT * FROM pa WHERE crm = '$crm'";
+        $resultado = $this->getConn()->query($sql);
+        return $resultado->fetch_assoc();
+        //SELECT * FROM paciente ORDER BY nome; 
+
+
     }
     public function update()
     {
