@@ -53,11 +53,18 @@ session_start();
                     </div>
                 </div>
 
+<<<<<<< Updated upstream
                 <div class="positionbutton">
                     <a href="/frontend/paginas/cadastrarPasciente.html">
                         <button type="button" class="btn">CADASTRAR PACIENTE</button>
                     </a>
                 </div>
+=======
+            <div class="positionbutton">
+                <a href="frontend/paginas/cadastrarPasciente.html"><button type="button" class="btn">CADASTRAR
+                        PACIENTE</button></a>
+            </div>
+>>>>>>> Stashed changes
 
             </div>
         </div>
